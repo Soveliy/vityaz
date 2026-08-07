@@ -1,0 +1,54 @@
+@use '../mixins' as *;
+@use '../vars' as *;
+
+.text-h0,
+.text-h1,
+.text-h2 {
+  @include heading-text;
+  margin: 0;
+}
+
+.text-h0 {
+  font-size: $font-size-h0;
+}
+
+.text-h1 {
+  font-size: $font-size-h1;
+}
+
+.text-h2 {
+  font-size: $font-size-h2;
+}
+
+.text-t1,
+.text-t2 {
+  line-height: $line-height-text;
+  margin: 0;
+}
+
+.text-t1 {
+  font-size: $font-size-t1;
+  font-weight: 700;
+}
+
+.text-t2 {
+  font-size: $font-size-t2;
+  font-weight: 700;
+}
+
+.text-label {
+  @include label-text;
+  margin: 0;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.text-dark {
+  color: var(--color-text);
+}
+
+.text-light {
+  color: var(--color-text-inverse);
+}

@@ -1,0 +1,41 @@
+@use '../vars' as *;
+@use '../fluid' as *;
+
+.header {
+  background-color: var(--color-bg);
+  border-bottom: rem(1px) solid var(--color-border);
+  padding: rem(20px) 0;
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+}
+
+.header__container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  color: var(--color-light);
+  font-family: var(--second-family);
+  font-size: rem(26px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.header__burger {
+  display: none;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__burger {
+    display: inline-flex;
+  }
+}

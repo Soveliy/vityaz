@@ -1,0 +1,41 @@
+@use '../vars' as *;
+@use '../fluid' as *;
+.group-inv {
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+}
+.group-inv-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: fluid(20px, 40px);
+  background: #f8f9fe;
+  border-radius: $radius-sm;
+  &__icon {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7.5rem;
+    width: 7.5rem;
+    img {
+      max-width: 100%;
+    }
+  }
+  &__name {
+    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 130%;
+    text-align: center;
+    color: #141414;
+  }
+  &__params {
+    font-size: 16px;
+    line-height: 110%;
+    text-align: center;
+    color: #97989b;
+  }
+}

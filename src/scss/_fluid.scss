@@ -1,0 +1,55 @@
+@use 'sass:math';
+
+$fluid-viewport-min: 375px !default;
+$fluid-viewport-max: 1540px !default;
+$rem-base: 16px !default;
+
+@function rem($value, $base: $rem-base) {
+  @if $value == 0 {
+    @return 0;
+  }
+
+  @if math.is-unitless($value) {
+    @return math.div($value, math.div($base, 1px)) * 1rem;
+  }
+
+  @if math.compatible($value, 1rem) {
+    @return $value;
+  }
+
+  @if not math.compatible($value, 1px) {
+    @error "rem(): value must be unitless, px, or rem.";
+  }
+
+  @return math.div($value, $base) * 1rem;
+}
+
+@function fluid(
+  $min-size,
+  $max-size,
+  $min-viewport: $fluid-viewport-min,
+  $max-viewport: $fluid-viewport-max
+) {
+  @if not math.compatible($min-size, $max-size) {
+    @error "fluid(): min and max sizes must use compatible units.";
+  }
+
+  @if not math.compatible($min-viewport, $max-viewport) {
+    @error "fluid(): viewport bounds must use compatible units.";
+  }
+
+  $slope: math.div($max-size - $min-size, $max-viewport - $min-viewport);
+  $intercept: $min-size - $slope * $min-viewport;
+
+  @return clamp(#{rem($min-size)}, calc(#{rem($intercept)} + #{$slope * 100}vw), #{rem($max-size)});
+}
+
+@mixin fluid-prop(
+  $property,
+  $min-size,
+  $max-size,
+  $min-viewport: $fluid-viewport-min,
+  $max-viewport: $fluid-viewport-max
+) {
+  #{$property}: fluid($min-size, $max-size, $min-viewport, $max-viewport);
+}

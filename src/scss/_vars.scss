@@ -1,0 +1,79 @@
+@use 'fluid' as *;
+
+$viewport-min: 375px;
+$viewport-max: 1540px;
+
+$content-width: rem(1540px);
+$container-offset: rem(24px);
+$container-width: $content-width + ($container-offset * 2);
+
+$breakpoint-tablet: rem(1024px);
+$breakpoint-mobile: rem(767px);
+
+:root {
+  --white: #ffffff;
+  --black: #141414;
+  --blue: #0335d6;
+  --color-bg: var(--white);
+  --color-bg-inverse: var(--black);
+  --color-text: var(--black);
+  --color-text-inverse: var(--white);
+  --font-family: 'Inter', sans-serif;
+  --second-family: 'AA Stetica', sans-serif;
+}
+
+$radius-xs: rem(6px);
+$radius-sm: rem(12px);
+$radius-md: rem(16px);
+$radius-lg: rem(24px);
+$radius-pill: 999rem;
+
+$space-2: rem(2px);
+$space-4: rem(4px);
+$space-6: rem(6px);
+$space-8: rem(8px);
+$space-10: rem(10px);
+$space-12: rem(12px);
+$space-16: rem(16px);
+$space-20: rem(20px);
+$space-24: rem(24px);
+$space-28: rem(28px);
+$space-32: rem(32px);
+$space-36: rem(36px);
+$space-40: rem(40px);
+$space-48: rem(48px);
+$space-56: rem(56px);
+$space-64: rem(64px);
+$space-72: rem(72px);
+$space-80: rem(80px);
+$space-96: rem(96px);
+
+$z-base: 1;
+$z-header: 100;
+$z-overlay: 400;
+$z-modal: 500;
+$z-tooltip: 600;
+
+$duration-fast: 160ms;
+$duration-base: 240ms;
+$ease-base: ease;
+
+$focus-outline-width: rem(2px);
+$focus-outline-offset: rem(3px);
+
+$font-size-h0: fluid(46px, 76px, $viewport-min, $viewport-max);
+$font-size-h1: fluid(38px, 58px, $viewport-min, $viewport-max);
+$font-size-h2: fluid(28px, 34px, $viewport-min, $viewport-max);
+$font-size-t1: fluid(16px, 18px, $viewport-min, $viewport-max);
+$font-size-t2: rem(14px);
+$font-size-label: rem(11px);
+
+$line-height-heading: 0.9;
+$line-height-text: 1.25;
+$line-height-label: 1;
+
+$space-ui-kit-y: fluid(48px, 72px, $viewport-min, $viewport-max);
+$space-ui-kit-y-end: fluid(72px, 96px, $viewport-min, $viewport-max);
+$space-ui-kit-hero-bottom: fluid(40px, 56px, $viewport-min, $viewport-max);
+$space-ui-kit-section-y: fluid(36px, 48px, $viewport-min, $viewport-max);
+$space-ui-kit-gap: fluid(20px, 28px, $viewport-min, $viewport-max);

@@ -1,0 +1,12 @@
+@use '../vars' as *;
+@use '../fluid' as *;
+.section {
+  padding: fluid(60px, 120px) 0;
+  &__title {
+    margin: 0 0 fluid(20px, 40px) 0;
+    font-weight: 500;
+    font-size: fluid(24px, 32px);
+    line-height: 110%;
+    color: var(--black);
+  }
+}

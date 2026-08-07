@@ -1,0 +1,31 @@
+@use '../vars' as *;
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: $focus-outline-width solid var(--focus-color);
+  outline-offset: $focus-outline-offset;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+[aria-disabled='true'] {
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,87 @@
+@use '../fluid' as *;
+@use '../vars' as *;
+
+.map__wrap {
+  background-color: #e5ebfe;
+  border-radius: $radius-sm;
+  height: fluid(360px, 560px);
+  overflow: hidden;
+  position: relative;
+}
+
+.map__fallback {
+  align-items: center;
+  color: var(--blue);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: rem(24px);
+  position: absolute;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.map__wrap.is-loaded .map__fallback {
+  display: none;
+}
+
+.map-marker {
+  position: relative;
+  transform: translate(-50%, -100%);
+}
+
+.map-marker__button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--blue);
+  cursor: pointer;
+  display: block;
+  padding: 0;
+}
+
+.map-marker__icon {
+  filter: drop-shadow(0 rem(6px) rem(10px) rgb(3 53 214 / 0.18));
+  height: fluid(48px, 64px);
+  width: fluid(36px, 48px);
+}
+
+.map-marker__balloon {
+  background-color: #f8f9fe;
+  border-radius: $radius-xs;
+  bottom: calc(100% + #{rem(16px)});
+  box-shadow: 0 rem(12px) rem(32px) rgb(20 20 20 / 0.12);
+  color: var(--black);
+  font-family: var(--font-family);
+  font-size: fluid(18px, 36px);
+  left: 50%;
+  line-height: 1.1;
+  padding: fluid(20px, 32px);
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  width: min(#{rem(720px)}, calc(100vw - #{rem(48px)}));
+}
+
+.map-marker__balloon::after {
+  border-left: rem(10px) solid transparent;
+  border-right: rem(10px) solid transparent;
+  border-top: rem(10px) solid #f8f9fe;
+  content: '';
+  left: 50%;
+  position: absolute;
+  top: 100%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .map__wrap {
+    border-radius: $radius-xs;
+  }
+
+  .map-marker__balloon {
+    width: min(#{rem(320px)}, calc(100vw - #{rem(32px)}));
+  }
+}

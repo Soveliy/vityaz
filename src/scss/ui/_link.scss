@@ -1,0 +1,21 @@
+@use '../vars' as *;
+
+.link {
+  color: var(--color-text);
+  text-decoration-color: rgb(255 255 255 / 0.34);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  transition:
+    color $duration-fast $ease-base,
+    text-decoration-color $duration-fast $ease-base;
+}
+
+.link:hover {
+  color: var(--color-accent);
+  text-decoration-color: currentColor;
+}
+
+.link--muted {
+  color: var(--color-muted);
+}

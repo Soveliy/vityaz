@@ -1,0 +1,80 @@
+@use 'vars' as *;
+@use 'fluid' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  margin: 0;
+  min-width: rem(320px);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $container-width;
+  padding: 0 $container-offset;
+}
+
+.footer {
+  border-top: rem(1px) solid var(--color-border);
+  padding: rem(24px) 0;
+}
+
+.footer__copy {
+  color: var(--color-muted);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--white);
+}
+
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: rem(1px);
+  margin: rem(-1px);
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: rem(1px);
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .container {
+    padding: 0 rem(16px);
+  }
+}

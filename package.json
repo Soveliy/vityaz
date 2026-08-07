@@ -1,0 +1,43 @@
+{
+  "name": "warpoint",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build --mode production",
+    "backend": "vite build --mode backend",
+    "clean": "node scripts/clean.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run lint:styles && npm run format:check",
+    "lint:styles": "stylelint \"src/scss/**/*.scss\"",
+    "sprite": "node scripts/sprite.mjs",
+    "zip": "npm run build && node scripts/zip-build.mjs dist archive/warpoint.zip"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.5%",
+    "not dead"
+  ],
+  "devDependencies": {
+    "archiver": "^8.0.0",
+    "autoprefixer": "^10.5.2",
+    "cheerio": "^1.2.0",
+    "esbuild": "^0.28.1",
+    "fast-glob": "^3.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.5.16",
+    "prettier": "^3.9.4",
+    "sass": "^1.101.0",
+    "stylelint": "^17.14.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-order": "^8.1.1",
+    "vite": "^8.1.3"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.25",
+    "swiper": "^14.0.1"
+  }
+}

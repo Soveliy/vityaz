@@ -1,0 +1,45 @@
+@use '../fluid' as *;
+@use '../vars' as *;
+
+.modal {
+  align-items: center;
+  background-color: rgb(0 0 0 / 0.72);
+  display: none;
+  inset: 0;
+  justify-content: center;
+  padding: $space-24;
+  position: fixed;
+  z-index: $z-modal;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal__dialog {
+  background-color: var(--color-surface);
+  border: rem(1px) solid var(--color-border);
+  border-radius: $radius-md;
+  color: var(--color-text);
+  max-width: rem(560px);
+  padding: $space-32;
+  position: relative;
+  width: min(100%, rem(560px));
+}
+
+.modal__close {
+  position: absolute;
+  right: $space-16;
+  top: $space-16;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .modal {
+    align-items: end;
+    padding: $space-12;
+  }
+
+  .modal__dialog {
+    padding: $space-24;
+  }
+}

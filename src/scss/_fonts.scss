@@ -1,0 +1,5 @@
+@use 'mixins' as *;
+
+@include font-face('Inter', 'inter.woff2', 100 900);
+@include font-face('AA Stetica', 'AAStetica-Medium.woff2', 500);
+@include font-face('AA Stetica', 'AAStetica-Bold.woff2', 700);

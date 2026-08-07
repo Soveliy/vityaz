@@ -1,0 +1,54 @@
+@use '../fluid' as *;
+@use '../vars' as *;
+
+.field {
+  display: grid;
+  gap: $space-8;
+}
+
+.field__label {
+  color: var(--color-muted);
+  font-size: $font-size-label;
+  font-weight: 800;
+  line-height: $line-height-label;
+  text-transform: uppercase;
+}
+
+.field__control {
+  appearance: none;
+  background-color: rgb(255 255 255 / 0.06);
+  border: rem(1px) solid var(--color-border);
+  border-radius: $radius-sm;
+  color: var(--color-text);
+  min-height: rem(48px);
+  padding: 0 $space-16;
+  transition:
+    background-color $duration-fast $ease-base,
+    border-color $duration-fast $ease-base;
+  width: 100%;
+}
+
+.field__control::placeholder {
+  color: rgb(255 255 255 / 0.36);
+}
+
+.field__control:hover {
+  border-color: rgb(255 255 255 / 0.32);
+}
+
+.field__control:focus-visible {
+  border-color: var(--focus-color);
+}
+
+textarea.field__control {
+  min-height: rem(128px);
+  padding-bottom: $space-12;
+  padding-top: $space-12;
+  resize: vertical;
+}
+
+.field__hint {
+  color: var(--color-muted);
+  font-size: $font-size-t2;
+  line-height: $line-height-text;
+}

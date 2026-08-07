@@ -1,0 +1,227 @@
+@use '../mixins' as *;
+@use '../vars' as *;
+@use '../fluid' as *;
+
+.ui-kit {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: $space-ui-kit-y 0 $space-ui-kit-y-end;
+}
+
+.ui-kit__hero {
+  border-bottom: rem(1px) solid var(--color-border);
+  display: grid;
+  gap: rem(24px);
+  padding-bottom: $space-ui-kit-hero-bottom;
+}
+
+.ui-kit__eyebrow {
+  @include label-text;
+  color: var(--color-accent);
+}
+
+.ui-kit__title {
+  max-width: rem(720px);
+}
+
+.ui-kit__lead {
+  color: var(--color-muted);
+  max-width: rem(520px);
+}
+
+.ui-kit__section {
+  border-bottom: rem(1px) solid var(--color-border);
+  display: grid;
+  gap: $space-ui-kit-gap;
+  grid-template-columns: rem(180px) minmax(0, 1fr);
+  padding: $space-ui-kit-section-y 0;
+}
+
+.ui-kit__section-title {
+  @include label-text;
+  color: var(--color-muted);
+}
+
+.ui-kit__stack {
+  display: grid;
+  gap: rem(24px);
+}
+
+.ui-kit__type-row {
+  align-items: start;
+  display: grid;
+  gap: $space-ui-kit-gap;
+  grid-template-columns: rem(160px) minmax(0, 1fr);
+}
+
+.ui-kit__type-name {
+  @include label-text;
+  color: var(--color-muted);
+}
+
+.ui-kit__type-sample {
+  max-width: rem(620px);
+}
+
+.ui-kit__light-row {
+  background-color: var(--white);
+  color: var(--black);
+  margin: 0 rem(-24px);
+  padding: rem(28px) rem(24px);
+}
+
+.ui-kit__buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(16px);
+}
+
+.ui-kit__icons {
+  display: grid;
+  gap: rem(12px);
+  grid-template-columns: repeat(auto-fit, minmax(rem(128px), 1fr));
+}
+
+.ui-kit__icon-card {
+  background-color: rgb(255 255 255 / 0.04);
+  border: rem(1px) solid var(--color-border);
+  border-radius: $radius-sm;
+  color: var(--color-text);
+  display: grid;
+  gap: rem(12px);
+  min-height: rem(132px);
+  padding: rem(18px) rem(12px);
+  place-items: center;
+}
+
+.ui-kit__icon {
+  color: var(--color-accent);
+  height: rem(36px);
+  width: rem(36px);
+}
+
+.ui-kit__icon-name {
+  color: var(--color-muted);
+  font-size: rem(13px);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.ui-kit__swatches {
+  display: grid;
+  gap: rem(12px);
+  grid-template-columns: repeat(auto-fit, minmax(rem(140px), 1fr));
+}
+
+.ui-kit__swatch {
+  border: rem(1px) solid var(--color-border);
+  border-radius: $radius-sm;
+  overflow: hidden;
+}
+
+.ui-kit__swatch-color {
+  height: rem(56px);
+}
+
+.ui-kit__swatch-caption {
+  display: grid;
+  gap: rem(4px);
+  padding: rem(12px);
+}
+
+.ui-kit__swatch-name {
+  @include label-text;
+}
+
+.ui-kit__swatch-value {
+  color: var(--color-muted);
+  font-size: rem(13px);
+  line-height: 1.2;
+}
+
+.ui-kit__media {
+  background-color: rgb(255 255 255 / 0.06);
+  border: rem(1px) solid var(--color-border);
+  border-radius: $radius-sm;
+}
+
+.ui-kit__media-placeholder {
+  align-items: center;
+  color: var(--color-muted);
+  display: flex;
+  justify-content: center;
+}
+
+.ui-kit__slider-shell {
+  display: grid;
+  gap: rem(16px);
+  min-width: 0;
+}
+
+.ui-kit__slider {
+  min-width: 0;
+  width: 100%;
+}
+
+.ui-kit__slide {
+  align-content: end;
+  background-color: rgb(255 255 255 / 0.06);
+  border: rem(1px) solid var(--color-border);
+  border-radius: $radius-sm;
+  color: var(--color-text);
+  display: grid;
+  gap: rem(8px);
+  min-height: rem(148px);
+  padding: rem(18px);
+  width: rem(220px);
+}
+
+.ui-kit__slide strong {
+  font-size: rem(20px);
+  line-height: 1.1;
+}
+
+.ui-kit__slider-controls {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(12px);
+}
+
+.ui-kit__slider-pagination {
+  align-items: center;
+  display: flex;
+  flex: 1 1 rem(120px);
+  gap: rem(8px);
+  justify-content: center;
+  min-width: rem(96px);
+}
+
+.ui-kit__slider-pagination .swiper-pagination-bullet {
+  background-color: var(--color-muted);
+  margin: 0;
+  opacity: 0.35;
+}
+
+.ui-kit__slider-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-secondary);
+  opacity: 1;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .ui-kit__section,
+  .ui-kit__type-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ui-kit__section {
+    gap: rem(20px);
+  }
+
+  .ui-kit__light-row {
+    margin: 0 rem(-16px);
+    padding: rem(24px) rem(16px);
+  }
+}

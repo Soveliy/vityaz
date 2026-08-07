@@ -1,0 +1,34 @@
+@use 'vars' as *;
+
+@mixin font-face($font-family, $url, $weight: 400, $style: normal, $format: 'woff2') {
+  @font-face {
+    font-display: swap;
+    font-family: $font-family;
+    font-style: $style;
+    font-weight: $weight;
+    src: url('../resources/fonts/#{$url}') format($format);
+  }
+}
+
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin heading-text {
+  font-family: var(--second-family);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: $line-height-heading;
+  text-transform: uppercase;
+}
+
+@mixin label-text {
+  font-family: var(--font-family);
+  font-size: $font-size-label;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: $line-height-label;
+  text-transform: uppercase;
+}

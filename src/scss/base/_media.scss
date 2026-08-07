@@ -1,0 +1,50 @@
+@use '../fluid' as *;
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+.media-cover {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.media-contain {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.ratio {
+  aspect-ratio: var(--ratio, 16 / 9);
+  overflow: hidden;
+}
+
+.ratio > img,
+.ratio > video,
+.ratio > picture {
+  height: 100%;
+  width: 100%;
+}
+
+.ratio > picture > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.lazy-media {
+  background-color: rgb(255 255 255 / 0.06);
+  min-height: rem(1px);
+}

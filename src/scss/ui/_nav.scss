@@ -1,0 +1,19 @@
+@use '../mixins' as *;
+@use '../vars' as *;
+
+.nav {
+  align-items: center;
+  display: flex;
+  gap: $space-24;
+}
+
+.nav__link {
+  @include label-text;
+  color: var(--color-muted);
+  transition: color $duration-fast $ease-base;
+}
+
+.nav__link:hover,
+.nav__link.is-active {
+  color: var(--color-text);
+}
