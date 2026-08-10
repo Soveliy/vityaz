@@ -2,44 +2,177 @@
 @use '../vars' as *;
 
 .modal {
-  align-items: center;
-  background-color: rgb(0 0 0 / 0.72);
-  display: none;
-  inset: 0;
-  justify-content: center;
-  padding: $space-24;
   position: fixed;
+  inset: 0;
   z-index: $z-modal;
-}
-
-.modal.is-open {
   display: flex;
-}
+  align-items: center;
+  justify-content: center;
+  padding: rem(24px);
+  visibility: hidden;
+  background: rgb(20 20 20 / 0.56);
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
 
-.modal__dialog {
-  background-color: var(--color-surface);
-  border: rem(1px) solid var(--color-border);
-  border-radius: $radius-md;
-  color: var(--color-text);
-  max-width: rem(560px);
-  padding: $space-32;
-  position: relative;
-  width: min(100%, rem(560px));
-}
-
-.modal__close {
-  position: absolute;
-  right: $space-16;
-  top: $space-16;
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .modal {
-    align-items: end;
-    padding: $space-12;
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
   }
 
-  .modal__dialog {
-    padding: $space-24;
+  &__dialog {
+    position: relative;
+    overflow-y: auto;
+    width: min(100%, rem(850px));
+    max-height: calc(100vh - #{rem(48px)});
+    padding: fluid(32px, 60px);
+    color: var(--black);
+    background: var(--white);
+    border-radius: $radius-sm;
+    transform: translateY(rem(18px)) scale(0.98);
+    transition: transform 0.25s ease;
+  }
+
+  &.is-open &__dialog {
+    transform: translateY(0) scale(1);
+  }
+
+  &__title {
+    max-width: calc(100% - #{rem(48px)});
+    margin: 0 0 fluid(28px, 38px);
+    font-family: var(--second-family);
+    font-size: fluid(26px, 34px);
+    font-weight: 500;
+    line-height: 110%;
+  }
+
+  &__close {
+    position: absolute;
+    top: fluid(22px, 40px);
+    right: fluid(22px, 40px);
+    width: rem(34px);
+    height: rem(34px);
+    padding: 0;
+    background: transparent;
+    border: 0;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: rem(32px);
+      height: rem(3px);
+      background: var(--blue);
+      border-radius: $radius-pill;
+      content: '';
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__form {
+    gap: rem(16px);
+
+    .form__input {
+      height: rem(68px);
+      padding: rem(16px);
+      background: #f8f9fe;
+      border-radius: $radius-sm;
+      font-size: fluid(17px, 20px);
+    }
+
+    .form__footer {
+      gap: rem(12px);
+      margin-top: rem(24px);
+    }
+
+    .form__btn {
+      min-width: rem(190px);
+      padding: rem(16px) rem(40px);
+      font-size: rem(20px);
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    align-items: flex-end;
+    padding: rem(12px);
+
+    &__dialog {
+      max-height: calc(100vh - #{rem(24px)});
+      padding: rem(28px) rem(20px);
+    }
+
+    &__title {
+      margin-bottom: rem(24px);
+      font-size: rem(26px);
+    }
+
+    &__close {
+      top: rem(18px);
+      right: rem(18px);
+    }
+
+    &__form {
+      .form__input {
+        height: rem(58px);
+      }
+
+      .form__btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.notice {
+  position: fixed;
+  right: rem(24px);
+  bottom: rem(24px);
+  z-index: $z-tooltip;
+  display: flex;
+  flex-direction: column;
+  width: min(rem(380px), calc(100% - #{rem(32px)}));
+  padding: rem(36px) rem(40px);
+  background: #f8f9fe;
+  border-radius: $radius-sm;
+  box-shadow: 0 rem(18px) rem(48px) rgb(20 20 20 / 0.16);
+  opacity: 0;
+  transform: translateY(rem(18px));
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+  &.is-shown {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__title {
+    color: var(--blue);
+    font-family: var(--second-family);
+    font-size: rem(24px);
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  &__text {
+    margin-top: rem(12px);
+    color: var(--black);
+    font-size: rem(20px);
+    line-height: 120%;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    right: rem(16px);
+    bottom: rem(16px);
+    padding: rem(28px);
   }
 }

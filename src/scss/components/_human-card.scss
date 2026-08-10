@@ -1,0 +1,57 @@
+@use '../fluid' as *;
+@use '../vars' as *;
+.human-card {
+  padding: fluid(20px, 40px);
+  background: #f8f9fe;
+  border-radius: $radius-sm;
+  &__row {
+    display: flex;
+    gap: fluid(16px, 32px);
+  }
+  &__image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  &__name {
+    font-size: fluid(16, 20px);
+    line-height: 130%;
+    text-align: center;
+    color: #141414;
+  }
+  &__desc {
+    font-size: fluid(14px, 16px);
+    line-height: 110%;
+    text-align: center;
+    color: #97989b;
+  }
+  &__list {
+    list-style: none;
+    margin: fluid(16px, 32px) 0 0 0;
+  }
+  &__item {
+    &-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    &-icon {
+      height: 24px;
+      width: 24px;
+      color: #0335d6;
+      flex-shrink: 0;
+      fill: none;
+    }
+    &-title {
+      font-family: var(--second-family);
+      font-weight: 500;
+      font-size: fluid(16px, 20px);
+      line-height: 110%;
+      color: #0335d6;
+    }
+    & + & {
+      margin-top: fluid(10px, 20px);
+    }
+  }
+}

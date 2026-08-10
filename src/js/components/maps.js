@@ -27,7 +27,7 @@ function loadYandexMapsApi(apiKey) {
     });
 
     script.async = true;
-    script.src = `${YANDEX_MAPS_API_URL}?${parameters}`;
+    script.src = `https://api-maps.yandex.ru/v3/?apikey=${apiKey}&lang=ru_RU`;
     script.addEventListener('load', () => resolve(globalThis.ymaps3), { once: true });
     script.addEventListener(
       'error',
@@ -140,7 +140,7 @@ async function createMap(container, apiKey) {
 
 export function initMaps() {
   const containers = document.querySelectorAll('[data-map]');
-  const apiKey = import.meta.env.VITE_YANDEX_MAPS_API_KEY;
+  const apiKey = '9346e199-7dda-41f1-aed7-6908fc8dae82';
 
   if (!containers.length || !apiKey) {
     return;

@@ -1,0 +1,70 @@
+@use '../fluid' as *;
+@use '../vars' as *;
+
+.news {
+  &__slider-wrap {
+    position: relative;
+  }
+
+  &__slider {
+    overflow: hidden;
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .content-card {
+      height: auto;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: rem(40px);
+    height: rem(40px);
+    padding: 0;
+    color: var(--blue);
+    background: transparent;
+    border: 0;
+    transform: translateY(-50%);
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--prev {
+      left: rem(-40px);
+    }
+
+    &--next {
+      right: rem(-40px);
+    }
+
+    &.swiper-button-disabled {
+      cursor: default;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &__more {
+    display: inline-flex;
+    margin-top: fluid(24px, 40px);
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    &__nav {
+      &--prev {
+        left: rem(8px);
+      }
+
+      &--next {
+        right: rem(8px);
+      }
+    }
+  }
+}

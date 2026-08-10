@@ -1,0 +1,64 @@
+@use '../fluid' as *;
+@use '../vars' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: rem(15px);
+
+  &__label {
+    display: block;
+    margin-bottom: rem(8px);
+    font-size: rem(14px);
+    line-height: 110%;
+    color: var(--black);
+  }
+
+  &__input {
+    background: #f8f9fe;
+    width: 100%;
+    height: rem(60px);
+    padding: rem(16px);
+    font-size: fluid(16px, 20px);
+    line-height: 130%;
+    border: 0;
+    border-radius: $radius-xs;
+    color: var(--black);
+
+    &::placeholder {
+      color: #97989b;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12px);
+    margin-top: auto;
+  }
+
+  &__btn {
+    align-self: flex-start;
+    padding: rem(12px) rem(40px);
+    font-size: rem(16px);
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: rem(8px);
+    color: #6f7074;
+    font-size: rem(14px);
+    line-height: 130%;
+
+    input {
+      margin-top: rem(2px);
+      accent-color: var(--blue);
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+  }
+}

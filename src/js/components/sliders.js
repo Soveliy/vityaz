@@ -5,6 +5,7 @@ export function initSliders() {
   const sliders = document.querySelectorAll('[data-slider]');
 
   sliders.forEach((slider) => {
+    const isCardSlider = ['news', 'students'].includes(slider.dataset.slider);
     const root = slider.closest('[data-slider-root]') ?? slider;
     const nextEl = root.querySelector('[data-slider-next]');
     const paginationEl = root.querySelector('[data-slider-pagination]');
@@ -25,15 +26,25 @@ export function initSliders() {
               nextEl,
               prevEl,
             }
-          : undefined,
+          : false,
       pagination: paginationEl
         ? {
             clickable: true,
             el: paginationEl,
           }
+        : false,
+      breakpoints: isCardSlider
+        ? {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }
         : undefined,
-      slidesPerView: 'auto',
-      spaceBetween: 16,
+      slidesPerView: isCardSlider ? 1 : 'auto',
+      spaceBetween: isCardSlider ? 20 : 16,
       speed: 650,
       watchOverflow: true,
     });

@@ -1,0 +1,65 @@
+@use '../fluid' as *;
+@use '../vars' as *;
+
+.price {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: fluid(10px, 20px);
+  }
+}
+.price-item {
+  display: flex;
+  flex-direction: column;
+  padding: fluid(20px, 40px);
+  border-radius: $radius-sm;
+  color: #141414;
+  background: #f8f9fe;
+  &__title {
+    font-size: fluid(16px, 20px);
+    line-height: 130%;
+    text-align: center;
+  }
+  &__value {
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: fluid(24px, 44px);
+    line-height: 110%;
+    text-align: center;
+    color: #0335d6;
+    margin: fluid(10px, 12px);
+  }
+  &__desc {
+    font-size: fluid(14px, 16px);
+    line-height: 110%;
+    text-align: center;
+    color: #97989b;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: fluid(16px, 32px) 0;
+  }
+  &__list-item {
+    position: relative;
+    padding-left: 24px;
+    font-size: fluid(16px, 20px);
+    line-height: 130%;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      height: 8px;
+      width: 8px;
+      background-color: #0335d6;
+      border-radius: 50%;
+    }
+    & + & {
+      margin-top: fluid(6px, 8px);
+    }
+  }
+  &__btn {
+    margin-top: auto;
+  }
+}

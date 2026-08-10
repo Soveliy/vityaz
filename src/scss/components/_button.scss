@@ -3,36 +3,28 @@
 @use '../fluid' as *;
 
 .btn {
-  @include label-text;
-  align-items: center;
+  font-family: var(--second-family);
   appearance: none;
-  background: var(--btn-bg);
-  border: rem(1px) solid var(--btn-border);
-  border-radius: $radius-sm;
-  color: var(--btn-color);
-  display: inline-flex;
-  justify-content: center;
-  min-width: var(--btn-min-width);
-  min-height: var(--btn-height);
-  padding: 0 var(--btn-padding-x);
-  transition:
-    background-color $duration-fast $ease-base,
-    border-color $duration-fast $ease-base,
-    color $duration-fast $ease-base,
-    opacity $duration-fast $ease-base;
+  background: #0335d6;
   user-select: none;
+  border-radius: $radius-xs;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 110%;
+  color: #fff;
+  padding: 16px 40px;
 }
 
 .btn:hover {
-  background: var(--btn-bg-hover);
-  border-color: var(--btn-border-hover);
-  color: var(--btn-color-hover);
+  background: #012fc1;
 }
 
 .btn:active {
-  background: var(--btn-bg-active);
-  border-color: var(--btn-border-active);
-  color: var(--btn-color-active);
+  background: #00259d;
 }
 
 .btn:focus-visible {

@@ -1,0 +1,39 @@
+@use '../vars' as *;
+@use '../fluid' as *;
+.tizers {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: fluid(12px, 20px);
+  }
+}
+.tizers-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius-sm;
+  background-color: #f8f9fe;
+  &__image-container {
+    height: 13.75rem;
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__body {
+    padding: fluid(20px, 40px);
+  }
+  &__title {
+    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 130%;
+    color: #141414;
+  }
+  &__desc {
+    font-size: 16px;
+    line-height: 110%;
+    color: #141414;
+  }
+}

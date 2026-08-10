@@ -1,0 +1,67 @@
+@use '../fluid' as *;
+@use '../vars' as *;
+
+.content-card {
+  overflow: hidden;
+  height: 100%;
+  background: #f8f9fe;
+  border-radius: $radius-sm;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: fluid(18px, 28px);
+
+    &::after {
+      order: 5;
+      margin-top: auto;
+      padding-top: rem(12px);
+      color: var(--blue);
+      font-size: fluid(14px, 16px);
+      font-weight: 500;
+      content: 'Подробнее...';
+    }
+  }
+
+  &__image {
+    order: 2;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  &__body {
+    display: contents;
+  }
+
+  &__date {
+    order: 1;
+    margin-bottom: rem(18px);
+    color: var(--blue);
+    font-size: fluid(14px, 16px);
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  &__title {
+    order: 3;
+    margin: rem(18px) 0 0;
+    font-family: var(--second-family);
+    font-size: fluid(18px, 22px);
+    font-weight: 500;
+    line-height: 110%;
+  }
+
+  &__text {
+    display: -webkit-box;
+    order: 4;
+    overflow: hidden;
+    margin: rem(10px) 0 rem(12px);
+    color: #97989b;
+    font-size: fluid(14px, 16px);
+    line-height: 130%;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}

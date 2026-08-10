@@ -1,41 +1,212 @@
-@use '../vars' as *;
 @use '../fluid' as *;
+@use '../vars' as *;
 
 .header {
-  background-color: var(--color-bg);
-  border-bottom: rem(1px) solid var(--color-border);
-  padding: rem(20px) 0;
   position: sticky;
   top: 0;
   z-index: $z-header;
-}
+  padding: rem(14px) 0;
+  background: var(--white);
 
-.header__container {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
+  &__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: fluid(24px, 48px);
+  }
 
-.header__logo {
-  color: var(--color-light);
-  font-family: var(--second-family);
-  font-size: rem(26px);
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1;
-  text-transform: uppercase;
-}
+  &__logo {
+    display: block;
+    width: fluid(210px, 270px);
 
-.header__burger {
-  display: none;
-}
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
 
-@media (max-width: $breakpoint-mobile) {
-  .header__nav {
+  &__menu {
+    min-width: 0;
+  }
+
+  .menu {
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: fluid(16px, 28px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &__item {
+      position: relative;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: rem(5px);
+      color: var(--black);
+      font-family: var(--second-family);
+      font-size: fluid(13px, 16px);
+      font-weight: 500;
+      line-height: 120%;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--blue);
+      }
+
+      svg {
+        width: rem(14px);
+        height: rem(14px);
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &__dropdown {
+      position: relative;
+
+      summary {
+        list-style: none;
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+      }
+
+      &[open] > summary svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__submenu {
+      position: absolute;
+      top: calc(100% + #{rem(14px)});
+      left: 50%;
+      display: grid;
+      min-width: rem(260px);
+      padding: rem(12px);
+      background: var(--white);
+      border: rem(1px) solid #edf0fb;
+      border-radius: $radius-xs;
+      box-shadow: 0 rem(16px) rem(36px) rgb(20 20 20 / 0.12);
+      transform: translateX(-50%);
+
+      a {
+        padding: rem(10px) rem(12px);
+        border-radius: rem(4px);
+        font-size: rem(14px);
+        white-space: nowrap;
+
+        &:hover {
+          color: var(--blue);
+          background: #f8f9fe;
+        }
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: fluid(12px, 22px);
+  }
+
+  &__phone {
+    font-family: var(--second-family);
+    font-size: fluid(14px, 18px);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  &__btn {
+    padding: rem(12px) rem(24px);
+    font-size: rem(15px);
+    white-space: nowrap;
+  }
+
+  &__burger {
     display: none;
   }
 
-  .header__burger {
-    display: inline-flex;
+  @media (max-width: $breakpoint-tablet) {
+    &__row {
+      grid-template-columns: auto 1fr;
+    }
+
+    &__menu {
+      position: absolute;
+      top: calc(100% + #{rem(15px)});
+      right: 0;
+      left: 0;
+      visibility: hidden;
+      padding: rem(20px);
+      background: var(--white);
+      border: rem(1px) solid #edf0fb;
+      border-radius: $radius-sm;
+      box-shadow: 0 rem(16px) rem(40px) rgb(20 20 20 / 0.12);
+      opacity: 0;
+      transform: translateY(rem(-8px));
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+    }
+
+    .menu {
+      &__list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      &__link {
+        justify-content: space-between;
+        padding: rem(11px) 0;
+        font-size: rem(16px);
+      }
+
+      &__submenu {
+        position: static;
+        min-width: 0;
+        padding: 0 0 rem(8px) rem(12px);
+        border: 0;
+        box-shadow: none;
+        transform: none;
+      }
+    }
+
+    &__right {
+      justify-self: end;
+    }
+
+    &__burger {
+      display: inline-flex;
+    }
+
+    &.is-menu-open &__menu {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: rem(10px) 0;
+
+    &__logo {
+      width: rem(190px);
+    }
+
+    &__phone,
+    &__btn {
+      display: none;
+    }
   }
 }

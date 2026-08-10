@@ -1,10 +1,10 @@
 @use 'fluid' as *;
 
 $viewport-min: 375px;
-$viewport-max: 1540px;
+$viewport-max: 1520px;
 
-$content-width: rem(1540px);
-$container-offset: rem(24px);
+$content-width: rem(1520px);
+$container-offset: rem(20px);
 $container-width: $content-width + ($container-offset * 2);
 
 $breakpoint-tablet: rem(1024px);

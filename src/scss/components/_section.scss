@@ -3,6 +3,7 @@
 .section {
   padding: fluid(60px, 120px) 0;
   &__title {
+    font-family: var(--second-family);
     margin: 0 0 fluid(20px, 40px) 0;
     font-weight: 500;
     font-size: fluid(24px, 32px);
