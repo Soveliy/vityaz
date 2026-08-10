@@ -1,4 +1,4 @@
-# Warpoint Frontend Build
+# Витязь Frontend Build
 
 Классическая сборка для верстки на Vite: HTML, SCSS, JS, SVG-спрайт и статические ассеты.
 
@@ -8,7 +8,7 @@
 - `npm run build` - production-сборка в `dist`.
 - `npm run backend` - сборка в `backend` без минификации и с sourcemap.
 - `npm run sprite` - собрать SVG-спрайт в `public/img/sprite.svg`.
-- `npm run zip` - собрать production и архив `archive/warpoint.zip`.
+- `npm run zip` - собрать production и архив `archive/vityaz.zip`.
 - `npm run clean` - удалить каталоги сборки и сгенерированный `public`.
 - `npm run lint` - проверить SCSS и форматирование.
 - `npm run lint:styles` - проверить SCSS через Stylelint.
@@ -60,7 +60,7 @@ src/
 
 ## VS Code Snippets
 
-В проекте есть переносимые frontend-сниппеты в `.vscode/frontend.code-snippets`. Они не завязаны на Warpoint и рассчитаны на переиспользование в других классических проектах.
+В проекте есть переносимые frontend-сниппеты в `.vscode/frontend.code-snippets`.
 
 - `fe-sprite` - декоративная SVG-иконка из спрайта.
 - `fe-sprite-a11y` - доступная SVG-иконка с `aria-label`.
@@ -108,7 +108,7 @@ $font-size-h1: fluid(38px, 58px);
 }
 ```
 
-`fluid()` возвращает `clamp()` с `rem`-границами. По умолчанию размер меняется в диапазоне viewport `375px -> 1440px`.
+`fluid()` возвращает `clamp()` с `rem`-границами. По умолчанию размер меняется в диапазоне viewport `375px -> 1520`.
 
 ## JavaScript
 
