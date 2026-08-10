@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="/img/favico.png" type="image/png">
-  <title>Секции единоборств Курск: Каратэ и Кудо для детей. Всестилевое каратэ Курск - Ассоциация Витязей</title>
+  @include('partials/seo.html')
 </head>
 
 <body class="page" id="top">
@@ -15,9 +14,11 @@
     <section class="hero" data-hero>
       <div class="container hero__container">
         <div class="hero__content" data-hero-content>
-          <h1 class="hero__title">Каратэ для детей<br>в Курске и области</h1>
-          <p class="hero__text">Обучаем детей от 5 до 18 лет. Развиваем силу, дисциплину, уверенность в себе и спортивные
-            навыки под руководством опытных тренеров.</p>
+          <h1 class="hero__title">Каратэ для детей в&nbsp;Курске и&nbsp;области</h1>
+          <p class="hero__text">
+            Обучаем детей от&nbsp;5&nbsp;до&nbsp;18&nbsp;лет. Развиваем силу, дисциплину, уверенность в&nbsp;себе
+            и&nbsp;спортивные навыки под руководством опытных тренеров
+          </p>
           <div class="hero__facts">
             <span>Первое занятие бесплатно</span>
             <span>Без опыта</span>
@@ -28,179 +29,183 @@
 
         <div class="hero__visual" aria-hidden="true">
           <div class="hero__photo hero__photo--first" data-hero-photo>
-            <img src="/img/hero/1.jpg" alt="">
+            <img src="/img/hero/1.jpg" alt="" width="281" height="503" decoding="async" />
           </div>
           <div class="hero__photo hero__photo--second" data-hero-photo>
-            <img src="/img/hero/2.jpg" alt="">
+            <img src="/img/hero/2.jpg" alt="" width="371" height="502" decoding="async" />
           </div>
-          <img class="hero__fighters" src="/img/hero/3.png" alt="" data-hero-fighters>
+          <img class="hero__fighters" src="/img/hero/3.png" alt="" width="568" height="369" decoding="async"
+            fetchpriority="high" data-hero-fighters />
         </div>
       </div>
     </section>
 
     <section class="section place" id="places">
       <div class="container">
-        <h2 class="section__title">
-          Выберите ближайший зал
-        </h2>
+        <h2 class="section__title">Выберите ближайший зал</h2>
         <div class="place__grid">
-          <a href="#" class="place-item">
+          <a href="#map" class="place-item">
             <div class="place-item__content">
-              <div class="place-item__name">Курск – Центральный округ</div>
+              <h3 class="place-item__name">Курск – Центральный округ</h3>
               <div class="place-item__adress">Мирная, Димитрова, Павлуновского</div>
             </div>
             <svg class="place-item__icon" aria-hidden="true">
               <use href="/img/sprite.svg#icon-arrow_right"></use>
             </svg>
           </a>
-          <a href="#" class="place-item">
+          <a href="#map" class="place-item">
             <div class="place-item__content">
-              <div class="place-item__name">Курск – Северо-Западный мкр-н</div>
+              <h3 class="place-item__name">Курск – Северо-Западный мкр-н</h3>
               <div class="place-item__adress">Дружбы, Верхняя Казацкая, Мыльникова</div>
             </div>
             <svg class="place-item__icon" aria-hidden="true">
               <use href="/img/sprite.svg#icon-arrow_right"></use>
             </svg>
           </a>
-          <a href="#" class="place-item">
+          <a href="#map" class="place-item">
             <div class="place-item__content">
-              <div class="place-item__name">Курск – Северный мкр-н</div>
+              <h3 class="place-item__name">Курск – Северный мкр-н</h3>
               <div class="place-item__adress">Победы, Дериглазова, Видяевская</div>
             </div>
             <svg class="place-item__icon" aria-hidden="true">
               <use href="/img/sprite.svg#icon-arrow_right"></use>
             </svg>
           </a>
-          <a href="#" class="place-item">
+          <a href="#map" class="place-item">
             <div class="place-item__content">
-              <div class="place-item__name">Курск – Железнодорожный округ</div>
+              <h3 class="place-item__name">Курск – Железнодорожный округ</h3>
               <div class="place-item__adress">Островского, ВЧК, Краснознаменная</div>
             </div>
             <svg class="place-item__icon" aria-hidden="true">
               <use href="/img/sprite.svg#icon-arrow_right"></use>
             </svg>
           </a>
-          <a href="#" class="place-item">
+          <a href="#map" class="place-item">
             <div class="place-item__content">
-              <div class="place-item__name">Курск – Сеймский округ</div>
+              <h3 class="place-item__name">Курск – Сеймский округ</h3>
               <div class="place-item__adress">Комарова, Серегина, Менделеева</div>
             </div>
             <svg class="place-item__icon" aria-hidden="true">
               <use href="/img/sprite.svg#icon-arrow_right"></use>
             </svg>
-
           </a>
-          <a href="#" class="place-item">
+          <a href="#map" class="place-item">
             <div class="place-item__content">
-              <div class="place-item__name">Курская область</div>
+              <h3 class="place-item__name">Курская область</h3>
               <div class="place-item__adress">Фатеж, Курчатов, Щигры, Обоянь</div>
             </div>
             <svg class="place-item__icon" aria-hidden="true">
               <use href="/img/sprite.svg#icon-arrow_right"></use>
             </svg>
           </a>
-
         </div>
       </div>
     </section>
-    <section class="section map">
+    <section class="section map" id="map">
       <div class="container">
-        <h2 class="section__title">
-          Наши адреса
-        </h2>
-        <div class="map__wrap" data-map aria-label="Адреса Ассоциации Витязей в Курске">
-          <a class="map__fallback"
-            href="https://yandex.ru/maps/?text=%D0%9A%D1%83%D1%80%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B7%D0%BD%D0%B0%D0%BC%D1%91%D0%BD%D0%BD%D0%B0%D1%8F%2C%2020%D0%90"
-            target="_blank" rel="noopener noreferrer">
-            Открыть адрес в Яндекс Картах
-          </a>
+        <h2 class="section__title">Наши адреса</h2>
+        <div class="map__toolbar" role="group" aria-label="Область показа адресов">
+          <button class="map__filter is-active" type="button" data-map-scope="city" aria-pressed="true">
+            Курск
+          </button>
+          <button class="map__filter" type="button" data-map-scope="region" aria-pressed="false">
+            Курская область
+          </button>
+          <button class="map__filter" type="button" data-map-scope="all" aria-pressed="false">
+            Все адреса
+          </button>
         </div>
-
+        <div class="map__wrap" data-map aria-label="Адреса Ассоциации Витязей в Курске и Курской области">
+          <a class="map__fallback"
+            href="https://yandex.ru/maps/?text=%D0%90%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F%20%D0%92%D0%B8%D1%82%D1%8F%D0%B7%D0%B5%D0%B9%20%D0%9A%D1%83%D1%80%D1%81%D0%BA"
+            target="_blank" rel="noopener noreferrer">
+            Открыть адреса в Яндекс Картах
+          </a>
+          <span class="map__status" data-map-status data-state="loading" aria-live="polite">
+            Загружаем карту…
+          </span>
+        </div>
       </div>
     </section>
     <section class="section tizers">
       <div class="container">
-        <h2 class="section__title">
-          Что дают ребенку занятия каратэ и кудо
-        </h2>
+        <h2 class="section__title">Что дают ребенку занятия каратэ и кудо</h2>
         <div class="tizers__grid">
           <div class="tizers-item">
             <div class="tizers-item__image-container">
-              <img src="img/tzr/1.jpg" alt="">
+              <img src="img/tzr/1.jpg" alt="Девочка выполняет удар на соревнованиях по каратэ" width="493" height="220"
+                loading="lazy" decoding="async" />
             </div>
             <div class="tizers-item__body">
-              <div class="tizers-item__title">
-                Уверенность в себе
-              </div>
+              <h3 class="tizers-item__title">Уверенность в себе</h3>
               <div class="tizers-item__desc">
-                Ребёнок учится преодолевать трудности, не боится пробовать новое и постепенно становится увереннее
-                в своих возможностях
+                Ребёнок учится преодолевать трудности, не боится пробовать новое и постепенно
+                становится увереннее в своих возможностях
               </div>
             </div>
           </div>
           <div class="tizers-item">
             <div class="tizers-item__image-container">
-              <img src="img/tzr/2.jpg" alt="">
+              <img src="img/tzr/2.jpg" alt="Юные каратисты пожимают руки после поединка" width="493" height="220"
+                loading="lazy" decoding="async" />
             </div>
             <div class="tizers-item__body">
-              <div class="tizers-item__title">
-                Дисциплина и ответственность
-              </div>
+              <h3 class="tizers-item__title">Дисциплина и ответственность</h3>
               <div class="tizers-item__desc">
-                Регулярные тренировки помогают соблюдать режим, выполнять договорённости и доводить начатое до конца
+                Регулярные тренировки помогают соблюдать режим, выполнять договорённости
+                и доводить начатое до конца
               </div>
             </div>
           </div>
           <div class="tizers-item">
             <div class="tizers-item__image-container">
-              <img src="img/tzr/3.jpg" alt="">
+              <img src="img/tzr/3.jpg" alt="Дети выполняют упражнения на тренировке по каратэ" width="493" height="220"
+                loading="lazy" decoding="async" />
             </div>
             <div class="tizers-item__body">
-              <div class="tizers-item__title">
-                Физическое развитие
-              </div>
+              <h3 class="tizers-item__title">Физическое развитие</h3>
               <div class="tizers-item__desc">
-                Улучшаются сила, выносливость, гибкость, координация движений и общая физическая подготовка
+                Улучшаются сила, выносливость, гибкость, координация движений и общая физическая
+                подготовка
               </div>
             </div>
           </div>
           <div class="tizers-item">
             <div class="tizers-item__image-container">
-              <img src="img/tzr/4.jpg" alt="">
+              <img src="img/tzr/4.jpg" alt="Спарринг спортсменов по каратэ" width="493" height="220" loading="lazy"
+                decoding="async" />
             </div>
             <div class="tizers-item__body">
-              <div class="tizers-item__title">
-                Навыки самообороны
-              </div>
-              <div class="tizers-item__desc">Ребёнок учится защищать себя, правильно оценивать ситуацию и сохранять
-                спокойствие в конфликтах</div>
-            </div>
-          </div>
-          <div class="tizers-item">
-            <div class="tizers-item__image-container">
-              <img src="img/tzr/5.jpg" alt="">
-            </div>
-            <div class="tizers-item__body">
-              <div class="tizers-item__title">
-                Умение достигать целей
-              </div>
+              <h3 class="tizers-item__title">Навыки самообороны</h3>
               <div class="tizers-item__desc">
-                Пояса, соревнования и новые техники показывают, что настойчивость, регулярный труд и упорство приводят
-                к результату
+                Ребёнок учится защищать себя, правильно оценивать ситуацию и сохранять спокойствие
+                в конфликтах
               </div>
             </div>
           </div>
           <div class="tizers-item">
             <div class="tizers-item__image-container">
-              <img src="img/tzr/6.jpg" alt="">
+              <img src="img/tzr/5.jpg" alt="Судья объявляет победителя детского поединка" width="493" height="220"
+                loading="lazy" decoding="async" />
             </div>
             <div class="tizers-item__body">
-              <div class="tizers-item__title">
-                Новые друзья и поддержка
-              </div>
+              <h3 class="tizers-item__title">Умение достигать целей</h3>
               <div class="tizers-item__desc">
-                Тренировки проходят в дружеской атмосфере, где дети учатся уважать друг друга, работать в команде
-                и находят единомышленников
+                Пояса, соревнования и новые техники показывают, что настойчивость, регулярный труд
+                и упорство приводят к результату
+              </div>
+            </div>
+          </div>
+          <div class="tizers-item">
+            <div class="tizers-item__image-container">
+              <img src="img/tzr/6.jpg" alt="Юные каратисты отдыхают между поединками" width="493" height="220"
+                loading="lazy" decoding="async" />
+            </div>
+            <div class="tizers-item__body">
+              <h3 class="tizers-item__title">Новые друзья и поддержка</h3>
+              <div class="tizers-item__desc">
+                Тренировки проходят в дружеской атмосфере, где дети учатся уважать друг друга,
+                работать в команде и находят единомышленников
               </div>
             </div>
           </div>
@@ -209,92 +214,81 @@
     </section>
     <section class="section group-inv" id="groups">
       <div class="container">
-        <h2 class="section__title">
-          Набор в группы по каратэ
-        </h2>
+        <h2 class="section__title">Набор в группы по каратэ</h2>
         <div class="group-inv__row">
           <div class="group-inv-item">
             <div class="group-inv-item__icon">
-              <img src="img/groups/1.svg" alt="">
+              <img src="img/groups/1.svg" alt="" width="120" height="120" loading="lazy" />
             </div>
-            <div class="group-inv-item__name">Детская группа</div>
+            <h3 class="group-inv-item__name">Детская группа</h3>
             <div class="group-inv-item__params">От 3 до 10 лет</div>
           </div>
           <div class="group-inv-item">
             <div class="group-inv-item__icon">
-              <img src="img/groups/2.svg" alt="">
+              <img src="img/groups/2.svg" alt="" width="120" height="120" loading="lazy" />
             </div>
-            <div class="group-inv-item__name">Подростковая группа</div>
+            <h3 class="group-inv-item__name">Подростковая группа</h3>
             <div class="group-inv-item__params">От 11 до 14 лет</div>
           </div>
           <div class="group-inv-item">
             <div class="group-inv-item__icon">
-              <img src="img/groups/3.svg" alt="">
+              <img src="img/groups/3.svg" alt="" width="120" height="120" loading="lazy" />
             </div>
-            <div class="group-inv-item__name">Взрослая группа</div>
+            <h3 class="group-inv-item__name">Взрослая группа</h3>
             <div class="group-inv-item__params">От 14 лет и старше</div>
           </div>
           <div class="group-inv-item">
             <div class="group-inv-item__icon">
-              <img src="img/groups/4.svg" alt="">
+              <img src="img/groups/4.svg" alt="" width="120" height="120" loading="lazy" />
             </div>
-            <div class="group-inv-item__name">Индивидуальные занятия</div>
+            <h3 class="group-inv-item__name">Индивидуальные занятия</h3>
             <div class="group-inv-item__params">Для всех возрастов</div>
           </div>
           <div class="group-inv-item">
             <div class="group-inv-item__icon">
-              <img src="img/groups/5.svg" alt="">
+              <img src="img/groups/5.svg" alt="" width="120" height="120" loading="lazy" />
             </div>
-            <div class="group-inv-item__name">Группа спортивной подготовки</div>
+            <h3 class="group-inv-item__name">Группа спортивной подготовки</h3>
             <div class="group-inv-item__params">Для тех, у кого есть опыт</div>
           </div>
         </div>
-
       </div>
     </section>
 
     <section class="section why" id="why">
       <div class="container">
-        <h2 class="section__title">
-          Почему родители выбирают каратэ
-        </h2>
+        <h2 class="section__title">Почему родители выбирают каратэ</h2>
         <div class="why__grid">
           <div class="why-item">
-            <div class="why-item__title">
-              Хочется укрепить здоровье
-            </div>
+            <h3 class="why-item__title">Хочется укрепить здоровье</h3>
             <div class="why-item__desc">
-              Занятия развивают силу, выносливость, координацию, гибкость и помогают поддерживать хорошую физическую
-              форму
+              Занятия развивают силу, выносливость, координацию, гибкость и помогают поддерживать
+              хорошую физическую форму
             </div>
           </div>
           <div class="why-item">
-            <div class="why-item__title">
-              Много времени проводит в гаджетах
-            </div>
+            <h3 class="why-item__title">Много времени проводит в гаджетах</h3>
             <div class="why-item__desc">
-              Регулярные тренировки заменяют пассивный досуг активным движением и помогают сформировать полезные
-              привычки
+              Регулярные тренировки заменяют пассивный досуг активным движением и помогают
+              сформировать полезные привычки
             </div>
           </div>
           <div class="why-item__image">
-            <img src="img/why-img.png" alt="">
+            <img src="img/why-img.png" alt="Девочка выполняет удар ногой на соревнованиях по каратэ" width="538"
+              height="396" loading="lazy" decoding="async" />
           </div>
           <div class="why-item">
-            <div class="why-item__title">
-              Важно научиться постоять за себя
-            </div>
+            <h3 class="why-item__title">Важно научиться постоять за себя</h3>
             <div class="why-item__desc">
-              Дети осваивают основы самообороны, учатся сохранять спокойствие и правильно действовать в сложных
-              ситуациях
+              Дети осваивают основы самообороны, учатся сохранять спокойствие и правильно
+              действовать в сложных ситуациях
             </div>
           </div>
           <div class="why-item">
-            <div class="why-item__title">
-              Ребенку не хватает уверенности
-            </div>
+            <h3 class="why-item__title">Ребенку не хватает уверенности</h3>
             <div class="why-item__desc">
-              Каратэ помогает стать смелее, поверить в свои силы и научиться справляться с трудностями самостоятельно
+              Каратэ помогает стать смелее, поверить в свои силы и научиться справляться
+              с трудностями самостоятельно
             </div>
           </div>
         </div>
@@ -302,11 +296,10 @@
     </section>
     <section class="section schedule" id="schedule">
       <div class="container">
-        <h2 class="section__title">
-          Расписание
-        </h2>
+        <h2 class="section__title">Расписание</h2>
         <div class="schedule__container">
-          <img src="img/schedule.png" alt="">
+          <img src="img/schedule.png" alt="Расписание групповых тренировок Ассоциации Витязей" width="1520" height="546"
+            loading="lazy" decoding="async" />
         </div>
         <button class="schedule__btn btn" type="button" data-modal-open="request" data-type="Подробное расписание">
           Получить подробное расписание
@@ -315,73 +308,78 @@
     </section>
     <section class="section price" id="price">
       <div class="container">
-        <h2 class="section__title">
-          Сколько стоит обучение каратэ
-        </h2>
+        <h2 class="section__title">Сколько стоит обучение каратэ</h2>
         <div class="price__grid">
           <div class="price-item">
-            <div class="price-item__title">Первое занятие</div>
+            <h3 class="price-item__title">Первое занятие</h3>
             <div class="price-item__value">бесплатно</div>
-            <div class="price-item__desc">Подойдёт, если хотите познакомиться с тренировками без покупки абонемента
+            <div class="price-item__desc">
+              Подойдёт, если хотите познакомиться с тренировками без покупки абонемента
             </div>
             <ul class="price-item__list">
               <li class="price-item__list-item">Разовая тренировка</li>
               <li class="price-item__list-item">Любая возрастная группа</li>
               <li class="price-item__list-item">С собой нужно иметь спортивный костюм и воду</li>
             </ul>
-            <button class="btn price-item__btn" type="button" data-modal-open="request"
-              data-type="Первое занятие">Записаться</button>
+            <button class="btn price-item__btn" type="button" data-modal-open="request" data-type="Первое занятие">
+              Записаться
+            </button>
           </div>
           <div class="price-item">
-            <div class="price-item__title">Абонемент на месяц</div>
+            <h3 class="price-item__title">Абонемент на месяц</h3>
             <div class="price-item__value">от 3500 ₽/месяц</div>
-            <div class="price-item__desc">Лучший выбор для регулярных тренировок и стабильного прогресса</div>
+            <div class="price-item__desc">
+              Лучший выбор для регулярных тренировок и стабильного прогресса
+            </div>
             <ul class="price-item__list">
               <li class="price-item__list-item">Занятия по расписанию 2 раза в неделю</li>
               <li class="price-item__list-item">Группы по возрасту и уровню подготовки</li>
               <li class="price-item__list-item">Подготовка к соревнованиям и аттестациям</li>
             </ul>
-            <button class="btn price-item__btn" type="button" data-modal-open="request"
-              data-type="Абонемент на месяц">Записаться</button>
+            <button class="btn price-item__btn" type="button" data-modal-open="request" data-type="Абонемент на месяц">
+              Записаться
+            </button>
           </div>
           <div class="price-item">
-            <div class="price-item__title">Индивидуальные тренировки</div>
-            <div class="price-item__value"> от 1500 ₽/занятие</div>
-            <div class="price-item__desc">Персональная работа с тренером для быстрого достижения целей</div>
+            <h3 class="price-item__title">Индивидуальные тренировки</h3>
+            <div class="price-item__value">от 1500 ₽/занятие</div>
+            <div class="price-item__desc">
+              Персональная работа с тренером для быстрого достижения целей
+            </div>
             <ul class="price-item__list">
               <li class="price-item__list-item">Индивидуальная программа</li>
               <li class="price-item__list-item">Максимум внимания тренера</li>
               <li class="price-item__list-item">Удобное время по согласованию</li>
             </ul>
             <button class="btn price-item__btn" type="button" data-modal-open="request"
-              data-type="Индивидуальные тренировки">Записаться</button>
+              data-type="Индивидуальные тренировки">
+              Записаться
+            </button>
           </div>
         </div>
       </div>
     </section>
     <section class="section offer" id="trial">
       <div class="container">
-        <h2 class="section__title">
-          Запишитесь на бесплатную пробную тренировку
-        </h2>
+        <h2 class="section__title">Запишитесь на бесплатную пробную тренировку</h2>
         <div class="offer__row">
-          <img class="offer__image" src="/img/offer.jpg" alt="Детская тренировка по каратэ" loading="lazy"
-            decoding="async">
+          <img class="offer__image" src="/img/offer.jpg" alt="Детская тренировка по каратэ" width="730" height="333"
+            loading="lazy" decoding="async" />
           <form action="#" class="form__offer form">
             <div class="form__item">
               <label for="trial-name" class="form__label">Имя</label>
               <input id="trial-name" type="text" class="form__input" name="name" placeholder="Ваше имя"
-                autocomplete="name" required>
+                autocomplete="name" required />
             </div>
             <div class="form__item">
               <label for="trial-phone" class="form__label">Телефон</label>
               <input id="trial-phone" type="tel" class="form__input" name="phone" placeholder="Ваш номер телефона"
-                autocomplete="tel" required>
+                autocomplete="tel" required />
             </div>
             <div class="form__footer">
               <button class="btn form__btn" type="submit">Отправить</button>
               <label class="form__checkbox">
-                <input type="checkbox" required>
+                <input type="checkbox" required />
                 Я согласен(а) на <a href="#" target="_blank">обработку персональных данных</a>
               </label>
             </div>
@@ -391,19 +389,17 @@
     </section>
     <section class="section students">
       <div class="container">
-        <h2 class="section__title">
-          Лучшие воспитанники
-        </h2>
+        <h2 class="section__title">Лучшие воспитанники</h2>
         <div class="students__slider-wrap" data-slider-root>
           <div class="students__slider swiper" data-slider="students">
             <div class="swiper-wrapper">
               <div class="human-card swiper-slide">
                 <div class="human-card__image-container">
-                  <img class="media-cover" src="/img/students/1.jpg" alt="" loading="lazy" decoding="async">
+                  <img class="media-cover" src="/img/students/1.jpg"
+                    alt="Милана Ишунина — воспитанница Ассоциации Витязей" width="285" height="398" loading="lazy"
+                    decoding="async" />
                 </div>
-                <div class="human-card__name">
-                  Милана Ишунина
-                </div>
+                <div class="human-card__name">Милана Ишунина</div>
                 <div class="human-card__desc">
                   Член сборной команды России по всестилевому каратэ
                 </div>
@@ -413,23 +409,18 @@
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-star"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Квалификация
-                      </div>
+                      <div class="human-card__item-title">Квалификация</div>
                     </div>
                     <div class="human-card__item-desc">
                       1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-cup"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Достижения
-                      </div>
+                      <div class="human-card__item-title">Достижения</div>
                     </div>
                     <div class="human-card__item-desc">
                       <ul>
@@ -439,31 +430,25 @@
                         <li>член сборной России</li>
                       </ul>
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-trainer"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Тренер
-                      </div>
+                      <div class="human-card__item-title">Тренер</div>
                     </div>
-                    <div class="human-card__item-desc">
-                      Горохов В.С., Литвинова Е.М.
-                    </div>
-
+                    <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
                   </li>
                 </ul>
               </div>
               <div class="human-card swiper-slide">
                 <div class="human-card__image-container">
-                  <img class="media-cover" src="/img/students/1.jpg" alt="" loading="lazy" decoding="async">
+                  <img class="media-cover" src="/img/students/1.jpg"
+                    alt="Милана Ишунина — воспитанница Ассоциации Витязей" width="285" height="398" loading="lazy"
+                    decoding="async" />
                 </div>
-                <div class="human-card__name">
-                  Милана Ишунина
-                </div>
+                <div class="human-card__name">Милана Ишунина</div>
                 <div class="human-card__desc">
                   Член сборной команды России по всестилевому каратэ
                 </div>
@@ -473,23 +458,18 @@
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-star"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Квалификация
-                      </div>
+                      <div class="human-card__item-title">Квалификация</div>
                     </div>
                     <div class="human-card__item-desc">
                       1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-cup"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Достижения
-                      </div>
+                      <div class="human-card__item-title">Достижения</div>
                     </div>
                     <div class="human-card__item-desc">
                       <ul>
@@ -499,31 +479,25 @@
                         <li>член сборной России</li>
                       </ul>
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-trainer"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Тренер
-                      </div>
+                      <div class="human-card__item-title">Тренер</div>
                     </div>
-                    <div class="human-card__item-desc">
-                      Горохов В.С., Литвинова Е.М.
-                    </div>
-
+                    <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
                   </li>
                 </ul>
               </div>
               <div class="human-card swiper-slide">
                 <div class="human-card__image-container">
-                  <img class="media-cover" src="/img/students/1.jpg" alt="" loading="lazy" decoding="async">
+                  <img class="media-cover" src="/img/students/1.jpg"
+                    alt="Милана Ишунина — воспитанница Ассоциации Витязей" width="285" height="398" loading="lazy"
+                    decoding="async" />
                 </div>
-                <div class="human-card__name">
-                  Милана Ишунина
-                </div>
+                <div class="human-card__name">Милана Ишунина</div>
                 <div class="human-card__desc">
                   Член сборной команды России по всестилевому каратэ
                 </div>
@@ -533,23 +507,18 @@
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-star"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Квалификация
-                      </div>
+                      <div class="human-card__item-title">Квалификация</div>
                     </div>
                     <div class="human-card__item-desc">
                       1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-cup"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Достижения
-                      </div>
+                      <div class="human-card__item-title">Достижения</div>
                     </div>
                     <div class="human-card__item-desc">
                       <ul>
@@ -559,31 +528,25 @@
                         <li>член сборной России</li>
                       </ul>
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-trainer"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Тренер
-                      </div>
+                      <div class="human-card__item-title">Тренер</div>
                     </div>
-                    <div class="human-card__item-desc">
-                      Горохов В.С., Литвинова Е.М.
-                    </div>
-
+                    <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
                   </li>
                 </ul>
               </div>
               <div class="human-card swiper-slide">
                 <div class="human-card__image-container">
-                  <img class="media-cover" src="/img/students/1.jpg" alt="" loading="lazy" decoding="async">
+                  <img class="media-cover" src="/img/students/1.jpg"
+                    alt="Милана Ишунина — воспитанница Ассоциации Витязей" width="285" height="398" loading="lazy"
+                    decoding="async" />
                 </div>
-                <div class="human-card__name">
-                  Милана Ишунина
-                </div>
+                <div class="human-card__name">Милана Ишунина</div>
                 <div class="human-card__desc">
                   Член сборной команды России по всестилевому каратэ
                 </div>
@@ -593,23 +556,18 @@
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-star"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Квалификация
-                      </div>
+                      <div class="human-card__item-title">Квалификация</div>
                     </div>
                     <div class="human-card__item-desc">
                       1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-cup"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Достижения
-                      </div>
+                      <div class="human-card__item-title">Достижения</div>
                     </div>
                     <div class="human-card__item-desc">
                       <ul>
@@ -619,31 +577,25 @@
                         <li>член сборной России</li>
                       </ul>
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-trainer"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Тренер
-                      </div>
+                      <div class="human-card__item-title">Тренер</div>
                     </div>
-                    <div class="human-card__item-desc">
-                      Горохов В.С., Литвинова Е.М.
-                    </div>
-
+                    <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
                   </li>
                 </ul>
               </div>
               <div class="human-card swiper-slide">
                 <div class="human-card__image-container">
-                  <img class="media-cover" src="/img/students/1.jpg" alt="" loading="lazy" decoding="async">
+                  <img class="media-cover" src="/img/students/1.jpg"
+                    alt="Милана Ишунина — воспитанница Ассоциации Витязей" width="285" height="398" loading="lazy"
+                    decoding="async" />
                 </div>
-                <div class="human-card__name">
-                  Милана Ишунина
-                </div>
+                <div class="human-card__name">Милана Ишунина</div>
                 <div class="human-card__desc">
                   Член сборной команды России по всестилевому каратэ
                 </div>
@@ -653,23 +605,18 @@
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-star"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Квалификация
-                      </div>
+                      <div class="human-card__item-title">Квалификация</div>
                     </div>
                     <div class="human-card__item-desc">
                       1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-cup"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Достижения
-                      </div>
+                      <div class="human-card__item-title">Достижения</div>
                     </div>
                     <div class="human-card__item-desc">
                       <ul>
@@ -679,21 +626,15 @@
                         <li>член сборной России</li>
                       </ul>
                     </div>
-
                   </li>
                   <li class="human-card__item">
                     <div class="human-card__item-head">
                       <svg class="human-card__item-icon" aria-hidden="true">
                         <use href="/img/sprite.svg#icon-trainer"></use>
                       </svg>
-                      <div class="human-card__item-title">
-                        Тренер
-                      </div>
+                      <div class="human-card__item-title">Тренер</div>
                     </div>
-                    <div class="human-card__item-desc">
-                      Горохов В.С., Литвинова Е.М.
-                    </div>
-
+                    <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
                   </li>
                 </ul>
               </div>
@@ -716,269 +657,219 @@
     </section>
     <section class="section trainers" id="trainers">
       <div class="container">
-        <h2 class="section__title">
-          Тренеры
-        </h2>
+        <h2 class="section__title">Тренеры</h2>
         <div class="trainers__grid">
           <div class="trainers__col">
-          <div class="human-card">
-            <div class="human-card__row">
-              <div class="human-card__image-container">
-                <img class="media-cover" src="/img/trainers/1.jpg" alt="" loading="lazy" decoding="async">
+            <div class="human-card">
+              <div class="human-card__row">
+                <div class="human-card__image-container">
+                  <img class="media-cover" src="/img/trainers/1.jpg" alt="Тренер Ассоциации Витязей" width="319"
+                    height="398" loading="lazy" decoding="async" />
+                </div>
+                <div class="human-card__content">
+                  <div class="human-card__name">Милана Ишунина</div>
+                  <div class="human-card__desc">
+                    Член сборной команды России по всестилевому каратэ
+                  </div>
+                  <ul class="human-card__list">
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-star"></use>
+                        </svg>
+                        <div class="human-card__item-title">Квалификация</div>
+                      </div>
+                      <div class="human-card__item-desc">
+                        1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
+                      </div>
+                    </li>
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-cup"></use>
+                        </svg>
+                        <div class="human-card__item-title">Достижения</div>
+                      </div>
+                      <div class="human-card__item-desc">
+                        <ul>
+                          <li>победитель Первенства мира, России по всестилевому каратэ</li>
+                          <li>победитель Всероссийской Спартакиады учащихся России</li>
+                          <li>победитель Кубка России</li>
+                          <li>член сборной России</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-trainer"></use>
+                        </svg>
+                        <div class="human-card__item-title">Тренер</div>
+                      </div>
+                      <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div class="human-card__content">
-                <div class="human-card__name">
-                  Милана Ишунина
+            </div>
+            <div class="human-card">
+              <div class="human-card__row">
+                <div class="human-card__image-container">
+                  <img class="media-cover" src="/img/trainers/3.jpg" alt="Тренер Ассоциации Витязей" width="319"
+                    height="398" loading="lazy" decoding="async" />
                 </div>
-                <div class="human-card__desc">
-                  Член сборной команды России по всестилевому каратэ
+                <div class="human-card__content">
+                  <div class="human-card__name">Милана Ишунина</div>
+                  <div class="human-card__desc">
+                    Член сборной команды России по всестилевому каратэ
+                  </div>
+                  <ul class="human-card__list">
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-star"></use>
+                        </svg>
+                        <div class="human-card__item-title">Квалификация</div>
+                      </div>
+                      <div class="human-card__item-desc">
+                        1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
+                      </div>
+                    </li>
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-cup"></use>
+                        </svg>
+                        <div class="human-card__item-title">Достижения</div>
+                      </div>
+                      <div class="human-card__item-desc">
+                        <ul>
+                          <li>победитель Первенства мира, России по всестилевому каратэ</li>
+                          <li>победитель Всероссийской Спартакиады учащихся России</li>
+                          <li>победитель Кубка России</li>
+                          <li>член сборной России</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-trainer"></use>
+                        </svg>
+                        <div class="human-card__item-title">Тренер</div>
+                      </div>
+                      <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
+                    </li>
+                  </ul>
                 </div>
-                <ul class="human-card__list">
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-star"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Квалификация
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
-                    </div>
-
-                  </li>
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-cup"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Достижения
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      <ul>
-                        <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                        <li>победитель Всероссийской Спартакиады учащихся России</li>
-                        <li>победитель Кубка России</li>
-                        <li>член сборной России</li>
-                      </ul>
-                    </div>
-
-                  </li>
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-trainer"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Тренер
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      Горохов В.С., Литвинова Е.М.
-                    </div>
-
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
-          <div class="human-card">
-            <div class="human-card__row">
-              <div class="human-card__image-container">
-                <img class="media-cover" src="/img/trainers/3.jpg" alt="" loading="lazy" decoding="async">
-              </div>
-              <div class="human-card__content">
-                <div class="human-card__name">
-                  Милана Ишунина
+          <div class="trainers__col">
+            <div class="human-card">
+              <div class="human-card__row">
+                <div class="human-card__image-container">
+                  <img class="media-cover" src="/img/trainers/2.jpg" alt="Тренер Ассоциации Витязей" width="319"
+                    height="398" loading="lazy" decoding="async" />
                 </div>
-                <div class="human-card__desc">
-                  Член сборной команды России по всестилевому каратэ
+                <div class="human-card__content">
+                  <div class="human-card__name">Милана Ишунина</div>
+                  <div class="human-card__desc">
+                    Член сборной команды России по всестилевому каратэ
+                  </div>
+                  <ul class="human-card__list">
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-star"></use>
+                        </svg>
+                        <div class="human-card__item-title">Квалификация</div>
+                      </div>
+                      <div class="human-card__item-desc">
+                        1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
+                      </div>
+                    </li>
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-cup"></use>
+                        </svg>
+                        <div class="human-card__item-title">Достижения</div>
+                      </div>
+                      <div class="human-card__item-desc">
+                        <ul>
+                          <li>победитель Первенства мира, России по всестилевому каратэ</li>
+                          <li>победитель Всероссийской Спартакиады учащихся России</li>
+                          <li>победитель Кубка России</li>
+                          <li>член сборной России</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-trainer"></use>
+                        </svg>
+                        <div class="human-card__item-title">Тренер</div>
+                      </div>
+                      <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
+                    </li>
+                  </ul>
                 </div>
-                <ul class="human-card__list">
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-star"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Квалификация
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
-                    </div>
-
-                  </li>
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-cup"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Достижения
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      <ul>
-                        <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                        <li>победитель Всероссийской Спартакиады учащихся России</li>
-                        <li>победитель Кубка России</li>
-                        <li>член сборной России</li>
-                      </ul>
-                    </div>
-
-                  </li>
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-trainer"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Тренер
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      Горохов В.С., Литвинова Е.М.
-                    </div>
-
-                  </li>
-                </ul>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="trainers__col">
-          <div class="human-card">
-            <div class="human-card__row">
-              <div class="human-card__image-container">
-                <img class="media-cover" src="/img/trainers/2.jpg" alt="" loading="lazy" decoding="async">
-              </div>
-              <div class="human-card__content">
-                <div class="human-card__name">
-                  Милана Ишунина
+            <div class="human-card">
+              <div class="human-card__row">
+                <div class="human-card__image-container">
+                  <img class="media-cover" src="/img/trainers/4.jpg" alt="Тренер Ассоциации Витязей" width="319"
+                    height="398" loading="lazy" decoding="async" />
                 </div>
-                <div class="human-card__desc">
-                  Член сборной команды России по всестилевому каратэ
+                <div class="human-card__content">
+                  <div class="human-card__name">Милана Ишунина</div>
+                  <div class="human-card__desc">
+                    Член сборной команды России по всестилевому каратэ
+                  </div>
+                  <ul class="human-card__list">
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-star"></use>
+                        </svg>
+                        <div class="human-card__item-title">Квалификация</div>
+                      </div>
+                      <div class="human-card__item-desc">
+                        1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
+                      </div>
+                    </li>
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-cup"></use>
+                        </svg>
+                        <div class="human-card__item-title">Достижения</div>
+                      </div>
+                      <div class="human-card__item-desc">
+                        <ul>
+                          <li>победитель Первенства мира, России по всестилевому каратэ</li>
+                          <li>победитель Всероссийской Спартакиады учащихся России</li>
+                          <li>победитель Кубка России</li>
+                          <li>член сборной России</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-trainer"></use>
+                        </svg>
+                        <div class="human-card__item-title">Тренер</div>
+                      </div>
+                      <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
+                    </li>
+                  </ul>
                 </div>
-                <ul class="human-card__list">
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-star"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Квалификация
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
-                    </div>
-
-                  </li>
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-cup"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Достижения
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      <ul>
-                        <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                        <li>победитель Всероссийской Спартакиады учащихся России</li>
-                        <li>победитель Кубка России</li>
-                        <li>член сборной России</li>
-                      </ul>
-                    </div>
-
-                  </li>
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-trainer"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Тренер
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      Горохов В.С., Литвинова Е.М.
-                    </div>
-
-                  </li>
-                </ul>
               </div>
             </div>
-          </div>
-          <div class="human-card">
-            <div class="human-card__row">
-              <div class="human-card__image-container">
-                <img class="media-cover" src="/img/trainers/4.jpg" alt="" loading="lazy" decoding="async">
-              </div>
-              <div class="human-card__content">
-                <div class="human-card__name">
-                  Милана Ишунина
-                </div>
-                <div class="human-card__desc">
-                  Член сборной команды России по всестилевому каратэ
-                </div>
-                <ul class="human-card__list">
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-star"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Квалификация
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
-                    </div>
-
-                  </li>
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-cup"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Достижения
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      <ul>
-                        <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                        <li>победитель Всероссийской Спартакиады учащихся России</li>
-                        <li>победитель Кубка России</li>
-                        <li>член сборной России</li>
-                      </ul>
-                    </div>
-
-                  </li>
-                  <li class="human-card__item">
-                    <div class="human-card__item-head">
-                      <svg class="human-card__item-icon" aria-hidden="true">
-                        <use href="/img/sprite.svg#icon-trainer"></use>
-                      </svg>
-                      <div class="human-card__item-title">
-                        Тренер
-                      </div>
-                    </div>
-                    <div class="human-card__item-desc">
-                      Горохов В.С., Литвинова Е.М.
-                    </div>
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
           </div>
         </div>
       </div>
@@ -986,27 +877,25 @@
 
     <section class="section offer offer--repeat">
       <div class="container">
-        <h2 class="section__title">
-          Запишитесь на бесплатную пробную тренировку
-        </h2>
+        <h2 class="section__title">Запишитесь на бесплатную пробную тренировку</h2>
         <div class="offer__row">
-          <img class="offer__image" src="/img/offer.jpg" alt="Детская тренировка по каратэ" loading="lazy"
-            decoding="async">
+          <img class="offer__image" src="/img/offer.jpg" alt="Детская тренировка по каратэ" width="730" height="333"
+            loading="lazy" decoding="async" />
           <form action="#" class="form__offer form">
             <div class="form__item">
               <label for="repeat-name" class="form__label">Имя</label>
               <input id="repeat-name" type="text" class="form__input" name="name" placeholder="Ваше имя"
-                autocomplete="name" required>
+                autocomplete="name" required />
             </div>
             <div class="form__item">
               <label for="repeat-phone" class="form__label">Телефон</label>
               <input id="repeat-phone" type="tel" class="form__input" name="phone" placeholder="Ваш номер телефона"
-                autocomplete="tel" required>
+                autocomplete="tel" required />
             </div>
             <div class="form__footer">
               <button class="btn form__btn" type="submit">Отправить</button>
               <label class="form__checkbox">
-                <input type="checkbox" required>
+                <input type="checkbox" required />
                 Я согласен(а) на <a href="#" target="_blank">обработку персональных данных</a>
               </label>
             </div>
@@ -1024,66 +913,75 @@
               <article class="content-card swiper-slide">
                 <a class="content-card__link" href="#">
                   <img class="content-card__image" src="/img/news/1.jpg" alt="Воспитанники клуба на соревнованиях"
-                    loading="lazy" decoding="async">
+                    width="285" height="179" loading="lazy" decoding="async" />
                   <div class="content-card__body">
                     <time class="content-card__date" datetime="2026-08-12">12.08.2026</time>
-                    <h3 class="content-card__title">Воспитанники клуба успешно выступили на первенстве области</h3>
-                    <p class="content-card__text">Наши спортсмены завоевали призовые места и пополнили копилку клуба
-                      новыми медалями.</p>
+                    <h3 class="content-card__title">
+                      Воспитанники клуба успешно выступили на первенстве области
+                    </h3>
+                    <p class="content-card__text">
+                      Наши спортсмены завоевали призовые места и пополнили копилку клуба новыми
+                      медалями.
+                    </p>
                   </div>
                 </a>
               </article>
               <article class="content-card swiper-slide">
                 <a class="content-card__link" href="#">
-                  <img class="content-card__image" src="/img/news/2.jpg" alt="Команда болеет за спортсменов"
-                    loading="lazy" decoding="async">
+                  <img class="content-card__image" src="/img/news/2.jpg" alt="Команда болеет за спортсменов" width="285"
+                    height="179" loading="lazy" decoding="async" />
                   <div class="content-card__body">
                     <time class="content-card__date" datetime="2026-09-15">15.09.2026</time>
                     <h3 class="content-card__title">Летние сборы команды «Ассоциации Витязей»</h3>
-                    <p class="content-card__text">Неделя интенсивных тренировок, новых знакомств и подготовки к
-                      предстоящему сезону.</p>
+                    <p class="content-card__text">
+                      Неделя интенсивных тренировок, новых знакомств и подготовки к предстоящему
+                      сезону.
+                    </p>
                   </div>
                 </a>
               </article>
               <article class="content-card swiper-slide">
                 <a class="content-card__link" href="#">
-                  <img class="content-card__image" src="/img/news/3.jpg" alt="Юные каратисты на турнире" loading="lazy"
-                    decoding="async">
+                  <img class="content-card__image" src="/img/news/3.jpg" alt="Юные каратисты на турнире" width="285"
+                    height="179" loading="lazy" decoding="async" />
                   <div class="content-card__body">
                     <time class="content-card__date" datetime="2026-10-20">20.10.2026</time>
                     <h3 class="content-card__title">Открыта запись в новые группы для детей</h3>
-                    <p class="content-card__text">Приглашаем ребят от 4 лет на бесплатную пробную тренировку в Курске.</p>
+                    <p class="content-card__text">
+                      Приглашаем ребят от 4 лет на бесплатную пробную тренировку в Курске.
+                    </p>
                   </div>
                 </a>
               </article>
               <article class="content-card swiper-slide">
                 <a class="content-card__link" href="#">
                   <img class="content-card__image" src="/img/news/4.jpg" alt="Команда клуба на соревнованиях"
-                    loading="lazy" decoding="async">
+                    width="285" height="179" loading="lazy" decoding="async" />
                   <div class="content-card__body">
                     <time class="content-card__date" datetime="2026-11-01">01.11.2026</time>
                     <h3 class="content-card__title">Итоги спортивного сезона 2025/2026</h3>
-                    <p class="content-card__text">Подводим итоги, поздравляем победителей и благодарим родителей за
-                      поддержку.</p>
+                    <p class="content-card__text">
+                      Подводим итоги, поздравляем победителей и благодарим родителей за поддержку.
+                    </p>
                   </div>
                 </a>
               </article>
               <article class="content-card swiper-slide">
                 <a class="content-card__link" href="#">
-                  <img class="content-card__image" src="/img/news/2.jpg" alt="Поддержка команды на турнире"
-                    loading="lazy" decoding="async">
+                  <img class="content-card__image" src="/img/news/2.jpg" alt="Поддержка команды на турнире" width="285"
+                    height="179" loading="lazy" decoding="async" />
                   <div class="content-card__body">
                     <time class="content-card__date" datetime="2026-11-18">18.11.2026</time>
                     <h3 class="content-card__title">Аттестация на новые ученические пояса</h3>
-                    <p class="content-card__text">Юные спортсмены подтвердили свои навыки и сделали следующий шаг в
-                      каратэ.</p>
+                    <p class="content-card__text">
+                      Юные спортсмены подтвердили свои навыки и сделали следующий шаг в каратэ.
+                    </p>
                   </div>
                 </a>
               </article>
             </div>
           </div>
-          <button class="news__nav news__nav--prev" type="button" data-slider-prev
-            aria-label="Предыдущие новости">
+          <button class="news__nav news__nav--prev" type="button" data-slider-prev aria-label="Предыдущие новости">
             <svg aria-hidden="true">
               <use href="/img/sprite.svg#icon-arrow_left"></use>
             </svg>
@@ -1102,42 +1000,53 @@
       <div class="container">
         <h2 class="section__title">Фотогалерея</h2>
         <div class="gallery__grid">
-          <a class="gallery__item" href="/img/gallery/1.jpg" target="_blank">
-            <img src="/img/gallery/1.jpg" alt="Поединок юных каратистов" loading="lazy" decoding="async">
+          <a class="gallery__item" href="/img/gallery/1.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/1.jpg" alt="Поединок юных каратистов" width="365" height="325" loading="lazy"
+              decoding="async" />
           </a>
-          <a class="gallery__item gallery__item--wide" href="/img/gallery/2.jpg" target="_blank">
-            <img src="/img/gallery/2.jpg" alt="Спортивный поединок" loading="lazy" decoding="async">
+          <a class="gallery__item gallery__item--wide" href="/img/gallery/2.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/2.jpg" alt="Спортивный поединок" width="750" height="325" loading="lazy"
+              decoding="async" />
           </a>
-          <a class="gallery__item gallery__item--tall" href="/img/gallery/3.jpg" target="_blank">
-            <img src="/img/gallery/3.jpg" alt="Судья детских соревнований" loading="lazy" decoding="async">
+          <a class="gallery__item gallery__item--tall" href="/img/gallery/3.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/3.jpg" alt="Судья детских соревнований" width="365" height="669" loading="lazy"
+              decoding="async" />
           </a>
-          <a class="gallery__item" href="/img/gallery/4.jpg" target="_blank">
-            <img src="/img/gallery/4.jpg" alt="Юные спортсмены на татами" loading="lazy" decoding="async">
+          <a class="gallery__item" href="/img/gallery/4.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/4.jpg" alt="Юные спортсмены на татами" width="365" height="325" loading="lazy"
+              decoding="async" />
           </a>
-          <a class="gallery__item" href="/img/gallery/5.jpg" target="_blank">
-            <img src="/img/gallery/5.jpg" alt="Борьба на соревнованиях" loading="lazy" decoding="async">
+          <a class="gallery__item" href="/img/gallery/5.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/5.jpg" alt="Борьба на соревнованиях" width="365" height="325" loading="lazy"
+              decoding="async" />
           </a>
-          <a class="gallery__item" href="/img/gallery/6.jpg" target="_blank">
-            <img src="/img/gallery/6.jpg" alt="Воспитанник клуба на соревнованиях" loading="lazy" decoding="async">
+          <a class="gallery__item" href="/img/gallery/6.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/6.jpg" alt="Воспитанник клуба на соревнованиях" width="365" height="325"
+              loading="lazy" decoding="async" />
           </a>
-          <a class="gallery__item gallery__item--tall" href="/img/gallery/3.jpg" target="_blank">
-            <img src="/img/gallery/3.jpg" alt="Подготовка спортсмена к выступлению" loading="lazy"
-              decoding="async">
+          <a class="gallery__item gallery__item--tall" href="/img/gallery/3.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/3.jpg" alt="Подготовка спортсмена к выступлению" width="365" height="669"
+              loading="lazy" decoding="async" />
           </a>
-          <a class="gallery__item gallery__item--wide" href="/img/gallery/2.jpg" target="_blank">
-            <img src="/img/gallery/2.jpg" alt="Турнир по всестилевому каратэ" loading="lazy" decoding="async">
+          <a class="gallery__item gallery__item--wide" href="/img/gallery/2.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/2.jpg" alt="Турнир по всестилевому каратэ" width="750" height="325" loading="lazy"
+              decoding="async" />
           </a>
-          <a class="gallery__item" href="/img/gallery/5.jpg" target="_blank">
-            <img src="/img/gallery/5.jpg" alt="Борьба на соревнованиях" loading="lazy" decoding="async">
+          <a class="gallery__item" href="/img/gallery/5.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/5.jpg" alt="Борьба на соревнованиях" width="365" height="325" loading="lazy"
+              decoding="async" />
           </a>
-          <a class="gallery__item" href="/img/gallery/1.jpg" target="_blank">
-            <img src="/img/gallery/1.jpg" alt="Техника удара в каратэ" loading="lazy" decoding="async">
+          <a class="gallery__item" href="/img/gallery/1.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/1.jpg" alt="Техника удара в каратэ" width="365" height="325" loading="lazy"
+              decoding="async" />
           </a>
-          <a class="gallery__item" href="/img/gallery/4.jpg" target="_blank">
-            <img src="/img/gallery/4.jpg" alt="Детский турнир по каратэ" loading="lazy" decoding="async">
+          <a class="gallery__item" href="/img/gallery/4.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/4.jpg" alt="Детский турнир по каратэ" width="365" height="325" loading="lazy"
+              decoding="async" />
           </a>
-          <a class="gallery__item" href="/img/gallery/6.jpg" target="_blank">
-            <img src="/img/gallery/6.jpg" alt="Воспитанник клуба перед поединком" loading="lazy" decoding="async">
+          <a class="gallery__item" href="/img/gallery/6.jpg" data-fancybox="gallery">
+            <img src="/img/gallery/6.jpg" alt="Воспитанник клуба перед поединком" width="365" height="325"
+              loading="lazy" decoding="async" />
           </a>
         </div>
       </div>
@@ -1150,7 +1059,7 @@
           <article class="content-card">
             <a class="content-card__link" href="#">
               <img class="content-card__image" src="/img/news/1.jpg" alt="Открытое первенство клуба" loading="lazy"
-                decoding="async">
+                width="285" height="179" decoding="async" />
               <div class="content-card__body">
                 <time class="content-card__date" datetime="2026-08-12">12.08.2026</time>
                 <h3 class="content-card__title">Открытое первенство клуба по каратэ</h3>
@@ -1160,8 +1069,8 @@
           </article>
           <article class="content-card">
             <a class="content-card__link" href="#">
-              <img class="content-card__image" src="/img/news/3.jpg" alt="Учебно-тренировочные сборы"
-                loading="lazy" decoding="async">
+              <img class="content-card__image" src="/img/news/3.jpg" alt="Учебно-тренировочные сборы" width="285"
+                height="179" loading="lazy" decoding="async" />
               <div class="content-card__body">
                 <time class="content-card__date" datetime="2026-09-15">15.09.2026</time>
                 <h3 class="content-card__title">Учебно-тренировочные сборы</h3>
@@ -1172,7 +1081,7 @@
           <article class="content-card">
             <a class="content-card__link" href="#">
               <img class="content-card__image" src="/img/news/4.jpg" alt="Аттестация воспитанников" loading="lazy"
-                decoding="async">
+                width="285" height="179" decoding="async" />
               <div class="content-card__body">
                 <time class="content-card__date" datetime="2026-10-20">20.10.2026</time>
                 <h3 class="content-card__title">Квалификационная аттестация</h3>
@@ -1183,7 +1092,7 @@
           <article class="content-card">
             <a class="content-card__link" href="#">
               <img class="content-card__image" src="/img/news/2.jpg" alt="Новогодний турнир клуба" loading="lazy"
-                decoding="async">
+                width="285" height="179" decoding="async" />
               <div class="content-card__body">
                 <time class="content-card__date" datetime="2026-11-01">01.11.2026</time>
                 <h3 class="content-card__title">Новогодний турнир «Первые победы»</h3>
@@ -1202,24 +1111,33 @@
           <div class="reviews__cards">
             <article class="reviews__card">
               <h3>Екатерина, мама Артёма (7 лет)</h3>
-              <p>Сын пришёл на занятия очень стеснительным, переживал даже перед знакомством с новыми детьми. Уже через
-                несколько месяцев он стал увереннее в себе, с удовольствием ходит на тренировки и с нетерпением ждёт
-                каждое занятие.</p>
+              <p>
+                Сын пришёл на занятия очень стеснительным, переживал даже перед знакомством с
+                новыми детьми. Уже через несколько месяцев он стал увереннее в себе, с
+                удовольствием ходит на тренировки и с нетерпением ждёт каждое занятие.
+              </p>
             </article>
             <article class="reviews__card">
               <h3>Александр, папа Максима (10 лет)</h3>
-              <p>Выбирали секцию рядом с домом и не ошиблись. Тренировки проходят интересно и организованно, ребёнок
-                стал более дисциплинированным и ответственным.</p>
+              <p>
+                Выбирали секцию рядом с домом и не ошиблись. Тренировки проходят интересно и
+                организованно, ребёнок стал более дисциплинированным и ответственным.
+              </p>
             </article>
             <article class="reviews__card">
               <h3>Ольга, мама Софии (12 лет)</h3>
-              <p>Дочь занимается уже больше года и ни разу не сказала, что не хочет идти на тренировку. Стала сильнее
-                физически, нашла новых друзей и уже приняла участие в соревнованиях.</p>
+              <p>
+                Дочь занимается уже больше года и ни разу не сказала, что не хочет идти на
+                тренировку. Стала сильнее физически, нашла новых друзей и уже приняла участие в
+                соревнованиях.
+              </p>
             </article>
             <article class="reviews__card">
               <h3>Ирина, мама Кирилла (5 лет)</h3>
-              <p>Очень переживали, что сыну будет сложно привыкнуть к тренировкам. Тренеры умеют найти подход к детям и
-                всегда готовы ответить на вопросы родителей.</p>
+              <p>
+                Очень переживали, что сыну будет сложно привыкнуть к тренировкам. Тренеры умеют
+                найти подход к детям и всегда готовы ответить на вопросы родителей.
+              </p>
             </article>
           </div>
           <div class="reviews__widget">
@@ -1241,8 +1159,10 @@
                 <use href="/img/sprite.svg#icon-arrow_link"></use>
               </svg>
             </summary>
-            <div class="faq__answer">Мы принимаем детей с 5 лет. Группы формируются по возрасту и уровню подготовки,
-              поэтому нагрузка всегда соответствует возможностям ребёнка.</div>
+            <div class="faq__answer">
+              Мы принимаем детей с 5 лет. Группы формируются по возрасту и уровню подготовки,
+              поэтому нагрузка всегда соответствует возможностям ребёнка.
+            </div>
           </details>
           <details class="faq__item">
             <summary class="faq__question">
@@ -1251,8 +1171,10 @@
                 <use href="/img/sprite.svg#icon-arrow_link"></use>
               </svg>
             </summary>
-            <div class="faq__answer">Да. Тренер постепенно адаптирует нагрузку, помогает освоить базовые движения и
-              следит за правильной техникой.</div>
+            <div class="faq__answer">
+              Да. Тренер постепенно адаптирует нагрузку, помогает освоить базовые движения и
+              следит за правильной техникой.
+            </div>
           </details>
           <details class="faq__item" open>
             <summary class="faq__question">
@@ -1261,8 +1183,10 @@
                 <use href="/img/sprite.svg#icon-arrow_link"></use>
               </svg>
             </summary>
-            <div class="faq__answer">Для пробной тренировки достаточно удобной спортивной одежды и бутылки воды. Кимоно
-              можно приобрести позже, если ребёнок решит продолжить занятия.</div>
+            <div class="faq__answer">
+              Для пробной тренировки достаточно удобной спортивной одежды и бутылки воды. Кимоно
+              можно приобрести позже, если ребёнок решит продолжить занятия.
+            </div>
           </details>
           <details class="faq__item">
             <summary class="faq__question">
@@ -1271,8 +1195,10 @@
                 <use href="/img/sprite.svg#icon-arrow_link"></use>
               </svg>
             </summary>
-            <div class="faq__answer">Да, первое пробное занятие проходит бесплатно. Мы познакомим ребёнка с тренером,
-              группой и форматом тренировки.</div>
+            <div class="faq__answer">
+              Да, первое пробное занятие проходит бесплатно. Мы познакомим ребёнка с тренером,
+              группой и форматом тренировки.
+            </div>
           </details>
           <details class="faq__item">
             <summary class="faq__question">
@@ -1281,8 +1207,10 @@
                 <use href="/img/sprite.svg#icon-arrow_link"></use>
               </svg>
             </summary>
-            <div class="faq__answer">На первой тренировке родители могут присутствовать. Дальнейший формат зависит от
-              возраста группы и рекомендаций тренера.</div>
+            <div class="faq__answer">
+              На первой тренировке родители могут присутствовать. Дальнейший формат зависит от
+              возраста группы и рекомендаций тренера.
+            </div>
           </details>
           <details class="faq__item">
             <summary class="faq__question">
@@ -1291,17 +1219,17 @@
                 <use href="/img/sprite.svg#icon-arrow_link"></use>
               </svg>
             </summary>
-            <div class="faq__answer">После освоения базовой программы и по рекомендации тренера ребёнок сможет принять
-              участие в клубных, областных и всероссийских турнирах.</div>
+            <div class="faq__answer">
+              После освоения базовой программы и по рекомендации тренера ребёнок сможет принять
+              участие в клубных, областных и всероссийских турнирах.
+            </div>
           </details>
         </div>
       </div>
     </section>
-
   </main>
 
-  @include('partials/footer.html')
-  @include('partials/modal.html')
+  @include('partials/footer.html') @include('partials/modal.html')
 
   <script type="module" src="/js/main.js"></script>
 </body>

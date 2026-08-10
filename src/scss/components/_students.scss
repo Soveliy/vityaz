@@ -63,4 +63,19 @@
       }
     }
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__nav {
+      width: rem(36px);
+      height: rem(36px);
+
+      &--prev {
+        left: rem(4px);
+      }
+
+      &--next {
+        right: rem(4px);
+      }
+    }
+  }
 }

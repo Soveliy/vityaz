@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.vityazi-kursk.ru/sitemap.xml
+Host: www.vityazi-kursk.ru

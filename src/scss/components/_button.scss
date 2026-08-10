@@ -15,7 +15,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 110%;
-  color: #fff;
+  color: #ffffff;
   padding: 16px 40px;
 }
 
@@ -115,4 +115,11 @@
   --btn-color-active: var(--white);
   --btn-color-disabled: rgb(from var(--violet-200) r g b / 0.24);
   --btn-focus: var(--violet-300);
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .btn {
+    padding: rem(14px) rem(24px);
+    font-size: rem(16px);
+  }
 }

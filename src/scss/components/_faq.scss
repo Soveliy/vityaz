@@ -55,4 +55,22 @@
       grid-template-columns: 1fr;
     }
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__question {
+      gap: rem(12px);
+      padding: rem(16px);
+
+      svg {
+        flex-basis: rem(32px);
+        width: rem(32px);
+        height: rem(32px);
+      }
+    }
+
+    &__answer {
+      padding: 0 rem(16px) rem(16px);
+      font-size: rem(14px);
+    }
+  }
 }

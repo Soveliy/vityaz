@@ -2,75 +2,61 @@
   <div class="container">
     <div class="header__row">
       <a class="header__logo" href="#top" aria-label="Ассоциация Витязей — на главную">
-        <img src="/img/logo.png" alt="Ассоциация Витязей" />
+        <img src="/img/logo.png" alt="Ассоциация Витязей" width="320" height="80" decoding="async" />
       </a>
-
-      <nav
-        class="menu header__menu"
-        id="header-menu"
-        data-header-menu
-        aria-label="Основная навигация"
-      >
-        <ul class="menu__list">
-          <li class="menu__item"><a class="menu__link" href="#why">О нас</a></li>
-          <li class="menu__item">
-            <details class="menu__dropdown">
-              <summary class="menu__link">
-                Залы в Курске
-                <svg aria-hidden="true">
-                  <use href="/img/sprite.svg#icon-cvervron_down"></use>
-                </svg>
-              </summary>
-              <div class="menu__submenu">
-                <a href="#places">Центральный округ</a>
-                <a href="#places">Северо-Западный микрорайон</a>
-                <a href="#places">Северный микрорайон</a>
-                <a href="#places">Железнодорожный округ</a>
-                <a href="#places">Сеймский округ</a>
-              </div>
-            </details>
-          </li>
-          <li class="menu__item">
-            <details class="menu__dropdown">
-              <summary class="menu__link">
-                Залы в Курской области
-                <svg aria-hidden="true">
-                  <use href="/img/sprite.svg#icon-cvervron_down"></use>
-                </svg>
-              </summary>
-              <div class="menu__submenu">
-                <a href="#places">Фатеж</a>
-                <a href="#places">Курчатов</a>
-                <a href="#places">Щигры</a>
-                <a href="#places">Обоянь</a>
-              </div>
-            </details>
-          </li>
-          <li class="menu__item"><a class="menu__link" href="#news">Новости</a></li>
-          <li class="menu__item"><a class="menu__link" href="#events">Мероприятия</a></li>
-          <li class="menu__item"><a class="menu__link" href="#contacts">Контакты</a></li>
-        </ul>
-      </nav>
-
       <div class="header__right">
-        <a class="header__phone" href="tel:+79202657365">+7 (920) 265-73-65</a>
-        <a
-          class="btn header__btn"
-          href="#trial"
-          data-modal-open="request"
-          data-type="Запись из шапки"
-          >Записаться</a
-        >
-        <button
-          class="burger header__burger"
-          type="button"
-          data-header-toggle
-          aria-expanded="false"
-          aria-controls="header-menu"
-          aria-label="Открыть меню"
-        >
+
+
+        <nav class="menu header__menu" id="header-menu" data-header-menu aria-label="Основная навигация">
+          <ul class="menu__list">
+            <li class="menu__item"><a class="menu__link" href="#why">О нас</a></li>
+            <li class="menu__item">
+              <details class="menu__dropdown">
+                <summary class="menu__link">
+                  Залы в Курске
+                  <svg aria-hidden="true">
+                    <use href="/img/sprite.svg#icon-cvervron_down"></use>
+                  </svg>
+                </summary>
+                <div class="menu__submenu">
+                  <a href="#places">Центральный округ</a>
+                  <a href="#places">Северо-Западный микрорайон</a>
+                  <a href="#places">Северный микрорайон</a>
+                  <a href="#places">Железнодорожный округ</a>
+                  <a href="#places">Сеймский округ</a>
+                </div>
+              </details>
+            </li>
+            <li class="menu__item">
+              <details class="menu__dropdown">
+                <summary class="menu__link">
+                  Залы в Курской области
+                  <svg aria-hidden="true">
+                    <use href="/img/sprite.svg#icon-cvervron_down"></use>
+                  </svg>
+                </summary>
+                <div class="menu__submenu">
+                  <a href="#places">Фатеж</a>
+                  <a href="#places">Курчатов</a>
+                  <a href="#places">Щигры</a>
+                  <a href="#places">Обоянь</a>
+                </div>
+              </details>
+            </li>
+            <li class="menu__item"><a class="menu__link" href="#news">Новости</a></li>
+            <li class="menu__item"><a class="menu__link" href="#events">Мероприятия</a></li>
+            <li class="menu__item"><a class="menu__link" href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__contacts">
+          <a class="header__phone" href="tel:+79202657365">+7 (920) 265-73-65</a>
+          <button class="btn header__btn" data-modal-open="request" data-type="Запись из шапки">Записаться</button>
+          <!-- <button class="burger header__burger" type="button" data-header-toggle aria-expanded="false"
+          aria-controls="header-menu" aria-label="Открыть меню">
           <span class="burger__line"></span>
-        </button>
+        </button> -->
+        </div>
       </div>
     </div>
   </div>

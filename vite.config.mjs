@@ -127,6 +127,7 @@ function staticAssetsPlugin() {
   const watchedDirs = [
     path.join(srcDir, 'img'),
     path.join(srcDir, 'resources'),
+    path.join(srcDir, 'static'),
     path.join(srcDir, 'js', 'vendor'),
   ];
 

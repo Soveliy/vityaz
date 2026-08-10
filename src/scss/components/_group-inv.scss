@@ -1,12 +1,26 @@
 @use '../vars' as *;
 @use '../fluid' as *;
+
 .group-inv {
   &__row {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: fluid(12px, 20px);
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    &__row {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 }
+
 .group-inv-item {
   display: flex;
   flex-direction: column;
@@ -14,28 +28,51 @@
   padding: fluid(20px, 40px);
   background: #f8f9fe;
   border-radius: $radius-sm;
+
   &__icon {
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 7.5rem;
-    width: 7.5rem;
+    width: fluid(80px, 120px);
+    height: fluid(80px, 120px);
+    margin-bottom: fluid(12px, 20px);
+
     img {
       max-width: 100%;
     }
   }
+
   &__name {
-    margin-bottom: 8px;
+    margin: 0 0 8px;
+    font-family: var(--font-family);
+    font-weight: 400;
     font-size: 20px;
     line-height: 130%;
     text-align: center;
     color: #141414;
   }
+
   &__params {
     font-size: 16px;
     line-height: 110%;
     text-align: center;
     color: #97989b;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: rem(16px) rem(12px);
+    border-radius: $radius-xs;
+
+    &__name {
+      font-size: rem(16px);
+    }
+
+    &__params {
+      font-size: rem(14px);
+    }
+
+    &:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
   }
 }

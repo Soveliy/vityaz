@@ -98,8 +98,25 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
+    padding: rem(44px) 0;
+
     &__grid {
       grid-template-columns: 1fr;
+      gap: rem(28px);
+    }
+
+    &__logo {
+      max-width: rem(230px);
+    }
+
+    &__legal {
+      gap: rem(10px);
+      margin-top: rem(28px);
+    }
+
+    &__nav,
+    &__contacts {
+      gap: rem(12px);
     }
   }
 }

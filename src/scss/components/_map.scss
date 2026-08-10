@@ -1,10 +1,47 @@
 @use '../fluid' as *;
 @use '../vars' as *;
 
+.map__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(8px);
+  margin-bottom: rem(16px);
+}
+
+.map__filter {
+  appearance: none;
+  background-color: #f8f9fe;
+  border: rem(1px) solid #dfe5fa;
+  border-radius: $radius-pill;
+  color: var(--black);
+  font-size: rem(14px);
+  font-weight: 600;
+  min-height: rem(40px);
+  padding: rem(8px) rem(18px);
+  transition:
+    background-color $duration-fast $ease-base,
+    border-color $duration-fast $ease-base,
+    color $duration-fast $ease-base;
+}
+
+.map__filter:hover,
+.map__filter:focus-visible,
+.map__filter.is-active {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.map__filter:focus-visible {
+  outline: $focus-outline-width solid var(--black);
+  outline-offset: $focus-outline-offset;
+}
+
 .map__wrap {
   background-color: #e5ebfe;
   border-radius: $radius-sm;
   height: fluid(360px, 560px);
+  isolation: isolate;
   overflow: hidden;
   position: relative;
 }
@@ -26,43 +63,80 @@
   display: none;
 }
 
+.map__status {
+  background-color: rgb(248 249 254 / 0.94);
+  border-radius: $radius-pill;
+  bottom: rem(12px);
+  box-shadow: 0 rem(4px) rem(16px) rgb(20 20 20 / 0.08);
+  color: var(--black);
+  font-size: rem(12px);
+  font-weight: 600;
+  left: rem(12px);
+  line-height: 1;
+  padding: rem(9px) rem(12px);
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.map__status[data-state='warning'],
+.map__status[data-state='error'] {
+  color: #a13b00;
+}
+
 .map-marker {
+  --marker-color: var(--blue);
+
+  color: var(--marker-color);
   position: relative;
   transform: translate(-50%, -100%);
+}
+
+.map-marker.is-open {
+  z-index: 10;
 }
 
 .map-marker__button {
   appearance: none;
   background: transparent;
   border: 0;
-  color: var(--blue);
+  color: inherit;
   cursor: pointer;
   display: block;
   padding: 0;
 }
 
+.map-marker__button:focus-visible {
+  outline: $focus-outline-width solid var(--black);
+  outline-offset: $focus-outline-offset;
+}
+
 .map-marker__icon {
+  display: block;
   filter: drop-shadow(0 rem(6px) rem(10px) rgb(3 53 214 / 0.18));
-  height: fluid(48px, 64px);
-  width: fluid(36px, 48px);
+  height: fluid(42px, 52px);
+  overflow: visible;
+  width: fluid(32px, 39px);
 }
 
 .map-marker__balloon {
   background-color: #f8f9fe;
   border-radius: $radius-xs;
-  bottom: calc(100% + #{rem(16px)});
-  box-shadow: 0 rem(12px) rem(32px) rgb(20 20 20 / 0.12);
+  bottom: calc(100% + #{rem(14px)});
+  box-shadow: 0 rem(12px) rem(32px) rgb(20 20 20 / 0.16);
   color: var(--black);
   font-family: var(--font-family);
-  font-size: fluid(18px, 36px);
   left: 50%;
-  line-height: 1.1;
-  padding: fluid(20px, 32px);
-  pointer-events: none;
+  line-height: 1.25;
+  padding: rem(18px);
   position: absolute;
-  text-align: center;
+  text-align: left;
   transform: translateX(-50%);
-  width: min(#{rem(720px)}, calc(100vw - #{rem(48px)}));
+  width: min(#{rem(360px)}, calc(100vw - #{rem(48px)}));
+}
+
+.map-marker__balloon[hidden] {
+  display: none;
 }
 
 .map-marker__balloon::after {
@@ -76,12 +150,63 @@
   transform: translateX(-50%);
 }
 
+.map-marker__name {
+  font-family: var(--second-family);
+  font-size: rem(19px);
+  font-weight: 700;
+}
+
+.map-marker__meta {
+  color: var(--marker-color);
+  font-size: rem(12px);
+  font-weight: 700;
+  margin-top: rem(5px);
+  text-transform: uppercase;
+}
+
+.map-marker__address {
+  font-size: rem(14px);
+  margin-top: rem(10px);
+}
+
+.map-marker__link {
+  color: var(--blue);
+  display: inline-block;
+  font-size: rem(13px);
+  font-weight: 600;
+  margin-top: rem(12px);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 @media (max-width: $breakpoint-mobile) {
+  .map__toolbar {
+    flex-wrap: nowrap;
+    margin-inline: rem(-16px);
+    overflow-x: auto;
+    padding-inline: rem(16px);
+    scrollbar-width: none;
+  }
+
+  .map__toolbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .map__filter {
+    flex: 0 0 auto;
+  }
+
   .map__wrap {
     border-radius: $radius-xs;
+    height: rem(400px);
   }
 
   .map-marker__balloon {
-    width: min(#{rem(320px)}, calc(100vw - #{rem(32px)}));
+    padding: rem(16px);
+    width: min(#{rem(300px)}, calc(100vw - #{rem(32px)}));
+  }
+
+  .map-marker__name {
+    font-size: rem(17px);
   }
 }

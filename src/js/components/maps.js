@@ -1,12 +1,10 @@
-const YANDEX_MAPS_API_URL = 'https://api-maps.yandex.ru/v3/';
-const MAP_CENTER = [36.2400211, 51.7462];
+import { MAP_LOCATIONS } from './map-locations.js';
+import markerSvg from '../../img/svg/mark.svg?raw';
 
-const locations = [
-  {
-    address: 'г. Курск, ул. Краснознаменная, 20А, детский центр «Добрыня»',
-    coordinates: [36.2400211, 51.7445976],
-  },
-];
+const YANDEX_MAPS_API_URL = 'https://api-maps.yandex.ru/v3/';
+const YANDEX_MAPS_SEARCH_URL = 'https://yandex.ru/maps/';
+const MAP_CENTER = [36.192647, 51.730361];
+const DEFAULT_ZOOM = 11;
 
 let mapsApiPromise;
 
@@ -27,14 +25,23 @@ function loadYandexMapsApi(apiKey) {
     });
 
     script.async = true;
-    script.src = `https://api-maps.yandex.ru/v3/?apikey=${apiKey}&lang=ru_RU`;
-    script.addEventListener('load', () => resolve(globalThis.ymaps3), { once: true });
+    script.src = `${YANDEX_MAPS_API_URL}?${parameters}`;
+    script.addEventListener(
+      'load',
+      () => {
+        if (globalThis.ymaps3) {
+          resolve(globalThis.ymaps3);
+          return;
+        }
+
+        reject(new Error('API Яндекс Карт загрузился без объекта ymaps3'));
+      },
+      { once: true },
+    );
     script.addEventListener(
       'error',
       () => reject(new Error('Не удалось загрузить API Яндекс Карт')),
-      {
-        once: true,
-      },
+      { once: true },
     );
     document.head.append(script);
   });
@@ -53,32 +60,64 @@ async function loadCustomization() {
   return response.json();
 }
 
+function createTextElement(className, text) {
+  const element = document.createElement('div');
+
+  element.className = className;
+  element.textContent = text;
+
+  return element;
+}
+
+function createPopupElement(location) {
+  const popup = document.createElement('div');
+  const link = document.createElement('a');
+  const directions = location.disciplines.join(' · ');
+
+  popup.className = 'map-marker__balloon';
+  popup.append(
+    createTextElement('map-marker__name', location.name),
+    createTextElement('map-marker__meta', `${directions} · ${location.district}`),
+    createTextElement('map-marker__address', location.address),
+  );
+
+  link.className = 'map-marker__link';
+  link.href = `${YANDEX_MAPS_SEARCH_URL}?text=${encodeURIComponent(location.address)}`;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = 'Открыть в Яндекс Картах';
+  popup.append(link);
+
+  return popup;
+}
+
 function createMarkerElement(location) {
   const marker = document.createElement('div');
-  const balloon = document.createElement('div');
   const button = document.createElement('button');
-  const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+  const iconTemplate = document.createElement('template');
+  const balloon = createPopupElement(location);
 
   marker.className = 'map-marker';
-  balloon.className = 'map-marker__balloon';
-  balloon.hidden = true;
-  balloon.textContent = location.address;
 
   button.className = 'map-marker__button';
   button.type = 'button';
   button.setAttribute('aria-expanded', 'false');
   button.setAttribute('aria-label', `Показать адрес: ${location.address}`);
 
+  iconTemplate.innerHTML = markerSvg.trim();
+  const icon = iconTemplate.content.firstElementChild;
+
   icon.classList.add('map-marker__icon');
   icon.setAttribute('aria-hidden', 'true');
-  use.setAttribute('href', `${import.meta.env.BASE_URL}img/sprite.svg#icon-mark`);
-  icon.append(use);
+
+  balloon.hidden = true;
+  balloon.addEventListener('click', (event) => event.stopPropagation());
   button.append(icon);
   marker.append(balloon, button);
 
   const closeBalloon = () => {
     balloon.hidden = true;
+    marker.classList.remove('is-open');
     button.setAttribute('aria-expanded', 'false');
   };
 
@@ -87,13 +126,19 @@ function createMarkerElement(location) {
 
     const shouldOpen = balloon.hidden;
 
-    document.dispatchEvent(new CustomEvent('map-balloon-open', { detail: marker }));
-    balloon.hidden = !shouldOpen;
-    button.setAttribute('aria-expanded', String(shouldOpen));
+    document.dispatchEvent(new CustomEvent('map-marker-open', { detail: marker }));
+
+    if (shouldOpen) {
+      balloon.hidden = false;
+      marker.classList.add('is-open');
+      button.setAttribute('aria-expanded', 'true');
+    } else {
+      closeBalloon();
+    }
   });
 
   document.addEventListener('click', closeBalloon);
-  document.addEventListener('map-balloon-open', (event) => {
+  document.addEventListener('map-marker-open', (event) => {
     if (event.detail !== marker) {
       closeBalloon();
     }
@@ -102,7 +147,94 @@ function createMarkerElement(location) {
   return marker;
 }
 
+function getBounds(locations) {
+  if (!locations.length) {
+    return null;
+  }
+
+  const longitudes = locations.map(({ coordinates }) => coordinates[0]);
+  const latitudes = locations.map(({ coordinates }) => coordinates[1]);
+
+  return [
+    [Math.min(...longitudes), Math.min(...latitudes)],
+    [Math.max(...longitudes), Math.max(...latitudes)],
+  ];
+}
+
+function fitMapToLocations(map, locations) {
+  if (!locations.length) {
+    return;
+  }
+
+  if (locations.length === 1) {
+    map.setLocation({
+      center: locations[0].coordinates,
+      duration: 500,
+      zoom: 15,
+    });
+    return;
+  }
+
+  map.setLocation({
+    bounds: getBounds(locations),
+    duration: 500,
+  });
+}
+
+function getLocationsByScope(records, scope) {
+  if (scope === 'all') {
+    return records;
+  }
+
+  return records.filter(({ location }) => location.scope === scope);
+}
+
+function connectScopeControls(container, map, records) {
+  const controls = container.closest('.map')?.querySelectorAll('[data-map-scope]') ?? [];
+  const attachedMarkers = new Set();
+
+  const showScope = (scope) => {
+    const visibleRecords = getLocationsByScope(records, scope);
+
+    attachedMarkers.forEach((marker) => map.removeChild(marker));
+    attachedMarkers.clear();
+
+    visibleRecords.forEach(({ marker }) => {
+      map.addChild(marker);
+      attachedMarkers.add(marker);
+    });
+
+    controls.forEach((control) => {
+      const isActive = control.dataset.mapScope === scope;
+
+      control.classList.toggle('is-active', isActive);
+      control.setAttribute('aria-pressed', String(isActive));
+    });
+
+    fitMapToLocations(
+      map,
+      visibleRecords.map(({ location }) => location),
+    );
+  };
+
+  controls.forEach((control) => {
+    control.addEventListener('click', () => showScope(control.dataset.mapScope));
+  });
+
+  showScope('city');
+}
+
+function updateMapStatus(status, text, state) {
+  if (!status) {
+    return;
+  }
+
+  status.textContent = text;
+  status.dataset.state = state;
+}
+
 async function createMap(container, apiKey) {
+  const status = container.querySelector('[data-map-status]');
   const [ymaps3, customization] = await Promise.all([
     loadYandexMapsApi(apiKey),
     loadCustomization(),
@@ -111,43 +243,68 @@ async function createMap(container, apiKey) {
   await ymaps3.ready;
 
   const { YMap, YMapDefaultFeaturesLayer, YMapDefaultSchemeLayer, YMapMarker } = ymaps3;
-  const map = new YMap(container, {
-    behaviors: ['drag', 'pinchZoom', 'dblClick'],
-    location: {
-      center: MAP_CENTER,
-      zoom: 15,
+  const map = new YMap(
+    container,
+    {
+      behaviors: ['drag', 'pinchZoom', 'dblClick'],
+      location: {
+        center: MAP_CENTER,
+        zoom: DEFAULT_ZOOM,
+      },
+      mode: 'vector',
     },
-    mode: 'vector',
-  });
-
-  map.addChild(new YMapDefaultSchemeLayer({ customization }));
-  map.addChild(new YMapDefaultFeaturesLayer({ zIndex: 1800 }));
-
-  locations.forEach((location) => {
-    map.addChild(
-      new YMapMarker(
-        {
-          blockEvents: true,
-          coordinates: location.coordinates,
-        },
-        createMarkerElement(location),
-      ),
-    );
-  });
-
+    [new YMapDefaultSchemeLayer({ customization }), new YMapDefaultFeaturesLayer({ zIndex: 1800 })],
+  );
   container.classList.add('is-loaded');
+
+  const locations = MAP_LOCATIONS.filter(({ coordinates }) => coordinates?.length === 2);
+  const records = locations.map((location) => {
+    const marker = new YMapMarker(
+      {
+        blockEvents: true,
+        coordinates: location.coordinates,
+        zIndex: 2000,
+      },
+      createMarkerElement(location),
+    );
+
+    return { location, marker };
+  });
+
+  connectScopeControls(container, map, records);
+  container.dataset.markerCount = String(records.length);
+
+  if (locations.length === MAP_LOCATIONS.length) {
+    updateMapStatus(status, `${locations.length} площадок`, 'success');
+  } else {
+    updateMapStatus(
+      status,
+      `Показано ${locations.length} из ${MAP_LOCATIONS.length} площадок`,
+      'warning',
+    );
+  }
 }
 
 export function initMaps() {
   const containers = document.querySelectorAll('[data-map]');
-  const apiKey = '9346e199-7dda-41f1-aed7-6908fc8dae82';
+  const apiKey = import.meta.env.VITE_YANDEX_MAPS_API_KEY?.trim();
 
-  if (!containers.length || !apiKey) {
+  if (!containers.length) {
+    return;
+  }
+
+  if (!apiKey) {
+    console.warn('Для карты не задан VITE_YANDEX_MAPS_API_KEY');
     return;
   }
 
   containers.forEach((container) => {
     createMap(container, apiKey).catch((error) => {
+      updateMapStatus(
+        container.querySelector('[data-map-status]'),
+        'Не удалось загрузить интерактивную карту',
+        'error',
+      );
       console.error(error);
     });
   });

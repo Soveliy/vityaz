@@ -1,4 +1,5 @@
 import { initAnimations } from './components/animations.js';
+import { initGallery } from './components/gallery.js';
 import { initMaps } from './components/maps.js';
 import { initModals } from './components/modal.js';
 import { initNavigation } from './components/navigation.js';
@@ -11,5 +12,6 @@ initNavigation();
 initModals();
 initSmoothScroll();
 initAnimations();
+initGallery();
 initSliders();
 initMaps();

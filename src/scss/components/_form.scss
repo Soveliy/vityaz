@@ -17,6 +17,7 @@
   &__input {
     background: #f8f9fe;
     width: 100%;
+    min-width: 0;
     height: rem(60px);
     padding: rem(16px);
     font-size: fluid(16px, 20px);
@@ -44,21 +45,38 @@
   }
 
   &__checkbox {
-    display: flex;
-    align-items: flex-start;
-    gap: rem(8px);
+    position: relative;
+    display: block;
+    padding-left: rem(24px);
     color: #6f7074;
     font-size: rem(14px);
     line-height: 130%;
 
     input {
-      margin-top: rem(2px);
+      position: absolute;
+      top: rem(2px);
+      left: 0;
+      width: rem(16px);
+      height: rem(16px);
+      margin: 0;
       accent-color: var(--blue);
     }
 
     a {
       color: var(--blue);
       text-decoration: underline;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: rem(12px);
+
+    &__input {
+      height: rem(56px);
+    }
+
+    &__btn {
+      width: 100%;
     }
   }
 }

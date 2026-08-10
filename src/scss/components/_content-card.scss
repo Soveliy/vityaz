@@ -64,4 +64,20 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    border-radius: $radius-xs;
+
+    &__link {
+      padding: rem(16px);
+    }
+
+    &__date {
+      margin-bottom: rem(14px);
+    }
+
+    &__title {
+      margin-top: rem(14px);
+    }
+  }
 }

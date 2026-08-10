@@ -94,6 +94,15 @@
 
     &__widget {
       min-width: 0;
+      height: rem(480px);
+      min-height: 0;
+      border-radius: $radius-xs;
+    }
+
+    &__card {
+      min-height: 0;
+      padding: rem(20px);
+      border-radius: $radius-xs;
     }
   }
 }

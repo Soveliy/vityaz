@@ -15,6 +15,7 @@ export const publicDir = path.join(projectRoot, 'public');
 const srcImgDir = path.join(srcDir, 'img');
 const srcSvgDir = path.join(srcImgDir, 'svg');
 const srcResourcesDir = path.join(srcDir, 'resources');
+const srcStaticDir = path.join(srcDir, 'static');
 const srcVendorScriptsDir = path.join(srcDir, 'js', 'vendor');
 
 async function pathExists(filePath) {
@@ -174,6 +175,7 @@ export async function syncPublic() {
 
   await copyFiles(srcImgDir, path.join(publicDir, 'img'), ['**/*', '!svg/**', '!**/.gitkeep']);
   await copyFiles(srcResourcesDir, path.join(publicDir, 'resources'));
+  await copyFiles(srcStaticDir, publicDir);
   await copyFiles(srcVendorScriptsDir, path.join(publicDir, 'js', 'vendor'));
   await generateSvgSprite();
 }

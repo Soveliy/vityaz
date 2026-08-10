@@ -25,4 +25,12 @@
       grid-template-columns: 1fr;
     }
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__col {
+      .human-card:nth-child(n) .human-card__row {
+        flex-direction: column;
+      }
+    }
+  }
 }

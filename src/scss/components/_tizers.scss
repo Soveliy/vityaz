@@ -1,19 +1,35 @@
 @use '../vars' as *;
 @use '../fluid' as *;
+
 .tizers {
   &__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: fluid(12px, 20px);
   }
+
+  @media (max-width: $breakpoint-tablet) {
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
 }
+
 .tizers-item {
   position: relative;
   overflow: hidden;
   border-radius: $radius-sm;
   background-color: #f8f9fe;
+
   &__image-container {
-    height: 13.75rem;
+    height: fluid(180px, 220px);
+
     img {
       display: block;
       height: 100%;
@@ -22,18 +38,32 @@
       object-position: center;
     }
   }
+
   &__body {
     padding: fluid(20px, 40px);
   }
+
   &__title {
-    margin-bottom: 8px;
+    margin: 0 0 8px;
+    font-family: var(--font-family);
+    font-weight: 400;
     font-size: 20px;
     line-height: 130%;
     color: #141414;
   }
+
   &__desc {
     font-size: 16px;
     line-height: 110%;
     color: #141414;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    border-radius: $radius-xs;
+
+    &__image-container {
+      aspect-ratio: 16 / 9;
+      height: auto;
+    }
   }
 }
