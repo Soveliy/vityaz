@@ -1,3 +1,7 @@
+import { toggleScrollLock } from '../_functions.js';
+
+const MENU_SCROLL_LOCK = 'header-menu';
+
 export function initNavigation() {
   const header = document.querySelector('[data-header]');
   const toggle = header?.querySelector('[data-header-toggle]');
@@ -12,6 +16,7 @@ export function initNavigation() {
     toggle.classList.remove('is-active');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Открыть меню');
+    toggleScrollLock(false, MENU_SCROLL_LOCK);
     menu.querySelectorAll('details[open]').forEach((dropdown) => {
       dropdown.removeAttribute('open');
     });
@@ -24,6 +29,7 @@ export function initNavigation() {
     toggle.classList.toggle('is-active', shouldOpen);
     toggle.setAttribute('aria-expanded', String(shouldOpen));
     toggle.setAttribute('aria-label', shouldOpen ? 'Закрыть меню' : 'Открыть меню');
+    toggleScrollLock(shouldOpen, MENU_SCROLL_LOCK);
   });
 
   menu.addEventListener('click', (event) => {
@@ -41,6 +47,14 @@ export function initNavigation() {
 
   document.addEventListener('click', (event) => {
     if (!header.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  const mobileMenuMedia = window.matchMedia('(max-width: 1024px)');
+
+  mobileMenuMedia.addEventListener('change', (event) => {
+    if (!event.matches) {
       closeMenu();
     }
   });

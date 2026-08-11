@@ -46,15 +46,15 @@
     margin: 0 0 8px;
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: 20px;
+    font-size: fluid(14px, 20px);
     line-height: 130%;
     text-align: center;
     color: #141414;
   }
 
   &__params {
-    font-size: 16px;
-    line-height: 110%;
+    font-size: fluid(12px, 16px);
+    line-height: 130%;
     text-align: center;
     color: #97989b;
   }

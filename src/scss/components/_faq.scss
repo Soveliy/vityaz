@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: space-between;
     gap: rem(16px);
-    padding: fluid(18px, 24px);
+    padding: fluid(20px, 40px);
     font-family: var(--second-family);
     font-size: fluid(16px, 20px);
     font-weight: 500;
@@ -36,18 +36,20 @@
       width: rem(40px);
       height: rem(40px);
       color: var(--blue);
-      transition: transform 0.25s ease;
+      transition: opacity 0.25s ease;
     }
   }
 
   &__item[open] &__question svg {
-    transform: rotate(90deg);
+    opacity: 0;
   }
 
   &__answer {
-    padding: 0 fluid(18px, 24px) fluid(18px, 24px);
-    color: #6f7074;
-    line-height: 145%;
+    padding: 0 fluid(20px, 40px) fluid(20px, 40px);
+    margin-top: calc(fluid(20px, 40px) * -1);
+    font-size: 16px;
+    line-height: 110%;
+    color: var(--black);
   }
 
   @media (max-width: $breakpoint-tablet) {
@@ -70,6 +72,7 @@
 
     &__answer {
       padding: 0 rem(16px) rem(16px);
+      margin-top: 0;
       font-size: rem(14px);
     }
   }

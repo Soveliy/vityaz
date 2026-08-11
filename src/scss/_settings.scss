@@ -75,8 +75,6 @@ a {
   width: rem(1px);
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .container {
-    padding: 0 rem(16px);
-  }
+.main {
+  padding-top: fluid(64px, 100px);
 }

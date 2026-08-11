@@ -11,7 +11,7 @@
     gap: fluid(16px, 32px);
 
     .human-card__image-container {
-      flex: 0 0 42%;
+      flex: 0 0 48%;
       max-width: rem(319px);
     }
   }
@@ -20,7 +20,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    margin-bottom: rem(16px);
+    margin-bottom: rem(12px);
     aspect-ratio: 285 / 398;
     border-radius: 8px;
   }
@@ -39,6 +39,11 @@
     line-height: 130%;
     text-align: center;
     color: #141414;
+    margin-bottom: 10px;
+    &--center {
+      text-align: center;
+      padding: 0 14px;
+    }
   }
 
   &__desc {
@@ -46,11 +51,10 @@
     line-height: 110%;
     text-align: center;
     color: #97989b;
-  }
-
-  &__content &__name,
-  &__content &__desc {
-    text-align: left;
+    &--center {
+      text-align: center;
+      padding: 0 14px;
+    }
   }
 
   &__list {
@@ -64,7 +68,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 9px;
     }
 
     &-icon {
@@ -84,16 +88,20 @@
     }
 
     & + & {
-      margin-top: fluid(10px, 20px);
+      margin-top: fluid(10px, 23px);
     }
   }
 
   &__item-desc {
     overflow-wrap: anywhere;
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    line-height: 110%;
 
     ul {
       margin: 0;
       padding-left: rem(20px);
+      list-style: disc;
     }
   }
 

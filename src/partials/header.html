@@ -2,11 +2,12 @@
   <div class="container">
     <div class="header__row">
       <a class="header__logo" href="#top" aria-label="Ассоциация Витязей — на главную">
-        <img src="/img/logo.png" alt="Ассоциация Витязей" width="320" height="80" decoding="async" />
+        <picture>
+          <source srcset="/img/mob_logo.png" media="(max-width: 767px)">
+          <img src="/img/logo.png" alt="Ассоциация Витязей" width="320" height="80" decoding="async">
+        </picture>
       </a>
-      <div class="header__right">
-
-
+      <div class="header__right" id="header-panel">
         <nav class="menu header__menu" id="header-menu" data-header-menu aria-label="Основная навигация">
           <ul class="menu__list">
             <li class="menu__item"><a class="menu__link" href="#why">О нас</a></li>
@@ -18,12 +19,24 @@
                     <use href="/img/sprite.svg#icon-cvervron_down"></use>
                   </svg>
                 </summary>
-                <div class="menu__submenu">
-                  <a href="#places">Центральный округ</a>
-                  <a href="#places">Северо-Западный микрорайон</a>
-                  <a href="#places">Северный микрорайон</a>
-                  <a href="#places">Железнодорожный округ</a>
-                  <a href="#places">Сеймский округ</a>
+                <div class="menu__submenu menu__submenu--city">
+                  <div class="menu__submenu-column">
+                    <strong class="menu__submenu-title">Каратэ</strong>
+                    <a href="#places">Центральный округ</a>
+                    <a href="#places">Северо-Западный мкр-н</a>
+                    <a href="#places">Северный мкр-н</a>
+                    <a href="#places">Железнодорожный округ</a>
+                    <a href="#places">Сеймский округ</a>
+                    <a href="#places">Волокно</a>
+                  </div>
+                  <div class="menu__submenu-column">
+                    <strong class="menu__submenu-title">Кудо</strong>
+                    <a href="#places">Центральный округ</a>
+                    <a href="#places">Северо-Западный мкр-н</a>
+                    <a href="#places">Северный мкр-н</a>
+                    <a href="#places">Железнодорожный округ</a>
+                    <a href="#places">Сеймский округ</a>
+                  </div>
                 </div>
               </details>
             </li>
@@ -35,11 +48,24 @@
                     <use href="/img/sprite.svg#icon-cvervron_down"></use>
                   </svg>
                 </summary>
-                <div class="menu__submenu">
-                  <a href="#places">Фатеж</a>
-                  <a href="#places">Курчатов</a>
-                  <a href="#places">Щигры</a>
-                  <a href="#places">Обоянь</a>
+                <div class="menu__submenu menu__submenu--region">
+                  <div class="menu__submenu-column">
+                    <a href="#places">г. Дмитриев</a>
+                    <a href="#places">г. Курчатов</a>
+                    <a href="#places">г. Обоянь</a>
+                    <a href="#places">г. Фатеж</a>
+                    <a href="#places">г. Щигры</a>
+                    <a href="#places">с. Верхний Любаж</a>
+                    <a href="#places">пос. Искра</a>
+                  </div>
+                  <div class="menu__submenu-column">
+                    <a href="#places">пос. им. Карла Либкнехта</a>
+                    <a href="#places">пос. Мантурово</a>
+                    <a href="#places">пос. Медвенка</a>
+                    <a href="#places">пос. Черемисиново</a>
+                    <a href="#places">пос. Черницыно</a>
+                    <a href="#places">пос. им. Маршала Жукова</a>
+                  </div>
                 </div>
               </details>
             </li>
@@ -51,13 +77,15 @@
 
         <div class="header__contacts">
           <a class="header__phone" href="tel:+79202657365">+7 (920) 265-73-65</a>
-          <button class="btn header__btn" data-modal-open="request" data-type="Запись из шапки">Записаться</button>
-          <!-- <button class="burger header__burger" type="button" data-header-toggle aria-expanded="false"
-          aria-controls="header-menu" aria-label="Открыть меню">
-          <span class="burger__line"></span>
-        </button> -->
+          <button class="btn header__btn" data-modal-open="request" data-type="Запись из шапки">
+            Записаться
+          </button>
         </div>
       </div>
+      <button class="burger header__burger" type="button" data-header-toggle aria-expanded="false"
+        aria-controls="header-panel" aria-label="Открыть меню">
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
 </header>

@@ -4,12 +4,12 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: rem(15px);
+  gap: fluid(12px, 15px);
 
   &__label {
     display: block;
     margin-bottom: rem(8px);
-    font-size: rem(14px);
+    font-size: fluid(12px, 16px);
     line-height: 110%;
     color: var(--black);
   }
@@ -18,9 +18,9 @@
     background: #f8f9fe;
     width: 100%;
     min-width: 0;
-    height: rem(60px);
+    height: fluid(50px, 68px);
     padding: rem(16px);
-    font-size: fluid(16px, 20px);
+    font-size: fluid(14px, 20px);
     line-height: 130%;
     border: 0;
     border-radius: $radius-xs;
@@ -40,31 +40,61 @@
 
   &__btn {
     align-self: flex-start;
-    padding: rem(12px) rem(40px);
-    font-size: rem(16px);
   }
 
   &__checkbox {
     position: relative;
-    display: block;
-    padding-left: rem(24px);
-    color: #6f7074;
-    font-size: rem(14px);
-    line-height: 130%;
+    padding-left: rem(36px);
+    padding-top: fluid(6px, 4px);
+    font-size: fluid(12px, 16px);
+    line-height: 110%;
+    color: #c0c0c0;
+    cursor: pointer;
+
+    a {
+      line-height: 110%;
+      color: #c0c0c0;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+    }
 
     input {
       position: absolute;
-      top: rem(2px);
+      top: 0;
       left: 0;
-      width: rem(16px);
-      height: rem(16px);
+      width: rem(24px);
+      height: rem(24px);
       margin: 0;
-      accent-color: var(--blue);
+      opacity: 0;
     }
 
-    a {
-      color: var(--blue);
-      text-decoration: underline;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: rem(24px);
+      height: rem(24px);
+      border-radius: $radius-xs;
+      background-color: #f8f9fe;
+      border: 1px solid #cfd5f3;
+    }
+
+    &:has(input:checked)::before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: rem(17px);
+      font-weight: 700;
+      content: '✓';
+      background-color: var(--blue);
+      border-color: var(--blue);
+    }
+
+    &:has(input:focus-visible)::before {
+      outline: $focus-outline-width solid var(--blue);
+      outline-offset: $focus-outline-offset;
     }
   }
 

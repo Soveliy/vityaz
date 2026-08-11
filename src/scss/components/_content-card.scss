@@ -11,12 +11,11 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: fluid(18px, 28px);
+    padding: fluid(20px, 40px);
 
     &::after {
       order: 5;
       margin-top: auto;
-      padding-top: rem(12px);
       color: var(--blue);
       font-size: fluid(14px, 16px);
       font-weight: 500;
@@ -27,7 +26,7 @@
   &__image {
     order: 2;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    // aspect-ratio: 16 / 9;
     object-fit: cover;
   }
 
@@ -37,9 +36,9 @@
 
   &__date {
     order: 1;
-    margin-bottom: rem(18px);
+    margin-bottom: rem(20px);
     color: var(--blue);
-    font-size: fluid(14px, 16px);
+    font-size: fluid(16px, 20px);
     font-weight: 700;
     line-height: 120%;
   }
@@ -47,22 +46,22 @@
   &__title {
     order: 3;
     margin: rem(18px) 0 0;
-    font-family: var(--second-family);
-    font-size: fluid(18px, 22px);
+    font-family: var(--font-family);
+    font-size: fluid(14px, 20px);
     font-weight: 500;
-    line-height: 110%;
+    line-height: 130%;
   }
 
   &__text {
     display: -webkit-box;
     order: 4;
     overflow: hidden;
-    margin: rem(10px) 0 rem(12px);
+    margin: rem(10px) 0 0;
     color: #97989b;
     font-size: fluid(14px, 16px);
     line-height: 130%;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
   }
 
   @media (max-width: $breakpoint-mobile) {

@@ -2,22 +2,16 @@
 @use '../fluid' as *;
 
 .section {
-  padding: fluid(30px, 60px) 0;
+  position: relative;
+  z-index: 1;
+  padding: fluid(20px, 60px) 0;
 
   &__title {
     font-family: var(--second-family);
     margin: 0 0 fluid(20px, 40px);
     font-weight: 500;
-    font-size: fluid(24px, 32px);
+    font-size: fluid(20px, 32px);
     line-height: 110%;
     color: var(--black);
-  }
-
-  @media (max-width: $breakpoint-mobile) {
-    padding: rem(48px) 0;
-
-    &__title {
-      margin-bottom: rem(24px);
-    }
   }
 }

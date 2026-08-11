@@ -174,6 +174,13 @@ export async function syncPublic() {
   await ensureDir(publicDir);
 
   await copyFiles(srcImgDir, path.join(publicDir, 'img'), ['**/*', '!svg/**', '!**/.gitkeep']);
+
+  const markerIconPath = path.join(srcSvgDir, 'mark.svg');
+
+  if (await pathExists(markerIconPath)) {
+    await copyFileIfChanged(markerIconPath, path.join(publicDir, 'img', 'mark.svg'));
+  }
+
   await copyFiles(srcResourcesDir, path.join(publicDir, 'resources'));
   await copyFiles(srcStaticDir, publicDir);
   await copyFiles(srcVendorScriptsDir, path.join(publicDir, 'js', 'vendor'));

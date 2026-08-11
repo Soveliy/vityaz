@@ -40,7 +40,7 @@
 .map__wrap {
   background-color: #e5ebfe;
   border-radius: $radius-sm;
-  height: fluid(360px, 560px);
+  height: rem(680px);
   isolation: isolate;
   overflow: hidden;
   position: relative;
@@ -92,6 +92,8 @@
   transform: translate(-50%, -100%);
 }
 
+.map-marker:hover,
+.map-marker:focus-within,
 .map-marker.is-open {
   z-index: 10;
 }
@@ -115,8 +117,17 @@
   display: block;
   filter: drop-shadow(0 rem(6px) rem(10px) rgb(3 53 214 / 0.18));
   height: fluid(42px, 52px);
-  overflow: visible;
+  max-width: none;
+  object-fit: contain;
+  pointer-events: none;
+  transition: opacity $duration-base $ease-base;
   width: fluid(32px, 39px);
+}
+
+.map-marker__button:hover .map-marker__icon,
+.map-marker__button:focus-visible .map-marker__icon,
+.map-marker.is-open .map-marker__icon {
+  opacity: 0.8;
 }
 
 .map-marker__balloon {
@@ -130,7 +141,7 @@
   line-height: 1.25;
   padding: rem(18px);
   position: absolute;
-  text-align: left;
+  text-align: center;
   transform: translateX(-50%);
   width: min(#{rem(360px)}, calc(100vw - #{rem(48px)}));
 }
@@ -150,33 +161,9 @@
   transform: translateX(-50%);
 }
 
-.map-marker__name {
-  font-family: var(--second-family);
-  font-size: rem(19px);
-  font-weight: 700;
-}
-
-.map-marker__meta {
-  color: var(--marker-color);
-  font-size: rem(12px);
-  font-weight: 700;
-  margin-top: rem(5px);
-  text-transform: uppercase;
-}
-
 .map-marker__address {
-  font-size: rem(14px);
-  margin-top: rem(10px);
-}
-
-.map-marker__link {
-  color: var(--blue);
-  display: inline-block;
-  font-size: rem(13px);
-  font-weight: 600;
-  margin-top: rem(12px);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  font-size: rem(16px);
+  font-weight: 500;
 }
 
 @media (max-width: $breakpoint-mobile) {
@@ -196,17 +183,8 @@
     flex: 0 0 auto;
   }
 
-  .map__wrap {
-    border-radius: $radius-xs;
-    height: rem(400px);
-  }
-
   .map-marker__balloon {
     padding: rem(16px);
     width: min(#{rem(300px)}, calc(100vw - #{rem(32px)}));
-  }
-
-  .map-marker__name {
-    font-size: rem(17px);
   }
 }

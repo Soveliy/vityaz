@@ -87,16 +87,33 @@
     }
 
     & + & {
-      margin-top: fluid(6px, 8px);
+      margin-top: fluid(6px, 12px);
     }
   }
 
   &__btn {
-    margin-top: auto;
+    margin: auto auto 0;
+    width: max-content;
   }
 
   @media (max-width: $breakpoint-mobile) {
     border-radius: $radius-xs;
+
+    &__title {
+      font-size: rem(14px);
+    }
+
+    &__value {
+      font-size: rem(32px);
+    }
+
+    &__desc {
+      font-size: rem(13px);
+    }
+
+    &__list-item {
+      font-size: rem(14px);
+    }
 
     &__btn {
       width: 100%;

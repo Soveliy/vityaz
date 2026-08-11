@@ -2,14 +2,15 @@
 @use '../vars' as *;
 
 .footer {
-  padding: fluid(52px, 72px) 0 fluid(56px, 76px);
+  padding: fluid(20px, 57px) 0 fluid(20px, 80px);
   color: var(--white);
   background: var(--blue);
   border-top: 0;
+  margin-top: fluid(30px, 60px);
 
   &__grid {
     display: grid;
-    grid-template-columns: minmax(rem(280px), 1.4fr) repeat(3, minmax(rem(180px), 1fr));
+    grid-template-columns: minmax(rem(344px), 1.4fr) repeat(3, minmax(rem(180px), 1fr));
     gap: fluid(36px, 76px);
   }
 
@@ -20,7 +21,7 @@
 
   &__logo {
     display: block;
-    max-width: rem(270px);
+    max-width: rem(320px);
 
     img {
       display: block;
@@ -32,12 +33,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: rem(14px);
+    gap: rem(20px);
     max-width: rem(330px);
-    margin-top: fluid(64px, 100px);
-    color: rgb(255 255 255 / 0.68);
-    font-size: rem(13px);
-    line-height: 135%;
+    margin-top: fluid(64px, 68px);
+    font-size: 16px;
+    line-height: 110%;
+    color: #cdd7f7;
 
     a:hover {
       color: var(--white);
@@ -50,9 +51,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: rem(14px);
-    color: rgb(255 255 255 / 0.7);
-    font-size: rem(14px);
-    line-height: 130%;
+    font-size: 16px;
+    line-height: 110%;
+    color: #cdd7f7;
+    padding-top: 20px;
 
     a {
       transition: color 0.2s ease;
@@ -72,19 +74,14 @@
   }
 
   &__social {
-    display: grid;
-    width: rem(36px);
-    height: rem(36px);
-    margin-top: rem(6px);
-    place-items: center;
-    color: var(--blue);
-    background: var(--white);
-    border-radius: $radius-xs;
-
     svg {
-      width: rem(22px);
-      height: rem(22px);
+      width: rem(40px);
+      height: rem(40px);
     }
+  }
+
+  &__social--mobile {
+    display: none;
   }
 
   @media (max-width: $breakpoint-tablet) {
@@ -98,25 +95,66 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
-    padding: rem(44px) 0;
+    padding: rem(36px) 0 rem(28px);
 
     &__grid {
-      grid-template-columns: 1fr;
-      gap: rem(28px);
+      grid-template-areas:
+        'federation sports'
+        'federation contacts'
+        'legal legal'
+        'logo logo';
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: rem(32px) rem(20px);
+    }
+
+    &__brand {
+      display: contents;
     }
 
     &__logo {
-      max-width: rem(230px);
+      grid-area: logo;
+      max-width: rem(300px);
     }
 
     &__legal {
+      grid-area: legal;
       gap: rem(10px);
-      margin-top: rem(28px);
+      max-width: none;
+      margin-top: 0;
+      font-size: rem(12px);
+    }
+
+    &__nav--federation {
+      grid-area: federation;
+    }
+
+    &__nav--sports {
+      grid-area: sports;
+    }
+
+    &__contacts {
+      grid-area: contacts;
     }
 
     &__nav,
     &__contacts {
       gap: rem(12px);
+      padding-top: 0;
+      font-size: rem(13px);
+    }
+
+    &__title {
+      margin-bottom: rem(4px);
+      font-size: rem(16px);
+    }
+
+    &__social--desktop {
+      display: none;
+    }
+
+    &__social--mobile {
+      display: block;
+      margin-top: rem(8px);
     }
   }
 }

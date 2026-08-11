@@ -1,25 +1,95 @@
 import { lockScroll, unlockScroll } from '../_functions.js';
+import { MAP_LOCATIONS } from './map-locations.js';
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+const DEFAULT_REQUEST_TITLE = 'Оставьте заявку — мы вам перезвоним';
+const MODAL_SCROLL_LOCK = 'modal';
+const LOCATION_FILTERS = {
+  center: ({ district }) => district === 'Центр',
+  north: ({ district }) => district === 'СХА, Победа, Дериглазова',
+  northwest: ({ district }) => district === 'Северо-Западный район',
+  railway: ({ district }) => district === 'Железнодорожный округ',
+  region: ({ scope }) => scope === 'region',
+  seym: ({ district }) => district === 'Сеймский округ',
+};
+
+function getLocationLabel(location) {
+  return `${location.address}, ${location.name}`;
+}
 
 export function initModals() {
-  const modal = document.querySelector('[data-modal="request"]');
-  const closeButton = modal?.querySelector('[data-modal-close]');
-  const nameInput = modal?.querySelector('input[name="name"]');
-  const requestTypeInput = modal?.querySelector('[data-request-type]');
+  const requestModal = document.querySelector('[data-modal="request"]');
+  const locationsModal = document.querySelector('[data-modal="locations"]');
+  const requestTitle = requestModal?.querySelector('[data-request-modal-title]');
+  const nameInput = requestModal?.querySelector('input[name="name"]');
+  const emailInput = requestModal?.querySelector('input[name="email"]');
+  const scheduleField = requestModal?.querySelector('[data-schedule-field]');
+  const requestTypeInput = requestModal?.querySelector('[data-request-type]');
+  const locationTitle = locationsModal?.querySelector('[data-location-modal-title]');
+  const locationList = locationsModal?.querySelector('[data-location-modal-list]');
+  const locationSignupButton = locationsModal?.querySelector('[data-location-signup]');
   const notice = document.querySelector('[data-success-notice]');
   const openButtons = document.querySelectorAll('[data-modal-open="request"]');
+  const locationButtons = document.querySelectorAll('[data-location-group]');
   const requestForms = document.querySelectorAll('[data-request-form], .form__offer');
 
-  if (!modal || !closeButton) {
+  if (!requestModal) {
     return;
   }
 
+  let activeLocationTrigger;
+  let activeModal;
   let closeTimer;
   let lastFocusedElement;
   let noticeHideTimer;
   let noticeTimer;
+
+  const hideModalImmediately = (modal) => {
+    if (!modal) {
+      return;
+    }
+
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    modal.hidden = true;
+  };
+
+  const openModal = (modal, trigger, focusTarget) => {
+    window.clearTimeout(closeTimer);
+
+    if (activeModal && activeModal !== modal) {
+      hideModalImmediately(activeModal);
+    }
+
+    activeModal = modal;
+    lastFocusedElement = trigger;
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    lockScroll(MODAL_SCROLL_LOCK);
+
+    requestAnimationFrame(() => {
+      modal.classList.add('is-open');
+      focusTarget?.focus();
+    });
+  };
+
+  const closeModal = (modal = activeModal) => {
+    if (!modal || modal.hidden) {
+      return;
+    }
+
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    activeModal = null;
+    unlockScroll(MODAL_SCROLL_LOCK);
+
+    closeTimer = window.setTimeout(() => {
+      modal.hidden = true;
+    }, 250);
+
+    lastFocusedElement?.focus();
+  };
 
   const showNotice = () => {
     if (!notice) {
@@ -43,57 +113,91 @@ export function initModals() {
     }, 4000);
   };
 
-  const openModal = (trigger) => {
-    window.clearTimeout(closeTimer);
-    lastFocusedElement = trigger;
+  const setRequestVariant = (trigger) => {
+    const isSchedule = trigger.dataset.modalVariant === 'schedule';
+
+    requestModal.classList.toggle('modal--schedule', isSchedule);
+
+    if (requestTitle) {
+      requestTitle.textContent = trigger.dataset.modalTitle || DEFAULT_REQUEST_TITLE;
+    }
+
+    if (scheduleField && emailInput) {
+      scheduleField.hidden = !isSchedule;
+      emailInput.disabled = !isSchedule;
+      emailInput.required = isSchedule;
+    }
 
     if (requestTypeInput) {
       requestTypeInput.value = trigger.dataset.type || 'Заявка с сайта';
     }
-
-    modal.hidden = false;
-    modal.setAttribute('aria-hidden', 'false');
-    lockScroll();
-
-    requestAnimationFrame(() => {
-      modal.classList.add('is-open');
-      nameInput?.focus();
-    });
   };
 
-  const closeModal = () => {
-    if (modal.hidden) {
+  const openRequestModal = (trigger) => {
+    setRequestVariant(trigger);
+    openModal(requestModal, trigger, nameInput);
+  };
+
+  const openLocationsModal = (trigger) => {
+    if (!locationsModal || !locationTitle || !locationList) {
       return;
     }
 
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
-    unlockScroll();
+    const filter = LOCATION_FILTERS[trigger.dataset.locationGroup];
+    const locations = MAP_LOCATIONS.filter(
+      (location) => location.disciplines.includes('Каратэ') && filter?.(location),
+    );
 
-    closeTimer = window.setTimeout(() => {
-      modal.hidden = true;
-    }, 250);
+    activeLocationTrigger = trigger;
+    locationTitle.textContent = trigger.dataset.locationTitle || 'Ближайшие залы';
+    locationList.replaceChildren(
+      ...locations.map((location) => {
+        const item = document.createElement('li');
 
-    lastFocusedElement?.focus();
+        item.className = 'modal__location';
+        item.textContent = getLocationLabel(location);
+
+        return item;
+      }),
+    );
+
+    openModal(locationsModal, trigger, locationsModal.querySelector('[data-modal-close]'));
   };
 
   openButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
       event.preventDefault();
-      openModal(button);
+      openRequestModal(button);
     });
   });
 
-  closeButton.addEventListener('click', closeModal);
+  locationButtons.forEach((button) => {
+    button.addEventListener('click', () => openLocationsModal(button));
+  });
 
-  modal.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      closeModal();
+  locationSignupButton?.addEventListener('click', () => {
+    if (!activeLocationTrigger) {
+      return;
     }
+
+    activeLocationTrigger.dataset.type = `Выбран зал: ${activeLocationTrigger.dataset.locationTitle}`;
+    openRequestModal(activeLocationTrigger);
+  });
+
+  document.querySelectorAll('[data-modal-close]').forEach((button) => {
+    button.addEventListener('click', () => closeModal(button.closest('[data-modal]')));
+  });
+
+  document.querySelectorAll('[data-modal]').forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal(modal);
+      }
+    });
   });
 
   document.addEventListener('keydown', (event) => {
-    if (modal.hidden) {
+    if (!activeModal) {
       return;
     }
 
@@ -106,7 +210,9 @@ export function initModals() {
       return;
     }
 
-    const focusableElements = [...modal.querySelectorAll(FOCUSABLE_SELECTOR)];
+    const focusableElements = [...activeModal.querySelectorAll(FOCUSABLE_SELECTOR)].filter(
+      (element) => !element.closest('[hidden]'),
+    );
     const firstElement = focusableElements[0];
     const lastElement = focusableElements.at(-1);
 
@@ -128,8 +234,8 @@ export function initModals() {
         return;
       }
 
-      if (modal.contains(form)) {
-        closeModal();
+      if (requestModal.contains(form)) {
+        closeModal(requestModal);
       }
 
       form.reset();

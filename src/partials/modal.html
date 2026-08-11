@@ -9,7 +9,9 @@
 >
   <div class="modal__dialog" data-modal-dialog>
     <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно"></button>
-    <h2 class="modal__title" id="request-modal-title">Оставьте заявку — мы вам перезвоним</h2>
+    <h2 class="modal__title" id="request-modal-title" data-request-modal-title>
+      Оставьте заявку — мы вам перезвоним
+    </h2>
 
     <form class="modal__form form" action="#" data-request-form>
       <input type="hidden" name="request_type" data-request-type value="Заявка с сайта" />
@@ -25,17 +27,31 @@
           required
         />
       </div>
-      <div class="form__item">
-        <label class="form__label" for="modal-phone">Телефон</label>
-        <input
-          class="form__input"
-          id="modal-phone"
-          type="tel"
-          name="phone"
-          placeholder="Ваш номер телефона"
-          autocomplete="tel"
-          required
-        />
+      <div class="modal__contact-row">
+        <div class="form__item">
+          <label class="form__label" for="modal-phone">Телефон</label>
+          <input
+            class="form__input"
+            id="modal-phone"
+            type="tel"
+            name="phone"
+            placeholder="+7 (___) ___-__-__"
+            autocomplete="tel"
+            required
+          />
+        </div>
+        <div class="form__item" data-schedule-field hidden>
+          <label class="form__label" for="modal-email">Почта</label>
+          <input
+            class="form__input"
+            id="modal-email"
+            type="email"
+            name="email"
+            placeholder="Ваш e-mail"
+            autocomplete="email"
+            disabled
+          />
+        </div>
       </div>
       <div class="form__footer">
         <button class="btn form__btn" type="submit">Отправить</button>
@@ -47,6 +63,23 @@
         </label>
       </div>
     </form>
+  </div>
+</div>
+
+<div
+  class="modal modal--locations"
+  data-modal="locations"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+  aria-labelledby="locations-modal-title"
+  hidden
+>
+  <div class="modal__dialog modal__dialog--locations" data-modal-dialog>
+    <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно"></button>
+    <h2 class="modal__title" id="locations-modal-title" data-location-modal-title></h2>
+    <ul class="modal__locations-list" data-location-modal-list></ul>
+    <button class="btn modal__locations-btn" type="button" data-location-signup>Записаться</button>
   </div>
 </div>
 

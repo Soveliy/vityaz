@@ -3,6 +3,11 @@
 .is-scroll-locked {
   overflow: hidden;
   overscroll-behavior: none;
+
+  body {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
 }
 
 .is-hidden {

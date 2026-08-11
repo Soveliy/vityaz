@@ -66,9 +66,7 @@
     align-items: flex-end;
     overflow: hidden;
     min-height: 0;
-    padding-left: 20px;
     background: #f8f9fe;
-    border-radius: $radius-sm;
 
     img {
       width: 100%;
@@ -99,18 +97,19 @@
   }
 
   .why-item__image {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 35 / 24;
     grid-column: auto;
     grid-row: auto;
-    border-radius: $radius-xs;
+    order: 5;
   }
 
   .why-item {
-    min-height: rem(180px);
+    min-height: rem(136px);
+    padding: rem(20px);
     border-radius: $radius-xs;
 
     &::before {
-      font-size: rem(160px);
+      font-size: rem(140px);
     }
   }
 }

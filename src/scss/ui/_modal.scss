@@ -26,7 +26,7 @@
     overflow-y: auto;
     width: min(100%, rem(850px));
     max-height: calc(100vh - #{rem(48px)});
-    padding: fluid(32px, 60px);
+    padding: fluid(20px, 60px);
     color: var(--black);
     background: var(--white);
     border-radius: $radius-sm;
@@ -101,6 +101,44 @@
     }
   }
 
+  &__contact-row {
+    display: grid;
+    gap: rem(15px);
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  &--schedule &__contact-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &__dialog--locations {
+    width: min(100%, rem(750px));
+    padding: fluid(36px, 60px);
+    background: #f8f9fe;
+  }
+
+  &__dialog--locations &__title {
+    margin-bottom: fluid(20px, 32px);
+  }
+
+  &__locations-list {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(14px, 20px);
+    margin: 0 0 fluid(28px, 40px);
+    padding: 0;
+    list-style: none;
+  }
+
+  &__location {
+    font-size: fluid(17px, 20px);
+    line-height: 1.25;
+  }
+
+  &__locations-btn {
+    min-width: rem(199px);
+  }
+
   @media (max-width: $breakpoint-mobile) {
     align-items: flex-end;
     padding: rem(12px);
@@ -128,6 +166,18 @@
       .form__btn {
         width: 100%;
       }
+    }
+
+    &--schedule &__contact-row {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__dialog--locations {
+      padding: rem(28px) rem(20px);
+    }
+
+    &__locations-btn {
+      width: 100%;
     }
   }
 }

@@ -11,100 +11,112 @@
   @include('partials/header.html')
 
   <main class="main">
-    <section class="hero" data-hero>
-      <div class="container hero__container">
-        <div class="hero__content" data-hero-content>
-          <h1 class="hero__title">Каратэ для детей в&nbsp;Курске и&nbsp;области</h1>
-          <p class="hero__text">
-            Обучаем детей от&nbsp;5&nbsp;до&nbsp;18&nbsp;лет. Развиваем силу, дисциплину, уверенность в&nbsp;себе
-            и&nbsp;спортивные навыки под руководством опытных тренеров
-          </p>
-          <div class="hero__facts">
-            <span>Первое занятие бесплатно</span>
-            <span>Без опыта</span>
-            <span>Группы по возрасту</span>
+    <div class="first-screen">
+      <div class="hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <h1 class="hero__title">Каратэ для детей в&nbsp;Курске и&nbsp;области</h1>
+            <p class="hero__text">
+              Обучаем детей от&nbsp;5&nbsp;до&nbsp;18&nbsp;лет. Развиваем силу, дисциплину,
+              уверенность в&nbsp;себе и&nbsp;спортивные навыки под руководством опытных тренеров
+            </p>
+            <div class="hero__facts">
+              <span>Первое занятие бесплатно</span>
+              <span>Без опыта</span>
+              <span>Группы по возрасту</span>
+            </div>
+            <a class="btn hero__btn" href="#trial" data-modal-open="request"
+              data-type="Пробная тренировка">Записаться</a>
           </div>
-          <a class="btn hero__btn" href="#trial" data-modal-open="request" data-type="Пробная тренировка">Записаться</a>
-        </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__photo hero__photo--first" data-hero-photo>
-            <img src="/img/hero/1.jpg" alt="" width="281" height="503" decoding="async" />
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero__photo hero__photo--first">
+              <picture>
+                <source srcset="img/hero_mob.jpg" media="(max-width: 767px)" />
+                <img src="/img/hero/1.jpg" alt="" width="281" height="503" decoding="async" />
+              </picture>
+            </div>
+            <div class="hero__photo hero__photo--second">
+              <img src="/img/hero/2.jpg" alt="" width="371" height="502" decoding="async" />
+            </div>
+            <img class="hero__fighters" src="/img/hero/3.png" alt="" width="568" height="369" decoding="async"
+              fetchpriority="high" />
           </div>
-          <div class="hero__photo hero__photo--second" data-hero-photo>
-            <img src="/img/hero/2.jpg" alt="" width="371" height="502" decoding="async" />
-          </div>
-          <img class="hero__fighters" src="/img/hero/3.png" alt="" width="568" height="369" decoding="async"
-            fetchpriority="high" data-hero-fighters />
         </div>
+        <section class="section place" id="places">
+          <div class="container">
+            <h2 class="section__title">Выберите ближайший зал</h2>
+            <div class="place__grid">
+              <button class="place-item" type="button" data-location-group="center"
+                data-location-title="Курск — Центральный округ">
+                <div class="place-item__content">
+                  <h3 class="place-item__name">Курск – Центральный округ</h3>
+                  <div class="place-item__adress">Мирная, Димитрова, Павлуновского</div>
+                </div>
+                <svg class="place-item__icon" aria-hidden="true">
+                  <use href="/img/sprite.svg#icon-arrow_right"></use>
+                </svg>
+              </button>
+              <button class="place-item" type="button" data-location-group="northwest"
+                data-location-title="Курск — Северо-Западный район">
+                <div class="place-item__content">
+                  <h3 class="place-item__name">Курск – Северо-Западный мкр-н</h3>
+                  <div class="place-item__adress">Дружбы, Верхняя Казацкая, Мыльникова</div>
+                </div>
+                <svg class="place-item__icon" aria-hidden="true">
+                  <use href="/img/sprite.svg#icon-arrow_right"></use>
+                </svg>
+              </button>
+              <button class="place-item" type="button" data-location-group="north"
+                data-location-title="Курск — Северный микрорайон">
+                <div class="place-item__content">
+                  <h3 class="place-item__name">Курск – Северный мкр-н</h3>
+                  <div class="place-item__adress">Победы, Дериглазова, Видяевская</div>
+                </div>
+                <svg class="place-item__icon" aria-hidden="true">
+                  <use href="/img/sprite.svg#icon-arrow_right"></use>
+                </svg>
+              </button>
+              <button class="place-item" type="button" data-location-group="railway"
+                data-location-title="Курск — Железнодорожный округ">
+                <div class="place-item__content">
+                  <h3 class="place-item__name">Курск – Железнодорожный округ</h3>
+                  <div class="place-item__adress">Островского, ВЧК, Краснознаменная</div>
+                </div>
+                <svg class="place-item__icon" aria-hidden="true">
+                  <use href="/img/sprite.svg#icon-arrow_right"></use>
+                </svg>
+              </button>
+              <button class="place-item" type="button" data-location-group="seym"
+                data-location-title="Курск — Сеймский округ">
+                <div class="place-item__content">
+                  <h3 class="place-item__name">Курск – Сеймский округ</h3>
+                  <div class="place-item__adress">Комарова, Серегина, Менделеева</div>
+                </div>
+                <svg class="place-item__icon" aria-hidden="true">
+                  <use href="/img/sprite.svg#icon-arrow_right"></use>
+                </svg>
+              </button>
+              <button class="place-item" type="button" data-location-group="region"
+                data-location-title="Курская область">
+                <div class="place-item__content">
+                  <h3 class="place-item__name">Курская область</h3>
+                  <div class="place-item__adress">Фатеж, Курчатов, Щигры, Обоянь</div>
+                </div>
+                <svg class="place-item__icon" aria-hidden="true">
+                  <use href="/img/sprite.svg#icon-arrow_right"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
 
-    <section class="section place" id="places">
-      <div class="container">
-        <h2 class="section__title">Выберите ближайший зал</h2>
-        <div class="place__grid">
-          <a href="#map" class="place-item">
-            <div class="place-item__content">
-              <h3 class="place-item__name">Курск – Центральный округ</h3>
-              <div class="place-item__adress">Мирная, Димитрова, Павлуновского</div>
-            </div>
-            <svg class="place-item__icon" aria-hidden="true">
-              <use href="/img/sprite.svg#icon-arrow_right"></use>
-            </svg>
-          </a>
-          <a href="#map" class="place-item">
-            <div class="place-item__content">
-              <h3 class="place-item__name">Курск – Северо-Западный мкр-н</h3>
-              <div class="place-item__adress">Дружбы, Верхняя Казацкая, Мыльникова</div>
-            </div>
-            <svg class="place-item__icon" aria-hidden="true">
-              <use href="/img/sprite.svg#icon-arrow_right"></use>
-            </svg>
-          </a>
-          <a href="#map" class="place-item">
-            <div class="place-item__content">
-              <h3 class="place-item__name">Курск – Северный мкр-н</h3>
-              <div class="place-item__adress">Победы, Дериглазова, Видяевская</div>
-            </div>
-            <svg class="place-item__icon" aria-hidden="true">
-              <use href="/img/sprite.svg#icon-arrow_right"></use>
-            </svg>
-          </a>
-          <a href="#map" class="place-item">
-            <div class="place-item__content">
-              <h3 class="place-item__name">Курск – Железнодорожный округ</h3>
-              <div class="place-item__adress">Островского, ВЧК, Краснознаменная</div>
-            </div>
-            <svg class="place-item__icon" aria-hidden="true">
-              <use href="/img/sprite.svg#icon-arrow_right"></use>
-            </svg>
-          </a>
-          <a href="#map" class="place-item">
-            <div class="place-item__content">
-              <h3 class="place-item__name">Курск – Сеймский округ</h3>
-              <div class="place-item__adress">Комарова, Серегина, Менделеева</div>
-            </div>
-            <svg class="place-item__icon" aria-hidden="true">
-              <use href="/img/sprite.svg#icon-arrow_right"></use>
-            </svg>
-          </a>
-          <a href="#map" class="place-item">
-            <div class="place-item__content">
-              <h3 class="place-item__name">Курская область</h3>
-              <div class="place-item__adress">Фатеж, Курчатов, Щигры, Обоянь</div>
-            </div>
-            <svg class="place-item__icon" aria-hidden="true">
-              <use href="/img/sprite.svg#icon-arrow_right"></use>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
     <section class="section map" id="map">
       <div class="container">
         <h2 class="section__title">Наши адреса</h2>
-        <div class="map__toolbar" role="group" aria-label="Область показа адресов">
+        <!-- <div class="map__toolbar" role="group" aria-label="Область показа адресов">
           <button class="map__filter is-active" type="button" data-map-scope="city" aria-pressed="true">
             Курск
           </button>
@@ -114,7 +126,7 @@
           <button class="map__filter" type="button" data-map-scope="all" aria-pressed="false">
             Все адреса
           </button>
-        </div>
+        </div> -->
         <div class="map__wrap" data-map aria-label="Адреса Ассоциации Витязей в Курске и Курской области">
           <a class="map__fallback"
             href="https://yandex.ru/maps/?text=%D0%90%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F%20%D0%92%D0%B8%D1%82%D1%8F%D0%B7%D0%B5%D0%B9%20%D0%9A%D1%83%D1%80%D1%81%D0%BA"
@@ -212,6 +224,34 @@
         </div>
       </div>
     </section>
+    <section class="section offer">
+      <div class="container">
+        <h2 class="section__title">Запишитесь на бесплатную пробную тренировку</h2>
+        <div class="offer__row">
+          <img class="offer__image" src="/img/offer.jpg" alt="Детская тренировка по каратэ" width="730" height="333"
+            loading="lazy" decoding="async" />
+          <form action="#" class="form__offer form">
+            <div class="form__item">
+              <label for="trial-name" class="form__label">Имя</label>
+              <input id="trial-name" type="text" class="form__input" name="name" placeholder="Ваше имя"
+                autocomplete="name" required />
+            </div>
+            <div class="form__item">
+              <label for="trial-phone" class="form__label">Телефон</label>
+              <input id="trial-phone" type="tel" class="form__input" name="phone" placeholder="Ваш номер телефона"
+                autocomplete="tel" required />
+            </div>
+            <div class="form__footer">
+              <button class="btn form__btn" type="submit">Отправить</button>
+              <label class="form__checkbox">
+                <input type="checkbox" required />
+                Я согласен(а) на <a href="#" target="_blank">обработку персональных данных</a>
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
     <section class="section group-inv" id="groups">
       <div class="container">
         <h2 class="section__title">Набор в группы по каратэ</h2>
@@ -274,8 +314,7 @@
             </div>
           </div>
           <div class="why-item__image">
-            <img src="img/why-img.png" alt="Девочка выполняет удар ногой на соревнованиях по каратэ" width="538"
-              height="396" loading="lazy" decoding="async" />
+            <img src="img/why-img.jpg" alt="" width="538" height="396" loading="lazy" decoding="async" />
           </div>
           <div class="why-item">
             <h3 class="why-item__title">Важно научиться постоять за себя</h3>
@@ -300,8 +339,35 @@
         <div class="schedule__container">
           <img src="img/schedule.png" alt="Расписание групповых тренировок Ассоциации Витязей" width="1520" height="546"
             loading="lazy" decoding="async" />
+          <div class="schedule__mobile" aria-label="Расписание групповых тренировок">
+            <div class="schedule__mobile-head">
+              <span>Адрес</span>
+              <span>Время занятий</span>
+            </div>
+            <div class="schedule__mobile-row">
+              <span>Курск,<br />пос. Аккумуляторный, 21В,<br />БК «Русичи»</span>
+              <span>Вторник, Четверг<br />16:00–17:00</span>
+            </div>
+            <div class="schedule__mobile-row">
+              <span>Курск,<br />ул. Менделеева, 59Д,<br />ГКЦ «Лира»</span>
+              <span>Среда<br />17:30–18:30<br /><br />Суббота<br />15:30–16:30</span>
+            </div>
+            <div class="schedule__mobile-row">
+              <span>Курск,<br />ул. Республиканская, 50Б,<br />СОШ №35</span>
+              <span>Понедельник<br />16:00–17:00<br /><br />Пятница<br />17:00–18:00</span>
+            </div>
+            <div class="schedule__mobile-row">
+              <span>Курск,<br />ул. Мирная, 5,<br />Школа №5</span>
+              <span>Вторник, Четверг<br />15:00–16:00</span>
+            </div>
+            <div class="schedule__mobile-row">
+              <span>Курск,<br />ул. Мыльникова, 4,<br />детский центр «Добрыня»</span>
+              <span>Вторник, Четверг<br />16:00–17:00</span>
+            </div>
+          </div>
         </div>
-        <button class="schedule__btn btn" type="button" data-modal-open="request" data-type="Подробное расписание">
+        <button class="schedule__btn btn" type="button" data-modal-open="request" data-type="Подробное расписание"
+          data-modal-variant="schedule" data-modal-title="Оставьте заявку — мы отправим вам актуальное расписание">
           Получить подробное расписание
         </button>
       </div>
@@ -359,7 +425,7 @@
         </div>
       </div>
     </section>
-    <section class="section offer" id="trial">
+    <section class="section offer">
       <div class="container">
         <h2 class="section__title">Запишитесь на бесплатную пробную тренировку</h2>
         <div class="offer__row">
@@ -444,13 +510,13 @@
               </div>
               <div class="human-card swiper-slide">
                 <div class="human-card__image-container">
-                  <img class="media-cover" src="/img/students/1.jpg"
+                  <img class="media-cover" src="/img/students/2.jpg"
                     alt="Милана Ишунина — воспитанница Ассоциации Витязей" width="285" height="398" loading="lazy"
                     decoding="async" />
                 </div>
-                <div class="human-card__name">Милана Ишунина</div>
+                <div class="human-card__name">Валерий Мишин</div>
                 <div class="human-card__desc">
-                  Член сборной команды России по всестилевому каратэ
+                  Член сборной команды Курской области по всестилевому каратэ
                 </div>
                 <ul class="human-card__list">
                   <li class="human-card__item">
@@ -474,9 +540,8 @@
                     <div class="human-card__item-desc">
                       <ul>
                         <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                        <li>победитель Всероссийской Спартакиады учащихся России</li>
-                        <li>победитель Кубка России</li>
-                        <li>член сборной России</li>
+                        <li>победитель Всероссийских, областных и межрегиональных соревнований</li>
+                        <li>бронзовый призёр Первенства г. Санкт-Петербург</li>
                       </ul>
                     </div>
                   </li>
@@ -487,17 +552,17 @@
                       </svg>
                       <div class="human-card__item-title">Тренер</div>
                     </div>
-                    <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
+                    <div class="human-card__item-desc">Горохов В.С.</div>
                   </li>
                 </ul>
               </div>
               <div class="human-card swiper-slide">
                 <div class="human-card__image-container">
-                  <img class="media-cover" src="/img/students/1.jpg"
+                  <img class="media-cover" src="/img/students/3.jpg"
                     alt="Милана Ишунина — воспитанница Ассоциации Витязей" width="285" height="398" loading="lazy"
                     decoding="async" />
                 </div>
-                <div class="human-card__name">Милана Ишунина</div>
+                <div class="human-card__name">Векшин Александр</div>
                 <div class="human-card__desc">
                   Член сборной команды России по всестилевому каратэ
                 </div>
@@ -510,7 +575,7 @@
                       <div class="human-card__item-title">Квалификация</div>
                     </div>
                     <div class="human-card__item-desc">
-                      1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
+                      1 Дан (чёрный пояс) по каратэ-до Шотокан, 1 спортивный разряд
                     </div>
                   </li>
                   <li class="human-card__item">
@@ -522,10 +587,9 @@
                     </div>
                     <div class="human-card__item-desc">
                       <ul>
-                        <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                        <li>победитель Всероссийской Спартакиады учащихся России</li>
-                        <li>победитель Кубка России</li>
-                        <li>член сборной России</li>
+                        <li>победитель Первенства мира по всестилевому каратэ</li>
+                        <li>победитель Первенства России по всестилевому каратэ</li>
+                        <li>многократный победитель и призёр Всероссийских соревнований</li>
                       </ul>
                     </div>
                   </li>
@@ -536,19 +600,19 @@
                       </svg>
                       <div class="human-card__item-title">Тренер</div>
                     </div>
-                    <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
+                    <div class="human-card__item-desc">Горохов В.С.</div>
                   </li>
                 </ul>
               </div>
               <div class="human-card swiper-slide">
                 <div class="human-card__image-container">
-                  <img class="media-cover" src="/img/students/1.jpg"
+                  <img class="media-cover" src="/img/students/4.jpg"
                     alt="Милана Ишунина — воспитанница Ассоциации Витязей" width="285" height="398" loading="lazy"
                     decoding="async" />
                 </div>
-                <div class="human-card__name">Милана Ишунина</div>
+                <div class="human-card__name">Манукян Арман</div>
                 <div class="human-card__desc">
-                  Член сборной команды России по всестилевому каратэ
+                  Член сборной команды Курской области по всестилевому каратэ
                 </div>
                 <ul class="human-card__list">
                   <li class="human-card__item">
@@ -559,7 +623,7 @@
                       <div class="human-card__item-title">Квалификация</div>
                     </div>
                     <div class="human-card__item-desc">
-                      1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
+                      1 Дан (чёрный пояс) по каратэ-до Шотокан, 2 спортивный разряд
                     </div>
                   </li>
                   <li class="human-card__item">
@@ -571,10 +635,9 @@
                     </div>
                     <div class="human-card__item-desc">
                       <ul>
-                        <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                        <li>победитель Всероссийской Спартакиады учащихся России</li>
-                        <li>победитель Кубка России</li>
-                        <li>член сборной России</li>
+                        <li>победитель Первенства России по всестилевому каратэ</li>
+                        <li>призер всероссийских соревнований</li>
+                        <li>многократный победитель и призер Первенств Курской области</li>
                       </ul>
                     </div>
                   </li>
@@ -585,7 +648,7 @@
                       </svg>
                       <div class="human-card__item-title">Тренер</div>
                     </div>
-                    <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
+                    <div class="human-card__item-desc">Горохов В.С., Емельянов Д.О.</div>
                   </li>
                 </ul>
               </div>
@@ -653,6 +716,7 @@
             </svg>
           </button>
         </div>
+        <a class="students__more btn" href="#trainers">Смотреть всех</a>
       </div>
     </section>
     <section class="section trainers" id="trainers">
@@ -667,11 +731,22 @@
                     height="398" loading="lazy" decoding="async" />
                 </div>
                 <div class="human-card__content">
-                  <div class="human-card__name">Милана Ишунина</div>
-                  <div class="human-card__desc">
-                    Член сборной команды России по всестилевому каратэ
+                  <div class="human-card__name human-card__name--center">
+                    Емельянов Дмитрий Олегович
+                  </div>
+                  <div class="human-card__desc human-card__desc--center">
+                    Тренер-преподаватель по всестилевому каратэ и кудо
                   </div>
                   <ul class="human-card__list">
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-certificate_medal"></use>
+                        </svg>
+                        <div class="human-card__item-title">Стаж</div>
+                      </div>
+                      <div class="human-card__item-desc">19 лет</div>
+                    </li>
                     <li class="human-card__item">
                       <div class="human-card__item-head">
                         <svg class="human-card__item-icon" aria-hidden="true">
@@ -683,30 +758,18 @@
                         1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
                       </div>
                     </li>
+
                     <li class="human-card__item">
                       <div class="human-card__item-head">
                         <svg class="human-card__item-icon" aria-hidden="true">
-                          <use href="/img/sprite.svg#icon-cup"></use>
+                          <use href="/img/sprite.svg#icon-pin"></use>
                         </svg>
-                        <div class="human-card__item-title">Достижения</div>
+                        <div class="human-card__item-title">Залы</div>
                       </div>
                       <div class="human-card__item-desc">
-                        <ul>
-                          <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                          <li>победитель Всероссийской Спартакиады учащихся России</li>
-                          <li>победитель Кубка России</li>
-                          <li>член сборной России</li>
-                        </ul>
+                        Курск, ул. Республиканская, 50Б, СОШ №35 <br />
+                        Курск, ул. Мирная, 5, Школа № 5
                       </div>
-                    </li>
-                    <li class="human-card__item">
-                      <div class="human-card__item-head">
-                        <svg class="human-card__item-icon" aria-hidden="true">
-                          <use href="/img/sprite.svg#icon-trainer"></use>
-                        </svg>
-                        <div class="human-card__item-title">Тренер</div>
-                      </div>
-                      <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
                     </li>
                   </ul>
                 </div>
@@ -719,11 +782,22 @@
                     height="398" loading="lazy" decoding="async" />
                 </div>
                 <div class="human-card__content">
-                  <div class="human-card__name">Милана Ишунина</div>
-                  <div class="human-card__desc">
-                    Член сборной команды России по всестилевому каратэ
+                  <div class="human-card__name human-card__name--center">
+                    Аспидов Игорь Олегович
+                  </div>
+                  <div class="human-card__desc human-card__desc--center">
+                    Тренер-преподаватель по всестилевому каратэ и кудо
                   </div>
                   <ul class="human-card__list">
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-certificate_medal"></use>
+                        </svg>
+                        <div class="human-card__item-title">Стаж</div>
+                      </div>
+                      <div class="human-card__item-desc">19 лет</div>
+                    </li>
                     <li class="human-card__item">
                       <div class="human-card__item-head">
                         <svg class="human-card__item-icon" aria-hidden="true">
@@ -732,33 +806,22 @@
                         <div class="human-card__item-title">Квалификация</div>
                       </div>
                       <div class="human-card__item-desc">
-                        1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
+                        2 дан (чёрный пояс) по каратэ Шотокан, кандидат в мастера спорта
+                        по всестилевому каратэ
                       </div>
                     </li>
+
                     <li class="human-card__item">
                       <div class="human-card__item-head">
                         <svg class="human-card__item-icon" aria-hidden="true">
-                          <use href="/img/sprite.svg#icon-cup"></use>
+                          <use href="/img/sprite.svg#icon-pin"></use>
                         </svg>
-                        <div class="human-card__item-title">Достижения</div>
+                        <div class="human-card__item-title">Залы</div>
                       </div>
                       <div class="human-card__item-desc">
-                        <ul>
-                          <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                          <li>победитель Всероссийской Спартакиады учащихся России</li>
-                          <li>победитель Кубка России</li>
-                          <li>член сборной России</li>
-                        </ul>
+                        Курск, ул. Республиканская, 50Б, СОШ №35 <br />
+                        Курск, ул. Мирная, 5, Школа № 5
                       </div>
-                    </li>
-                    <li class="human-card__item">
-                      <div class="human-card__item-head">
-                        <svg class="human-card__item-icon" aria-hidden="true">
-                          <use href="/img/sprite.svg#icon-trainer"></use>
-                        </svg>
-                        <div class="human-card__item-title">Тренер</div>
-                      </div>
-                      <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
                     </li>
                   </ul>
                 </div>
@@ -773,11 +836,22 @@
                     height="398" loading="lazy" decoding="async" />
                 </div>
                 <div class="human-card__content">
-                  <div class="human-card__name">Милана Ишунина</div>
-                  <div class="human-card__desc">
-                    Член сборной команды России по всестилевому каратэ
+                  <div class="human-card__name human-card__name--center">
+                    Сметанин Владимир Валерьевич
+                  </div>
+                  <div class="human-card__desc human-card__desc--center">
+                    Тренер-преподаватель по всестилевому каратэ и кудо
                   </div>
                   <ul class="human-card__list">
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-certificate_medal"></use>
+                        </svg>
+                        <div class="human-card__item-title">Стаж</div>
+                      </div>
+                      <div class="human-card__item-desc">19 лет</div>
+                    </li>
                     <li class="human-card__item">
                       <div class="human-card__item-head">
                         <svg class="human-card__item-icon" aria-hidden="true">
@@ -786,33 +860,22 @@
                         <div class="human-card__item-title">Квалификация</div>
                       </div>
                       <div class="human-card__item-desc">
-                        1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
+                        1 дан (чёрный пояс) по каратэ Шотокан, заслуженный мастер спорта России
+                        по всестилевому каратэ
                       </div>
                     </li>
+
                     <li class="human-card__item">
                       <div class="human-card__item-head">
                         <svg class="human-card__item-icon" aria-hidden="true">
-                          <use href="/img/sprite.svg#icon-cup"></use>
+                          <use href="/img/sprite.svg#icon-pin"></use>
                         </svg>
-                        <div class="human-card__item-title">Достижения</div>
+                        <div class="human-card__item-title">Залы</div>
                       </div>
                       <div class="human-card__item-desc">
-                        <ul>
-                          <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                          <li>победитель Всероссийской Спартакиады учащихся России</li>
-                          <li>победитель Кубка России</li>
-                          <li>член сборной России</li>
-                        </ul>
+                        Курск, ул. Республиканская, 50Б, СОШ №35 <br />
+                        Курск, ул. Мирная, 5, Школа № 5
                       </div>
-                    </li>
-                    <li class="human-card__item">
-                      <div class="human-card__item-head">
-                        <svg class="human-card__item-icon" aria-hidden="true">
-                          <use href="/img/sprite.svg#icon-trainer"></use>
-                        </svg>
-                        <div class="human-card__item-title">Тренер</div>
-                      </div>
-                      <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
                     </li>
                   </ul>
                 </div>
@@ -825,11 +888,22 @@
                     height="398" loading="lazy" decoding="async" />
                 </div>
                 <div class="human-card__content">
-                  <div class="human-card__name">Милана Ишунина</div>
-                  <div class="human-card__desc">
-                    Член сборной команды России по всестилевому каратэ
+                  <div class="human-card__name human-card__name--center">
+                    Величкин Никита Валерьевич
+                  </div>
+                  <div class="human-card__desc human-card__desc--center">
+                    Тренер по всестилевому каратэ
                   </div>
                   <ul class="human-card__list">
+                    <li class="human-card__item">
+                      <div class="human-card__item-head">
+                        <svg class="human-card__item-icon" aria-hidden="true">
+                          <use href="/img/sprite.svg#icon-certificate_medal"></use>
+                        </svg>
+                        <div class="human-card__item-title">Стаж</div>
+                      </div>
+                      <div class="human-card__item-desc">19 лет</div>
+                    </li>
                     <li class="human-card__item">
                       <div class="human-card__item-head">
                         <svg class="human-card__item-icon" aria-hidden="true">
@@ -838,33 +912,22 @@
                         <div class="human-card__item-title">Квалификация</div>
                       </div>
                       <div class="human-card__item-desc">
-                        1 Дан (чёрный пояс) по каратэ-до Шотокан, кандидат в мастера спорта
+                        1 дан (чёрный пояс) по каратэ Шотокан, заслуженный мастер спорта России
+                        по всестилевому каратэ
                       </div>
                     </li>
+
                     <li class="human-card__item">
                       <div class="human-card__item-head">
                         <svg class="human-card__item-icon" aria-hidden="true">
-                          <use href="/img/sprite.svg#icon-cup"></use>
+                          <use href="/img/sprite.svg#icon-pin"></use>
                         </svg>
-                        <div class="human-card__item-title">Достижения</div>
+                        <div class="human-card__item-title">Залы</div>
                       </div>
                       <div class="human-card__item-desc">
-                        <ul>
-                          <li>победитель Первенства мира, России по всестилевому каратэ</li>
-                          <li>победитель Всероссийской Спартакиады учащихся России</li>
-                          <li>победитель Кубка России</li>
-                          <li>член сборной России</li>
-                        </ul>
+                        Курск, ул. Республиканская, 50Б, СОШ №35 <br />
+                        Курск, ул. Мирная, 5, Школа № 5
                       </div>
-                    </li>
-                    <li class="human-card__item">
-                      <div class="human-card__item-head">
-                        <svg class="human-card__item-icon" aria-hidden="true">
-                          <use href="/img/sprite.svg#icon-trainer"></use>
-                        </svg>
-                        <div class="human-card__item-title">Тренер</div>
-                      </div>
-                      <div class="human-card__item-desc">Горохов В.С., Литвинова Е.М.</div>
                     </li>
                   </ul>
                 </div>
@@ -872,6 +935,7 @@
             </div>
           </div>
         </div>
+        <a href="#" class="trainers__btn btn"> Смотреть всех </a>
       </div>
     </section>
 
@@ -917,7 +981,7 @@
                   <div class="content-card__body">
                     <time class="content-card__date" datetime="2026-08-12">12.08.2026</time>
                     <h3 class="content-card__title">
-                      Воспитанники клуба успешно выступили на первенстве области
+                      Делимся как это было: достижения на Russia Open
                     </h3>
                     <p class="content-card__text">
                       Наши спортсмены завоевали призовые места и пополнили копилку клуба новыми
@@ -1108,6 +1172,10 @@
       <div class="container">
         <h2 class="section__title">Отзывы</h2>
         <div class="reviews__grid">
+          <div class="reviews__widget">
+            <iframe src="https://yandex.ru/maps-reviews-widget/235430791173?comments"
+              title="Отзывы об Ассоциации Витязей на Яндекс Картах" loading="lazy"></iframe>
+          </div>
           <div class="reviews__cards">
             <article class="reviews__card">
               <h3>Екатерина, мама Артёма (7 лет)</h3>
@@ -1139,10 +1207,6 @@
                 найти подход к детям и всегда готовы ответить на вопросы родителей.
               </p>
             </article>
-          </div>
-          <div class="reviews__widget">
-            <iframe src="https://yandex.ru/maps-reviews-widget/235430791173?comments"
-              title="Отзывы об Ассоциации Витязей на Яндекс Картах" loading="lazy"></iframe>
           </div>
         </div>
       </div>
@@ -1176,7 +1240,7 @@
               следит за правильной техникой.
             </div>
           </details>
-          <details class="faq__item" open>
+          <details class="faq__item">
             <summary class="faq__question">
               Что нужно взять на первое занятие?
               <svg aria-hidden="true">

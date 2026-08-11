@@ -22,13 +22,29 @@
 }
 
 .place-item {
+  appearance: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: fluid(12px, 20px);
+  width: 100%;
   padding: fluid(12px, 20px) fluid(20px, 40px);
   background: #f8f9fe;
+  border: 0;
   border-radius: $radius-sm;
+  color: inherit;
+  text-align: left;
+  transition: background-color $duration-fast $ease-base;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #eef2ff;
+  }
+
+  &:focus-visible {
+    outline: $focus-outline-width solid var(--blue);
+    outline-offset: $focus-outline-offset;
+  }
 
   &__content {
     min-width: 0;
@@ -37,14 +53,14 @@
   &__name {
     margin: 0 0 8px;
     font-family: var(--font-family);
-    font-size: fluid(16px, 20px);
+    font-size: fluid(14px, 20px);
     line-height: 130%;
     color: #141414;
   }
 
   &__adress {
     font-family: var(--font-family);
-    font-size: fluid(14px, 16px);
+    font-size: fluid(12px, 16px);
     line-height: 110%;
     color: #97989b;
   }
@@ -54,10 +70,5 @@
     width: fluid(32px, 40px);
     flex-shrink: 0;
     color: #0335d6;
-  }
-
-  @media (max-width: $breakpoint-mobile) {
-    padding: rem(16px);
-    border-radius: $radius-xs;
   }
 }

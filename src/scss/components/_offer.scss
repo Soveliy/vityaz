@@ -4,7 +4,7 @@
 .offer {
   &__row {
     display: flex;
-    gap: fluid(16px, 20px);
+    gap: fluid(20px, 40px);
     justify-content: space-between;
   }
 
@@ -15,7 +15,7 @@
 
   &__image {
     min-height: 0;
-    aspect-ratio: 2.05 / 1;
+    aspect-ratio: 730 / 333;
     object-fit: cover;
     border-radius: $radius-sm;
   }
@@ -37,7 +37,7 @@
 
   @media (max-width: $breakpoint-mobile) {
     &__image {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 350 / 160;
       border-radius: $radius-xs;
     }
   }

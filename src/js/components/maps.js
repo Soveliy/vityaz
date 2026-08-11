@@ -1,10 +1,10 @@
 import { MAP_LOCATIONS } from './map-locations.js';
-import markerSvg from '../../img/svg/mark.svg?raw';
 
 const YANDEX_MAPS_API_URL = 'https://api-maps.yandex.ru/v3/';
-const YANDEX_MAPS_SEARCH_URL = 'https://yandex.ru/maps/';
+const MARKER_ICON_URL = `${import.meta.env.BASE_URL}img/mark.svg`;
 const MAP_CENTER = [36.192647, 51.730361];
 const DEFAULT_ZOOM = 11;
+const SELECTED_MARKER_ZOOM = 15;
 
 let mapsApiPromise;
 
@@ -71,30 +71,17 @@ function createTextElement(className, text) {
 
 function createPopupElement(location) {
   const popup = document.createElement('div');
-  const link = document.createElement('a');
-  const directions = location.disciplines.join(' · ');
 
   popup.className = 'map-marker__balloon';
-  popup.append(
-    createTextElement('map-marker__name', location.name),
-    createTextElement('map-marker__meta', `${directions} · ${location.district}`),
-    createTextElement('map-marker__address', location.address),
-  );
-
-  link.className = 'map-marker__link';
-  link.href = `${YANDEX_MAPS_SEARCH_URL}?text=${encodeURIComponent(location.address)}`;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  link.textContent = 'Открыть в Яндекс Картах';
-  popup.append(link);
+  popup.append(createTextElement('map-marker__address', location.address));
 
   return popup;
 }
 
-function createMarkerElement(location) {
+function createMarkerElement(location, onOpen) {
   const marker = document.createElement('div');
   const button = document.createElement('button');
-  const iconTemplate = document.createElement('template');
+  const icon = document.createElement('img');
   const balloon = createPopupElement(location);
 
   marker.className = 'map-marker';
@@ -104,11 +91,11 @@ function createMarkerElement(location) {
   button.setAttribute('aria-expanded', 'false');
   button.setAttribute('aria-label', `Показать адрес: ${location.address}`);
 
-  iconTemplate.innerHTML = markerSvg.trim();
-  const icon = iconTemplate.content.firstElementChild;
-
   icon.classList.add('map-marker__icon');
-  icon.setAttribute('aria-hidden', 'true');
+  icon.src = MARKER_ICON_URL;
+  icon.alt = '';
+  icon.width = 24;
+  icon.height = 32;
 
   balloon.hidden = true;
   balloon.addEventListener('click', (event) => event.stopPropagation());
@@ -132,6 +119,7 @@ function createMarkerElement(location) {
       balloon.hidden = false;
       marker.classList.add('is-open');
       button.setAttribute('aria-expanded', 'true');
+      onOpen(location);
     } else {
       closeBalloon();
     }
@@ -246,7 +234,7 @@ async function createMap(container, apiKey) {
   const map = new YMap(
     container,
     {
-      behaviors: ['drag', 'pinchZoom', 'dblClick'],
+      behaviors: ['drag', 'scrollZoom', 'pinchZoom', 'dblClick'],
       location: {
         center: MAP_CENTER,
         zoom: DEFAULT_ZOOM,
@@ -265,7 +253,13 @@ async function createMap(container, apiKey) {
         coordinates: location.coordinates,
         zIndex: 2000,
       },
-      createMarkerElement(location),
+      createMarkerElement(location, (selectedLocation) => {
+        map.setLocation({
+          center: selectedLocation.coordinates,
+          duration: 500,
+          zoom: SELECTED_MARKER_ZOOM,
+        });
+      }),
     );
 
     return { location, marker };

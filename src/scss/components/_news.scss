@@ -69,17 +69,41 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
+    &__slider {
+      margin-inline: rem(-16px);
+      overflow: visible;
+
+      .swiper-wrapper {
+        display: grid;
+        grid-auto-columns: min(78vw, #{rem(320px)});
+        grid-auto-flow: column;
+        gap: rem(20px);
+        height: auto;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        padding: 0 rem(16px) rem(4px);
+        scroll-padding-inline: rem(16px);
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        transform: none !important;
+        width: auto;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .swiper-slide {
+        margin-right: 0 !important;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        width: auto !important;
+      }
+    }
+
     &__nav {
-      width: rem(36px);
-      height: rem(36px);
-
-      &--prev {
-        left: rem(4px);
-      }
-
-      &--next {
-        right: rem(4px);
-      }
+      display: none;
     }
 
     &__more {

@@ -18,6 +18,12 @@
     }
   }
 
+  &__more {
+    display: block;
+    width: max-content;
+    margin-top: fluid(20px, 40px);
+  }
+
   &__nav {
     position: absolute;
     top: 50%;
@@ -65,17 +71,18 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
+    &__slider {
+      .human-card {
+        width: min(78vw, rem(320px));
+      }
+    }
+
     &__nav {
-      width: rem(36px);
-      height: rem(36px);
+      display: none;
+    }
 
-      &--prev {
-        left: rem(4px);
-      }
-
-      &--next {
-        right: rem(4px);
-      }
+    &__more {
+      width: 100%;
     }
   }
 }
