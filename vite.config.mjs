@@ -79,7 +79,7 @@ function htmlIncludesPlugin() {
   };
 
   return {
-    name: 'warpoint-html-includes',
+    name: 'vityaz-html-includes',
     configureServer(server) {
       const reloadPage = (filePath) => {
         if (isHtmlPartial(filePath)) {
@@ -104,7 +104,7 @@ function htmlIncludesPlugin() {
 
 function htmlMinifyPlugin(shouldMinify) {
   return {
-    name: 'warpoint-html-minify',
+    name: 'vityaz-html-minify',
     transformIndexHtml: {
       order: 'post',
       async handler(html) {
@@ -137,7 +137,7 @@ function staticAssetsPlugin() {
   };
 
   return {
-    name: 'warpoint-static-assets',
+    name: 'vityaz-static-assets',
     async buildStart() {
       await syncPublic();
     },
@@ -161,11 +161,17 @@ function staticAssetsPlugin() {
 
 export default defineConfig(({ mode }) => {
   const isBackend = mode === 'backend';
-  const shouldMinify = mode === 'production';
+  const shouldMinify = mode === 'production' || mode === 'wordpress';
 
   return {
     root: 'src',
     envDir: projectRoot,
+    define:
+      mode === 'wordpress'
+        ? {
+            'import.meta.env.VITE_YANDEX_MAPS_API_KEY': JSON.stringify(''),
+          }
+        : undefined,
     base: './',
     publicDir: '../public',
     server: {

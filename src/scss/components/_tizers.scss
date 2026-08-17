@@ -44,10 +44,10 @@
     counter-increment: tzr-item;
     position: relative;
     padding: fluid(20px, 40px);
+
     &::before {
       content: counter(tzr-item, decimal-leading-zero);
       position: absolute;
-      z-index: -1;
       color: transparent;
       font-family: var(--second-family);
       font-size: fluid(120px, 200px);

@@ -1,0 +1,214 @@
+@use '../fluid' as *;
+@use '../vars' as *;
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(7px);
+  margin-bottom: fluid(20px, 36px);
+  color: #797b82;
+  font-size: fluid(13px, 15px);
+
+  a {
+    transition: color $duration-fast $ease-base;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--blue);
+    }
+  }
+
+  [aria-current='page'] {
+    overflow: hidden;
+    max-width: min(55vw, rem(520px));
+    color: var(--black);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.archive-page {
+  &__hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: fluid(40px, 80px);
+    padding-bottom: fluid(40px, 72px);
+    background: #f8f9fe;
+
+    &::after {
+      position: absolute;
+      right: fluid(-70px, 40px);
+      bottom: fluid(-70px, -30px);
+      color: transparent;
+      font-family: var(--second-family);
+      font-size: fluid(140px, 300px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 0.75;
+      content: 'ВИТЯЗЬ';
+      pointer-events: none;
+      -webkit-text-stroke: rem(1px) #e1e7fb;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    max-width: rem(980px);
+    margin: 0;
+    font-family: var(--second-family);
+    font-size: fluid(38px, 70px);
+    font-weight: 700;
+    line-height: 0.98;
+  }
+
+  &__intro {
+    max-width: rem(800px);
+    margin: fluid(18px, 28px) 0 0;
+    color: #62646a;
+    font-size: fluid(16px, 21px);
+    line-height: 1.45;
+  }
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8px);
+    margin-top: fluid(24px, 36px);
+  }
+
+  &__filter {
+    padding: rem(10px) rem(18px);
+    background: var(--white);
+    border: rem(1px) solid #dce3f8;
+    border-radius: $radius-pill;
+    font-size: rem(15px);
+    transition:
+      color $duration-fast $ease-base,
+      background-color $duration-fast $ease-base,
+      border-color $duration-fast $ease-base;
+
+    &:hover,
+    &:focus-visible,
+    &.is-active {
+      color: var(--white);
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+  }
+
+  &__listing {
+    padding-top: fluid(40px, 72px);
+  }
+
+  &__grid {
+    display: grid;
+    gap: fluid(12px, 20px);
+
+    &--content,
+    &--students {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    &--trainers {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .content-card__image {
+      aspect-ratio: 16 / 10;
+    }
+
+    .human-card {
+      height: 100%;
+    }
+  }
+
+  &__pagination {
+    margin-top: fluid(32px, 56px);
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: rem(8px);
+    }
+
+    .page-numbers {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-width: rem(44px);
+      height: rem(44px);
+      padding: 0 rem(12px);
+      border: rem(1px) solid #dce3f8;
+      border-radius: $radius-xs;
+      font-weight: 500;
+
+      &:hover,
+      &:focus-visible,
+      &.current {
+        color: var(--white);
+        background: var(--blue);
+        border-color: var(--blue);
+      }
+    }
+  }
+
+  &__empty {
+    padding: fluid(28px, 52px);
+    background: #f8f9fe;
+    border-radius: $radius-sm;
+    text-align: center;
+
+    p {
+      margin: 0 0 rem(24px);
+      font-size: fluid(18px, 24px);
+    }
+
+    .btn {
+      display: inline-flex;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    &__grid {
+      &--content,
+      &--students {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      &--trainers {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__hero {
+      &::after {
+        right: rem(-40px);
+      }
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__filter {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    &__pagination {
+      .page-numbers {
+        min-width: rem(40px);
+        height: rem(40px);
+      }
+    }
+  }
+}

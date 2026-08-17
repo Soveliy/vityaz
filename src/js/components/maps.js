@@ -1,7 +1,12 @@
 import { MAP_LOCATIONS } from './map-locations.js';
 
+const themeConfig = globalThis.vityazTheme ?? {};
+const mapLocations = Array.isArray(themeConfig.mapLocations)
+  ? themeConfig.mapLocations
+  : MAP_LOCATIONS;
 const YANDEX_MAPS_API_URL = 'https://api-maps.yandex.ru/v3/';
-const MARKER_ICON_URL = `${import.meta.env.BASE_URL}img/mark.svg`;
+const ASSETS_URL = themeConfig.assetsUrl || import.meta.env.BASE_URL;
+const MARKER_ICON_URL = `${ASSETS_URL}img/mark.svg`;
 const MAP_CENTER = [36.192647, 51.730361];
 const DEFAULT_ZOOM = 11;
 const SELECTED_MARKER_ZOOM = 15;
@@ -50,7 +55,7 @@ function loadYandexMapsApi(apiKey) {
 }
 
 async function loadCustomization() {
-  const customizationUrl = `${import.meta.env.BASE_URL}resources/customization.json`;
+  const customizationUrl = `${ASSETS_URL}resources/customization.json`;
   const response = await fetch(customizationUrl);
 
   if (!response.ok) {
@@ -209,7 +214,7 @@ function connectScopeControls(container, map, records) {
     control.addEventListener('click', () => showScope(control.dataset.mapScope));
   });
 
-  showScope('city');
+  showScope(controls.length ? 'city' : 'all');
 }
 
 function updateMapStatus(status, text, state) {
@@ -245,7 +250,7 @@ async function createMap(container, apiKey) {
   );
   container.classList.add('is-loaded');
 
-  const locations = MAP_LOCATIONS.filter(({ coordinates }) => coordinates?.length === 2);
+  const locations = mapLocations.filter(({ coordinates }) => coordinates?.length === 2);
   const records = locations.map((location) => {
     const marker = new YMapMarker(
       {
@@ -268,12 +273,12 @@ async function createMap(container, apiKey) {
   connectScopeControls(container, map, records);
   container.dataset.markerCount = String(records.length);
 
-  if (locations.length === MAP_LOCATIONS.length) {
+  if (locations.length === mapLocations.length) {
     updateMapStatus(status, `${locations.length} площадок`, 'success');
   } else {
     updateMapStatus(
       status,
-      `Показано ${locations.length} из ${MAP_LOCATIONS.length} площадок`,
+      `Показано ${locations.length} из ${mapLocations.length} площадок`,
       'warning',
     );
   }
@@ -281,14 +286,24 @@ async function createMap(container, apiKey) {
 
 export function initMaps() {
   const containers = document.querySelectorAll('[data-map]');
-  const apiKey = import.meta.env.VITE_YANDEX_MAPS_API_KEY?.trim();
+  const apiKey =
+    themeConfig.yandexMapsApiKey?.trim() || import.meta.env.VITE_YANDEX_MAPS_API_KEY?.trim();
 
   if (!containers.length) {
     return;
   }
 
   if (!apiKey) {
-    console.warn('Для карты не задан VITE_YANDEX_MAPS_API_KEY');
+    console.warn('Для карты не задан ключ Яндекс Карт');
+
+    containers.forEach((container) => {
+      updateMapStatus(
+        container.querySelector('[data-map-status]'),
+        'Интерактивная карта не настроена',
+        'error',
+      );
+    });
+
     return;
   }
 

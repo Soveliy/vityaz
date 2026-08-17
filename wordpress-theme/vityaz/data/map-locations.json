@@ -1,0 +1,362 @@
+[
+  {
+    "id": "school-5-kursk",
+    "name": "СОШ №5",
+    "district": "Центр",
+    "address": "г. Курск, ул. Мирная, 5",
+    "coordinates": [36.195836, 51.741265],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-27-kursk",
+    "name": "СОШ №27",
+    "district": "Центр",
+    "address": "г. Курск, ул. Димитрова, 101",
+    "coordinates": [36.188317, 51.748838],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-19-kursk",
+    "name": "СОШ №19",
+    "district": "Центр",
+    "address": "г. Курск, ул. Павлуновского, 99",
+    "coordinates": [36.159427, 51.734651],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "gymnasium-25-kursk",
+    "name": "Гимназия №25",
+    "district": "Центр",
+    "address": "г. Курск, ул. Чернышевского, 7",
+    "coordinates": [36.167413, 51.724108],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-52-kursk",
+    "name": "СОШ №52",
+    "district": "Северо-Западный район",
+    "address": "г. Курск, проспект Дружбы, 14",
+    "coordinates": [36.139152, 51.740914],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-9-kursk",
+    "name": "СОШ №9",
+    "district": "Северо-Западный район",
+    "address": "г. Курск, ул. Верхняя Казацкая, 196",
+    "coordinates": [36.159418, 51.749267],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "dobrynya-mylnikova",
+    "name": "Детский центр «Добрыня»",
+    "district": "Северо-Западный район",
+    "address": "г. Курск, ул. Мыльникова, 4",
+    "coordinates": [36.135711, 51.730311],
+    "disciplines": ["Каратэ", "Кудо"],
+    "scope": "city"
+  },
+  {
+    "id": "school-42-kursk",
+    "name": "СОШ №42",
+    "district": "СХА, Победа, Дериглазова",
+    "address": "г. Курск, ул. Школьная, 1А",
+    "coordinates": [36.182514, 51.759509],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-60-kursk",
+    "name": "СОШ №60",
+    "district": "СХА, Победа, Дериглазова",
+    "address": "г. Курск, проспект Победы, 13",
+    "coordinates": [36.170907, 51.788833],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "dobrynya-deriglazova",
+    "name": "Детский центр «Добрыня»",
+    "district": "СХА, Победа, Дериглазова",
+    "address": "г. Курск, проспект Анатолия Дериглазова, 17Г",
+    "coordinates": [36.163505, 51.802703],
+    "disciplines": ["Каратэ", "Кудо"],
+    "scope": "city"
+  },
+  {
+    "id": "school-61-kursk",
+    "name": "СОШ №61",
+    "district": "СХА, Победа, Дериглазова",
+    "address": "г. Курск, проспект Анатолия Дериглазова, 27А",
+    "coordinates": [36.169883, 51.807965],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-23-kursk",
+    "name": "СОШ №23",
+    "district": "СХА, Победа, Дериглазова",
+    "address": "г. Курск, ул. Видяевская, 5",
+    "coordinates": [36.156507, 51.819079],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-38-kursk",
+    "name": "СОШ №38",
+    "district": "Железнодорожный округ",
+    "address": "г. Курск, ул. Островского, 10А",
+    "coordinates": [36.212571, 51.756175],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-34-kursk",
+    "name": "СОШ №34",
+    "district": "Железнодорожный округ",
+    "address": "г. Курск, ул. ВЧК, 47",
+    "coordinates": [36.220234, 51.749925],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-16-kursk",
+    "name": "СОШ №16",
+    "district": "Железнодорожный округ",
+    "address": "г. Курск, ул. 2-я Стрелецкая, 46",
+    "coordinates": [36.21408, 51.731951],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "dobrynya-krasnoznamennaya",
+    "name": "Детский центр «Добрыня»",
+    "district": "Железнодорожный округ",
+    "address": "г. Курск, ул. Краснознамённая, 20А",
+    "coordinates": [36.239979, 51.744617],
+    "disciplines": ["Каратэ", "Кудо"],
+    "scope": "city"
+  },
+  {
+    "id": "school-35-kursk",
+    "name": "СОШ №35",
+    "district": "Железнодорожный округ",
+    "address": "г. Курск, ул. Республиканская, 50Б",
+    "coordinates": [36.254756, 51.742615],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-20-kursk",
+    "name": "СОШ №20",
+    "district": "Сеймский округ",
+    "address": "г. Курск, ул. Комарова, 3",
+    "coordinates": [36.147066, 51.702567],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-48-kursk",
+    "name": "СОШ №48",
+    "district": "Сеймский округ",
+    "address": "г. Курск, ул. Серёгина, 17",
+    "coordinates": [36.137454, 51.669367],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-43-kursk",
+    "name": "СОШ №43",
+    "district": "Сеймский округ",
+    "address": "г. Курск, ул. Белгородская, 21",
+    "coordinates": [36.145072, 51.668724],
+    "disciplines": ["Каратэ", "Кудо"],
+    "scope": "city"
+  },
+  {
+    "id": "school-56-kursk",
+    "name": "СОШ №56",
+    "district": "Сеймский округ",
+    "address": "г. Курск, Магистральный проезд, 22В",
+    "coordinates": [36.144299, 51.649879],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "lira-kursk",
+    "name": "МБУК ГКЦ «Лира»",
+    "district": "Сеймский округ",
+    "address": "г. Курск, ул. Менделеева, 59Д",
+    "coordinates": [36.069595, 51.668244],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "rusichi-kursk",
+    "name": "БК «Русичи»",
+    "district": "Волокно",
+    "address": "г. Курск, посёлок Аккумулятор, 21В",
+    "coordinates": [36.101504, 51.665389],
+    "disciplines": ["Каратэ"],
+    "scope": "city"
+  },
+  {
+    "id": "school-cheremisinovo",
+    "name": "СОШ",
+    "district": "Черемисиновский район",
+    "address": "Курская область, пос. Черемисиново, ул. Советская, 27",
+    "coordinates": [37.265846, 51.889243],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "school-iskra",
+    "name": "СОШ имени Александра Невского",
+    "district": "Курский район",
+    "address": "Курская область, Курский район, пос. Искра",
+    "coordinates": [36.192665, 51.816935],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "medvenka",
+    "name": "Площадка в Медвенке",
+    "district": "Медвенский район",
+    "address": "Курская область, пос. Медвенка, ул. Промышленная, 2В",
+    "coordinates": [36.107235, 51.416333],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "marshal-zhukov-lyceum",
+    "name": "Лицей-интернат",
+    "district": "Курский район",
+    "address": "Курская область, пос. им. Маршала Жукова, 4-й квартал, 19",
+    "coordinates": [36.330754, 51.711324],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "karl-libknecht",
+    "name": "Площадка им. Карла Либкнехта",
+    "district": "Курчатовский район",
+    "address": "Курская область, пос. им. Карла Либкнехта, ул. Кирова, 15",
+    "coordinates": [35.488062, 51.627409],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "school-5-kurchatov",
+    "name": "СОШ №5",
+    "district": "Курчатов",
+    "address": "Курская область, г. Курчатов, ул. Энергетиков, 16",
+    "coordinates": [35.679493, 51.656311],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "oboyan",
+    "name": "Площадка в Обояни",
+    "district": "Обоянский район",
+    "address": "Курская область, г. Обоянь, ул. Фрунзе, 6А",
+    "coordinates": [36.273774, 51.206344],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "chernitsyno",
+    "name": "Площадка в Черницыно",
+    "district": "Октябрьский район",
+    "address": "Курская область, пос. Черницыно, ул. Октябрьская, 458А",
+    "coordinates": [35.985621, 51.652327],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "school-1-dmitriev",
+    "name": "СОШ №1",
+    "district": "Дмитриевский район",
+    "address": "Курская область, г. Дмитриев, ул. Советских Космонавтов, 2",
+    "coordinates": [35.066285, 52.127315],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "school-2-shchigry",
+    "name": "СОШ №2",
+    "district": "Щигры",
+    "address": "Курская область, г. Щигры, ул. Лазарева, 2",
+    "coordinates": [36.889632, 51.878847],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "school-manturovo",
+    "name": "СОШ",
+    "district": "Мантуровский район",
+    "address": "Курская область, пос. Мантурово, ул. Маяковского, 1",
+    "coordinates": [37.126131, 51.452111],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "solntsevo",
+    "name": "Площадка в Солнцево",
+    "district": "Солнцевский район",
+    "address": "Курская область, пос. Солнцево, ул. Первомайская, 49А",
+    "coordinates": [36.756304, 51.419378],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "bulat-fatezh",
+    "name": "Спортивный центр «Булат»",
+    "district": "Фатеж",
+    "address": "Курская область, г. Фатеж, ул. Карла Маркса, 28",
+    "coordinates": [35.862291, 52.08371],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "school-verkhniy-lyubazh",
+    "name": "Верхнелюбажская СОШ",
+    "district": "Фатежский район",
+    "address": "Курская область, с. Верхний Любаж, ул. Школьная, 24",
+    "coordinates": [35.833671, 52.20947],
+    "disciplines": ["Каратэ"],
+    "scope": "region"
+  },
+  {
+    "id": "school-36-kursk",
+    "name": "СОШ №36",
+    "district": "Железнодорожный округ",
+    "address": "г. Курск, ул. Станционная, 8",
+    "coordinates": [36.237068, 51.750494],
+    "disciplines": ["Кудо"],
+    "scope": "city"
+  },
+  {
+    "id": "school-7-kursk",
+    "name": "СОШ №7",
+    "district": "Центр",
+    "address": "г. Курск, ул. Дзержинского, 95",
+    "coordinates": [36.167709, 51.721413],
+    "disciplines": ["Кудо"],
+    "scope": "city"
+  },
+  {
+    "id": "school-1-kursk",
+    "name": "СОШ №1",
+    "district": "Сеймский округ",
+    "address": "г. Курск, ул. Конорева, 8",
+    "coordinates": [36.139233, 51.709544],
+    "disciplines": ["Кудо"],
+    "scope": "city"
+  }
+]

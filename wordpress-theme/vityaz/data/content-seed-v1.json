@@ -1,0 +1,604 @@
+{
+  "schema_version": 1,
+  "snapshot": {
+    "id": "vityazi-kursk-official-2026-08-17",
+    "created_at": "2026-08-17T01:21:19+03:00",
+    "locale": "ru-RU",
+    "source_name": "Ассоциация Витязей",
+    "source_base_url": "https://www.vityazi-kursk.ru/",
+    "source_sitemap_url": "https://www.vityazi-kursk.ru/sitemap.xml",
+    "source_scope": "Публичные страницы официального сайта: главная, профили тренеров, направления, проекты и история.",
+    "content_policy": "Локальный редактируемый снимок фактов и кратких проверенных пересказов. Полные тексты статей не копируются; source_url сохраняется для редакционной проверки.",
+    "media_policy": "image_url указывает на официальный источник. При импорте изображения следует копировать в медиатеку WordPress, а не подключать hotlink.",
+    "rights_note": "Перед публикацией текстов и изображений владелец сайта должен подтвердить право на их повторное использование и актуальность согласий для фотографий несовершеннолетних."
+  },
+  "contacts": {
+    "source_url": "https://www.vityazi-kursk.ru/#contact-bottom",
+    "phone_display": "+7 (920) 265-73-65",
+    "phone_e164": "+79202657365",
+    "email": "vityazi-kursk@yandex.ru",
+    "address": "г. Курск, ул. Краснознамённая, 20А",
+    "vk_url": "https://vk.com/vityazikursk"
+  },
+  "homepage": {
+    "source_url": "https://www.vityazi-kursk.ru/",
+    "title": "Детская школа единоборств в Курске",
+    "counters": [
+      {
+        "value": 23,
+        "label": "год работы"
+      },
+      {
+        "value": 17350,
+        "label": "воспитанников"
+      },
+      {
+        "value": 70,
+        "label": "чёрных поясов"
+      },
+      {
+        "value": 1915,
+        "label": "завоёванных медалей на Всероссийских соревнованиях"
+      }
+    ],
+    "welcome_summary": "Ассоциация представляет себя как крупную детско-юношескую организацию Курской области и школу боевых единоборств, где спортивную подготовку совмещают с воспитанием дисциплины, ответственности и любви к семье и Родине."
+  },
+  "known_source_conflicts": [
+    {
+      "field": "organization.pupils",
+      "values": ["Главная: 17 350 воспитанников", "Страница истории: 1 890 воспитанников"],
+      "resolution": "Не выбирать автоматически; подтвердить у владельца сайта."
+    },
+    {
+      "field": "vitalij-gorohov.qualification",
+      "values": ["Главная и профиль тренера: V Дан", "Страница истории: 4 Дан"],
+      "resolution": "В seed используется V Дан как значение из более нового персонального профиля."
+    },
+    {
+      "field": "kudo.minimum_age",
+      "values": [
+        "Карточка направления на главной: с 6 лет",
+        "Статья о КУДО: школа принимает с 5 лет",
+        "Страница направления: занимаются в возрасте от 7 до 25 лет"
+      ],
+      "resolution": "В фактах карточки направления сохранено значение с главной; перед публикацией подтвердить актуальный возраст."
+    }
+  ],
+  "trainers": [
+    {
+      "id": "emelyanov-dmitrij-olegovich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/emelyanov-dmitrij-olegovich/",
+      "title": "Емельянов Дмитрий Олегович",
+      "position": "Тренер-преподаватель по всестилевому каратэ и КУДО",
+      "experience": "15 лет",
+      "qualification": "2 дан (черный пояс) по каратэ Шотокан, мастер спорта России по всестилевому каратэ",
+      "content": "Член сборной команды России с 2018 года и сборной Курской области с 2010 года; победитель чемпионата мира и Кубка России по всестилевому каратэ.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/BsjHj8QqbyWoS5BtGAxx83udG62knArcyQt_Ijp796MouFnCI39p6CcxBbHzneWKI8oy5LANgx_GcRjxx_vDoalNd.jpg",
+      "directions": ["Всестилевое каратэ", "КУДО"]
+    },
+    {
+      "id": "smetanin-vladimir-valerevich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/smetanin-vladimir-valerevich/",
+      "title": "Сметанин Владимир Валерьевич",
+      "position": "Тренер-преподаватель по всестилевому каратэ и КУДО",
+      "experience": "5 лет",
+      "qualification": "Заслуженный мастер спорта России по всестилевому каратэ, 1 дан (черный пояс) по каратэ Шотокан",
+      "content": "Член сборной Курской области с 2014 года; победитель чемпионатов мира и России, четырёхкратный победитель первенства России по всестилевому каратэ.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/kqhVZ6hEByHaTcijhgbcs1EzDcKTiozuH6TknyRUuXkhhmDi7LK1TH_v3E4vgN_S5scQ87XdiWIfsUbgN_8UPzZbO.jpg",
+      "directions": ["Всестилевое каратэ", "КУДО"]
+    },
+    {
+      "id": "aspidov-igor-olegovich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/aspidov-igor-olegovich/",
+      "title": "Аспидов Игорь Олегович",
+      "position": "Тренер-преподаватель по всестилевому каратэ",
+      "experience": "10 лет",
+      "qualification": "2 дан (черный пояс) по каратэ Шотокан, кандидат в мастера спорта по всестилевому каратэ",
+      "content": "Член сборной Курской области с 2018 года; бронзовый призёр чемпионата ЦФО и победитель чемпионата Курской области по всестилевому каратэ.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/Vu7b20B7bld3xwT1pxYsK3ilSMaQqBW7W2lF6Yut9yioLIQbMzb33lD1I6-Iw_-_GqN3nijjJ8UG2RGec_R3mAyYL.jpg",
+      "directions": ["Всестилевое каратэ"]
+    },
+    {
+      "id": "litvinova-evgeniya-mihajlovna",
+      "source_url": "https://www.vityazi-kursk.ru/coach/litvinova-evgeniya-mihajlovna/",
+      "title": "Литвинова Евгения Михайловна",
+      "position": "Тренер-преподаватель по всестилевому каратэ",
+      "experience": "12 лет",
+      "qualification": "2 дан (черный пояс) по каратэ Шотокан, кандидат в мастера спорта по всестилевому каратэ",
+      "content": "Имеет бакалаврскую и магистерскую подготовку Курского государственного университета по физкультурному и педагогическому направлениям.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/cdMhC1XoUulluggWnoP4wuE9oautrXIZlaH6tDNI3RgckryjshOK3TgjSu4qm-bG7TAmVv_w6cFw9TKxS_GR99Gbl.jpg",
+      "directions": ["Всестилевое каратэ"]
+    },
+    {
+      "id": "velichkin-nikita-valerevich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/velichkin-nikita-valerevich/",
+      "title": "Величкин Никита Валерьевич",
+      "position": "Тренер по всестилевому каратэ",
+      "experience": "5 лет",
+      "qualification": "Черный пояс, 1 дан по каратэ Шотокан, мастер спорта России",
+      "content": "Победитель первенства России и многократный призёр всероссийских и областных соревнований по всестилевому каратэ.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/NstYJfA8E2qsUdvqhLObuPpJm8m7iB4vckzaRRexPPzlSl_js_pUR_FqR88gC10FaOaZstfzNDJAdxNZq_LF2PflI.jpg",
+      "directions": ["Всестилевое каратэ"]
+    },
+    {
+      "id": "nasyrov-aleksandr-vladimirovich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/nasyrov-aleksandr-vladimirovich/",
+      "title": "Насыров Александр Владимирович",
+      "position": "Главный тренер сборной команды Курской области по КУДО",
+      "experience": "12 лет",
+      "qualification": "1 кю (коричневый пояс) по КУДО, кандидат в мастера спорта по КУДО",
+      "content": "Серебряный призёр первенства ЦФО и Всероссийских юношеских игр боевых искусств, многократный победитель межрегиональных и областных соревнований по КУДО.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/jd_SLocuuAmQD_K8hkSyXmWAugLKP7pbN5byTJFYji9-aLLbanTSPeIRcJRSxRTudqWykTqV4KXI9clHc_AS9fyH6.jpg",
+      "directions": ["КУДО"]
+    },
+    {
+      "id": "rykov-sergej-viktorovich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/rykov-sergej-viktorovich/",
+      "title": "Рыков Сергей Викторович",
+      "position": "Тренер-преподаватель по всестилевому каратэ и КУДО",
+      "experience": "16 лет",
+      "qualification": "2 дан (черный пояс) по каратэ Шотокан, кандидат в мастера спорта по всестилевому каратэ",
+      "content": "Имеет подготовку в области юриспруденции, религиоведения и методики преподавания физической культуры.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/fLxxYy23gxAjJLOhQJA53sxCE3UQETD8vdpPnDt7CBPHCFmOlrBfxFiOOrUlR4Khi5vxZnA2881ODqGQ0_1HxwpJZ.jpg",
+      "directions": ["Всестилевое каратэ", "КУДО"]
+    },
+    {
+      "id": "vertikov-pavel-andreevich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/vertikov-pavel-andreevich/",
+      "title": "Вертиков Павел Андреевич",
+      "position": "Тренер по всестилевому каратэ",
+      "experience": "5 лет",
+      "qualification": "1 дан (черный пояс) по каратэ-до Шотокан, кандидат в мастера спорта",
+      "content": "Член сборной Курской области, победитель первенства России и многократный победитель всероссийских соревнований.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/5DXIhy6Hz64-F2_pJaGxL-G75dSu9DgE3na-46JGkc_eOjSAKuwnvgDc4EcxQxp_A5RiZGC_jbwwrpjur_CFF7RYy.jpg",
+      "directions": ["Всестилевое каратэ"]
+    },
+    {
+      "id": "belikov-roman-ruslanovich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/belikov-roman-ruslanovich/",
+      "title": "Беликов Роман Русланович",
+      "position": "Тренер-преподаватель по всестилевому каратэ и КУДО",
+      "experience": "4 года",
+      "qualification": "2 дан (черный пояс) по каратэ Шотокан, кандидат в мастера России по всестилевому каратэ",
+      "content": "Победитель первенства России по каратэ СЭНЭ, двукратный победитель Всероссийских юношеских игр боевых искусств и серебряный призёр первенства ЦФО по КУДО.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/jneH_U7E5RjLR93ztzFXyjrI__0-GWPN3BMqerx5rGqBKs9BOaRmoaaaCB837KCmR7ffDxujvEVEO-Y4O_PJe7UbX.jpg",
+      "directions": ["Всестилевое каратэ", "КУДО"]
+    },
+    {
+      "id": "luzanov-evgenij-ivanovich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/luzanov-evgenij-ivanovich/",
+      "title": "Лузанов Евгений Иванович",
+      "position": "Тренер-преподаватель по всестилевому каратэ",
+      "experience": "8 лет",
+      "qualification": "1 дан (черный пояс) по каратэ Шотокан, кандидат в мастера спорта по всестилевому каратэ",
+      "content": "Имеет педагогическое образование Курского государственного университета по историческому и физкультурному профилям.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/Ma50XMSTPDV3DJEPLRuDFTKM57sDusoWM6nSBvOegMErXSWrpHuShQzYYkkoi0CvwOX60VfdxLeEMeNSc_T3rLmiI.jpg",
+      "directions": ["Всестилевое каратэ"]
+    },
+    {
+      "id": "shatko-dmitrij-vasilevich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/shatko-dmitrij-vasilevich/",
+      "title": "Шатько Дмитрий Васильевич",
+      "position": "Тренер-преподаватель по всестилевому каратэ",
+      "experience": "3 года",
+      "qualification": "1 дан (черный пояс) по каратэ Шотокан",
+      "content": "Член сборной Курской области с 2017 года, бронзовый призёр чемпионата России и многократный призёр всероссийских соревнований по всестилевому каратэ.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC06626_1_4_3_1_1_Tn8GS6W.jpg",
+      "directions": ["Всестилевое каратэ"]
+    },
+    {
+      "id": "velichkin-kirill-valerevich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/velichkin-kirill-valerevich/",
+      "title": "Величкин Кирилл Валерьевич",
+      "position": "Тренер-преподаватель по всестилевому каратэ",
+      "experience": "2 года",
+      "qualification": "1 дан по каратэ Шотокан, кандидат в мастера спорта России по всестилевому каратэ",
+      "content": "Член сборной Курской области с 2018 года, победитель чемпионата России и призёр Спартакиады молодёжи России по всестилевому каратэ.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC06715_4_2dc3vey.jpg",
+      "directions": ["Всестилевое каратэ"]
+    },
+    {
+      "id": "kovalenko-artem-konstantinovich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/kovalenko-artem-konstantinovich/",
+      "title": "Коваленко Артем Константинович",
+      "position": "Тренер-преподаватель по КУДО",
+      "experience": "2 года",
+      "qualification": "2 кю (коричневый пояс) по КУДО, кандидат в мастера спорта по КУДО",
+      "content": "Член сборной Курской области с 2015 года, серебряный призёр первенства ЦФО и многократный победитель межрегиональных и областных соревнований по КУДО.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC06910_1_1_EBSllPH.jpg",
+      "directions": ["КУДО"]
+    },
+    {
+      "id": "postoev-nikita-dmitrievich",
+      "source_url": "https://www.vityazi-kursk.ru/coach/postoev-nikita-dmitrievich/",
+      "title": "Постоев Никита Дмитриевич",
+      "position": "Тренер-преподаватель по КУДО",
+      "experience": "3 года",
+      "qualification": "3 кю (зеленый пояс) по КУДО",
+      "content": "Член сборной Курской области с 2015 по 2021 год, многократный победитель межрегиональных и областных соревнований по КУДО.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC06666_1_1_XJhJCGa.jpg",
+      "directions": ["КУДО"]
+    },
+    {
+      "id": "ruckaya-kristina-denisovna",
+      "source_url": "https://www.vityazi-kursk.ru/coach/ruckaya-kristina-denisovna/",
+      "title": "Руцкая Кристина Денисовна",
+      "position": "Тренер-преподаватель по всестилевому каратэ",
+      "experience": "2 года",
+      "qualification": "1 дан по каратэ Шотокан, кандидат в мастера спорта России по всестилевому каратэ",
+      "content": "Член сборной России с 2024 года; победитель Кубка России, первенств мира и России по всестилевому каратэ.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC06525_2_1_1_9olzz8G.jpg",
+      "directions": ["Всестилевое каратэ"]
+    },
+    {
+      "id": "vitalij-gorohov",
+      "source_url": "https://www.vityazi-kursk.ru/coach/vitalij-gorohov/",
+      "title": "Горохов Виталий Сергеевич",
+      "position": "Председатель Курского регионального отделения «Ассоциация Витязей», заслуженный тренер России, главный тренер сборной команды Курской области по всестилевому каратэ",
+      "experience": null,
+      "qualification": "V Дан по каратэ Шотокан (IKA)",
+      "content": "Председатель курских отделений Федерации КУДО России и Федерации всестилевого каратэ России; тренерскую деятельность ведёт с 1997 года.",
+      "image_url": "https://www.vityazi-kursk.ru/media/images/WhZrVEzSNnK2tvsIfy510F2kCjm1SSuZBWptmcAUimXJG5UHODnb6oQgwyHkN5GzxULsHsaxzCJUQYEuJ_xln3bNb.jpg",
+      "directions": ["Всестилевое каратэ", "КУДО"]
+    }
+  ],
+  "students": [
+    {
+      "id": "milana-ishunina",
+      "source_url": "https://www.vityazi-kursk.ru/#students",
+      "title": "Милана Ишунина",
+      "subtitle": "Член сборной команды России по всестилевому каратэ",
+      "qualification": "1 Дан (черный пояс) по каратэ-до Шотокан, кандидат в мастера спорта",
+      "achievements": [
+        "Победитель Первенства мира и России по всестилевому каратэ",
+        "Победитель Всероссийской Спартакиады учащихся России",
+        "Победитель Кубка России",
+        "Член сборной России"
+      ],
+      "trainers": [
+        {
+          "id": "vitalij-gorohov",
+          "name": "Горохов В.С."
+        },
+        {
+          "id": "litvinova-evgeniya-mihajlovna",
+          "name": "Литвинова Е.М."
+        }
+      ],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC03305_1.jpg"
+    },
+    {
+      "id": "valerij-mishin",
+      "source_url": "https://www.vityazi-kursk.ru/#students",
+      "title": "Валерий Мишин",
+      "subtitle": "Член сборной команды Курской области по всестилевому каратэ",
+      "qualification": "1 Дан (черный пояс) по каратэ-до Шотокан, кандидат в мастера спорта",
+      "achievements": [
+        "Победитель Первенства мира",
+        "Победитель Первенства России",
+        "Победитель Всероссийских соревнований",
+        "Бронзовый призёр Первенства г. Санкт-Петербург",
+        "Многократный победитель областных и межрегиональных соревнований"
+      ],
+      "trainers": [
+        {
+          "id": "vitalij-gorohov",
+          "name": "Горохов В.С."
+        }
+      ],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/e-VxM8yVzb4-min.jpg"
+    },
+    {
+      "id": "veksin-aleksandr",
+      "source_url": "https://www.vityazi-kursk.ru/#students",
+      "title": "Векшин Александр",
+      "subtitle": "Член сборной команды Курской области по всестилевому каратэ",
+      "qualification": "1 Дан (черный пояс) по каратэ-до Шотокан, 1 спортивный разряд",
+      "achievements": [
+        "Победитель Первенства мира",
+        "Победитель Первенства России",
+        "Многократный победитель и призёр Всероссийских соревнований"
+      ],
+      "trainers": [
+        {
+          "id": "vitalij-gorohov",
+          "name": "Горохов В.С."
+        }
+      ],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC00400_5.jpg"
+    },
+    {
+      "id": "manukyan-arman",
+      "source_url": "https://www.vityazi-kursk.ru/#students",
+      "title": "Манукян Арман",
+      "subtitle": "Член сборной команды Курской области по всестилевому каратэ",
+      "qualification": "1 Дан (черный пояс) по каратэ-до Шотокан, 2 спортивный разряд",
+      "achievements": [
+        "Победитель Первенства России",
+        "Призёр Всероссийских соревнований",
+        "Многократный победитель и призёр Первенств Курской области",
+        "Член сборной России"
+      ],
+      "trainers": [
+        {
+          "id": "vitalij-gorohov",
+          "name": "Горохов В.С."
+        },
+        {
+          "id": "emelyanov-dmitrij-olegovich",
+          "name": "Емельянов Д.О."
+        }
+      ],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/rE_1B7C30oE-min.jpg"
+    },
+    {
+      "id": "otenko-aleksandr",
+      "source_url": "https://www.vityazi-kursk.ru/#students",
+      "title": "Отенко Александр",
+      "subtitle": "Член сборной команды Курской области по всестилевому каратэ",
+      "qualification": "1 кю (коричневый пояс) по каратэ-до Шотокан, 1 спортивный разряд",
+      "achievements": [
+        "Призёр Первенства мира и России",
+        "Многократный победитель и призёр Первенств Курской области"
+      ],
+      "trainers": [
+        {
+          "id": "vitalij-gorohov",
+          "name": "Горохов В.С."
+        }
+      ],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC00467_1.jpg"
+    },
+    {
+      "id": "anikushina-darya",
+      "source_url": "https://www.vityazi-kursk.ru/#students",
+      "title": "Аникушина Дарья",
+      "subtitle": "Член сборной команды России по всестилевому каратэ",
+      "qualification": "1 кю (коричневый пояс) по каратэ-до Шотокан, кандидат в мастера спорта",
+      "achievements": [
+        "Победитель Первенства мира",
+        "Победитель Первенства России",
+        "Многократный победитель и призёр Всероссийских соревнований",
+        "Член сборной России"
+      ],
+      "trainers": [
+        {
+          "id": "vitalij-gorohov",
+          "name": "Горохов В.С."
+        }
+      ],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC03283_2.jpg"
+    },
+    {
+      "id": "frolov-artem",
+      "source_url": "https://www.vityazi-kursk.ru/#students",
+      "title": "Фролов Артем",
+      "subtitle": "Член сборной команды Курской области по всестилевому каратэ",
+      "qualification": "3 кю (зеленый пояс) по каратэ-до Шотокан, 1 спортивный разряд",
+      "achievements": [
+        "Победитель Первенства мира и России",
+        "Призёр Всероссийских соревнований",
+        "Многократный победитель и призёр Первенств Курской области"
+      ],
+      "trainers": [
+        {
+          "id": "vitalij-gorohov",
+          "name": "Горохов В.С."
+        }
+      ],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC01673_1.jpg"
+    },
+    {
+      "id": "anna-dyumina",
+      "source_url": "https://www.vityazi-kursk.ru/#students",
+      "title": "Анна Дюмина",
+      "subtitle": "Член сборной команды Курской области по всестилевому каратэ",
+      "qualification": "2 кю (синий пояс) по каратэ, 1 спортивный разряд",
+      "achievements": [
+        "Победитель Всероссийских соревнований",
+        "Победитель Первенства Центрального федерального округа по всестилевому каратэ",
+        "Многократный победитель и призёр областных и межрегиональных турниров"
+      ],
+      "trainers": [
+        {
+          "id": "vitalij-gorohov",
+          "name": "Горохов В.С."
+        }
+      ],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/DSC00576-0_1.jpg"
+    },
+    {
+      "id": "valeriya-goncharova",
+      "source_url": "https://www.vityazi-kursk.ru/#students",
+      "title": "Валерия Гончарова",
+      "subtitle": "Член сборной команды Курской области по всестилевому каратэ",
+      "qualification": "1 кю (коричневый пояс) по каратэ, кандидат в мастера спорта",
+      "achievements": [
+        "Победитель Первенства мира и России",
+        "Многократный победитель и призёр всероссийских соревнований по всестилевому каратэ"
+      ],
+      "trainers": [
+        {
+          "id": "vitalij-gorohov",
+          "name": "Горохов В.С."
+        }
+      ],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/zxPfyi8dljTRHtbLcEJfIDDDy-WhHK0OEiDsXB1A4MVNrOpAukUSt09n5l_8hJvzrq-UUwXpjlBcJJDK3_pYInWrf.jpg"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "vitalij-gorohov-vladislav-tretyak",
+      "source_url": "https://www.vityazi-kursk.ru/#portfolio",
+      "caption": "Виталий Горохов и Владислав Третьяк",
+      "image_url": "https://www.vityazi-kursk.ru/media/photos/%D0%92%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D0%B8_%D0%93%D0%BE%D1%80%D0%BE%D1%85%D0%BE%D0%B2_%D0%B8_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D1%81%D0%BB%D0%B0%D0%B2_%D0%A2%D1%80%D0%B5%D1%82%D1%8C%D1%8F%D0%BA..jpg"
+    },
+    {
+      "id": "vitalij-gorohov-fedor-emelyanenko-aleksandr-bryksin",
+      "source_url": "https://www.vityazi-kursk.ru/#portfolio",
+      "caption": "Виталий Горохов, Федор Емельяненко и Александр Брыксин.",
+      "image_url": "https://www.vityazi-kursk.ru/media/photos/%D0%92%D0%B8%D1%82%D0%B0%D0%BB%D0%B8%D0%B8_%D0%93%D0%BE%D1%80%D0%BE%D1%85%D0%BE%D0%B2_%D0%A4%D0%B5%D0%B4%D0%BE%D1%80_%D0%95%D0%BC%D0%B5%D0%BB%D1%8C%D1%8F%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE_%D0%B8_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%91%D1%80%D1%8B%D0%BA%D1%81%D0%B8%D0%BD..jpg"
+    },
+    {
+      "id": "nagrazhdenie-pobeditelej-sorevnovanij",
+      "source_url": "https://www.vityazi-kursk.ru/#portfolio",
+      "caption": "Награждение победителей соревнований по единоборствам",
+      "image_url": "https://www.vityazi-kursk.ru/media/photos/%D0%9D%D0%B0%D0%B3%D1%80%D0%B0%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE%D0%B1%D0%B5%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B8_%D1%81%D0%BE%D1%80%D0%B5%D0%B2%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8.jpg"
+    },
+    {
+      "id": "poedinok-polnyj-kontakt",
+      "source_url": "https://www.vityazi-kursk.ru/#portfolio",
+      "caption": "Поединок по правилам всестилевого каратэ, дисциплина Полный контакт в средствах защиты",
+      "image_url": "https://www.vityazi-kursk.ru/media/photos/%D0%9F%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA_%D0%BF%D0%BE_%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0%D0%BC_%D0%B2%D1%81%D0%B5%D1%81%D1%82%D0%B8%D0%BB%D0%B5%D0%B2%D0%BE%D0%B3%D0%BE_%D0%BA%D0%B0%D1%80%D0%B0%D1%82%D1%8D.jpg"
+    },
+    {
+      "id": "blagodarnost-gubernatora-kurskoj-oblasti",
+      "source_url": "https://www.vityazi-kursk.ru/#portfolio",
+      "caption": "Вручение Благодарности Губернатора Курской области",
+      "image_url": "https://www.vityazi-kursk.ru/media/photos/%D0%92%D1%80%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B5%D0%BC%D0%B8%D0%B8_%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D1%8F_%D0%92%D0%B5%D1%80%D1%88%D0%B8%D0%BD%D0%B0.jpg"
+    },
+    {
+      "id": "chempionat-rossii-2026",
+      "source_url": "https://www.vityazi-kursk.ru/#portfolio",
+      "caption": "Победители Чемпионата России по всестилевому каратэ 2026 года",
+      "image_url": "https://www.vityazi-kursk.ru/media/photos/87g833M_TSdJbs9lbYw8hTg3F3aVLce-3dpOh0REs9aHbj0Zw5PgPY74YKc3ME_bvWJMewYIafx9ZgvnTCBuYp0j.jpg"
+    },
+    {
+      "id": "vershina-2025-luchshij-trener",
+      "source_url": "https://www.vityazi-kursk.ru/#portfolio",
+      "caption": "Премия общественной признания в области спорта \"Вершина 2025\". Номинация: Лучший тренер",
+      "image_url": "https://www.vityazi-kursk.ru/media/photos/CWQR_5_R2F7Mr9mqk_QwGBZK0vb7vWc2QfuICoAmSYA0ySoVH5vmwMQL4MDMIjBBTYmMVUhQVhImWWuyF2wbFmUV.jpg"
+    },
+    {
+      "id": "pervenstvo-chempionat-mira-2025",
+      "source_url": "https://www.vityazi-kursk.ru/#portfolio",
+      "caption": "Победители и призеры Первенства и Чемпионата мира по всестилевому каратэ 2025 года",
+      "image_url": "https://www.vityazi-kursk.ru/media/photos/vpNIk-SVZhVAbEp-jtPc1_tW7xTKKoUa4WoWXs44JVmub70UXVqG4zsnk9lMhWgxOpQZuuGUwH_KgqIIYZhZOMeF.jpg"
+    },
+    {
+      "id": "kubok-rossii-2025",
+      "source_url": "https://www.vityazi-kursk.ru/#portfolio",
+      "caption": "Выступление на Кубке России 2025 года",
+      "image_url": "https://www.vityazi-kursk.ru/media/photos/rZXQyYC5mhAJzT1r_tpsps1pI-q5ik6FoZqK_iFe2uxeyafkKYMbz8tT5tB8PRm_JBUP_Dvs_l83P_FCCs7qFpfl.jpg"
+    }
+  ],
+  "articles": [
+    {
+      "id": "vityazi-zemli-russkoj",
+      "source_url": "https://www.vityazi-kursk.ru/project/vityazi-zemli-russkoj/",
+      "title": "Витязи земли Русской",
+      "kind": "project",
+      "published_at": null,
+      "summary": "Проект развивает сеть спортивно-патриотических клубов Ассоциации в 17 районах Курской области. На странице указаны 21 клуб, тренировки, патриотические и культурные мероприятия, подготовка к ГТО и 800 участников. Проект поддержан Фондом президентских грантов.",
+      "authors": ["Горохов В.С.", "Емельянов Д.О."],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/imgonline-com-ua-Resize-G95pmYJ9PdBmUPa_dGw1sdn.jpg"
+    },
+    {
+      "id": "nasledniki-pobedy",
+      "source_url": "https://www.vityazi-kursk.ru/project/nasledniki-pobedy/",
+      "title": "Наследники Победы",
+      "kind": "project",
+      "published_at": null,
+      "summary": "Всероссийский 14-дневный патриотический лагерь для участников 11–18 лет, посвящённый 75-летию Победы. На странице указаны образовательная и архивно-поисковая работа, 200 участников и поддержка Фонда президентских грантов.",
+      "authors": ["Горохов В.С.", "Литвинова Е.М."],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/imgonline-com-ua-Resize-ZPIXICK7LF4T_9skulgH.jpg"
+    },
+    {
+      "id": "karate-dlya-detej-plyusy-i-s-kakogo-vozrasta",
+      "source_url": "https://www.vityazi-kursk.ru/project/karate-dlya-detej-plyusy-i-s-kakogo-vozrasta/",
+      "title": "Каратэ для детей: плюсы и с какого возраста",
+      "kind": "article",
+      "published_at": null,
+      "summary": "Материал описывает особенности занятий каратэ для возрастов 4–5, 6–7, 8–11 и 12–17 лет: от общей физической подготовки и игровых упражнений до полноценной технической, тактической и соревновательной подготовки. Отдельно перечислена польза для физического развития, дисциплины и уверенности ребёнка.",
+      "authors": [],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/imgonline-com-ua-Resize-MdPsxVbNio2eBhg_SrbrFbw.jpg"
+    },
+    {
+      "id": "zanyat-znachit-zashishen",
+      "source_url": "https://www.vityazi-kursk.ru/project/zanyat-znachit-zashishen/",
+      "title": "Занят – значит защищен!",
+      "kind": "project",
+      "published_at": null,
+      "summary": "Социальный проект по профилактике асоциальных явлений через вовлечение детей и молодёжи в спорт. В программу входят показательные выступления, мастер-классы, пробные занятия и встречи со спортсменами. На странице заявлено 60 000 участников и финансирование из собственных средств.",
+      "authors": ["Горохов В.С.", "Рыков С.В."],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/imgonline-com-ua-Resize-QntcmiWNuwrIC8es_syTcacG.jpg"
+    },
+    {
+      "id": "kudo-dlya-detej-bezopasnyj-vid-sporta",
+      "source_url": "https://www.vityazi-kursk.ru/project/kudo-dlya-detej-bezopasnyj-vid-sporta/",
+      "title": "КУДО для детей. Безопасный вид спорта",
+      "kind": "article",
+      "published_at": null,
+      "summary": "Материал рассказывает о возрастной адаптации тренировок КУДО, защитной экипировке, требованиях к залу и постепенном усложнении программы. Подчёркиваются физическая подготовка, самодисциплина, уверенность, контроль эмоций и уважение к партнёрам.",
+      "authors": [],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/imgonline-com-ua-Resize-0FoQDgqEo2fG9F8N_lLbZhiQ.jpg"
+    },
+    {
+      "id": "sdacha-normativov-gto-v-test-rezhime-kik-test",
+      "source_url": "https://www.vityazi-kursk.ru/project/sdacha-normativov-gto-v-test-rezhime-kik-test/",
+      "title": "Сдача нормативов ГТО в тест-режиме + Кик-тест",
+      "kind": "project",
+      "published_at": null,
+      "summary": "Проект позволяет школьникам 7–17 лет пройти нормативы ГТО в условиях, приближённых к официальным, и проверить силу удара электронным силомером. На странице указано более 4 000 участников из Курской области.",
+      "authors": ["Горохов В.С.", "Литвинова Е.М.", "Рыков С.В."],
+      "image_url": "https://www.vityazi-kursk.ru/media/images/imgonline-com-ua-Resize-oenmSn1yZlTVco_gDiA1Ak.jpg"
+    }
+  ],
+  "history": {
+    "id": "istoriya-associacii",
+    "source_url": "https://www.vityazi-kursk.ru/page/istoriya-associacii/",
+    "title": "История Ассоциации",
+    "published_at": null,
+    "summary": "Истоки организации связываются с движением «Витязей», возникшим во Франции в 1922 году. Современная международная организация работает в России с 1992 года, а в Курской области — с 2002 года. Страница описывает нравственное, патриотическое и физическое воспитание, работу клубов при образовательных учреждениях, спортивные семинары, аттестации, соревнования и проекты, поддержанные президентскими грантами.",
+    "facts_from_source": {
+      "regional_branches": 44,
+      "kursk_start_year": 2002,
+      "districts_in_kursk_region": 17,
+      "pupils": 1890,
+      "instructors": 16
+    },
+    "image_url": "https://www.vityazi-kursk.ru/media/images/kQREk5ZTBBE.jpg"
+  },
+  "combat_pages": [
+    {
+      "id": "vsestilevoe-karate",
+      "source_url": "https://www.vityazi-kursk.ru/combat/vsestilevoe-karate/",
+      "title": "Всестилевое каратэ",
+      "published_at": null,
+      "summary": "Страница знакомит с кихоном, ката и кумитэ, технической, тактической, физической и психологической подготовкой. Курское региональное отделение Федерации создано в 2014 году и аккредитовано в 2015 году; источник сообщает о более чем 1 000 занимающихся и более чем 30 секциях.",
+      "facts_from_homepage": {
+        "group_size": "до 15 человек",
+        "minimum_age": "с 5 лет",
+        "duration": "от 1 до 2 часов"
+      },
+      "image_url": "https://www.vityazi-kursk.ru/media/images/imgonline-com-ua-Resize-TEE03zRwTNxyy8t1_VjzHgXb.jpg"
+    },
+    {
+      "id": "kudo",
+      "source_url": "https://www.vityazi-kursk.ru/combat/kudo/",
+      "title": "КУДО",
+      "published_at": null,
+      "summary": "КУДО представлено как сочетание ударных техник, бросков и борьбы в партере с обязательной защитной экипировкой. Курское областное отделение Федерации КУДО создано и аккредитовано в 2011 году; источник сообщает о более чем 200 занимающихся и клубах во всех районах Курска.",
+      "facts_from_homepage": {
+        "group_size": "до 15 человек",
+        "minimum_age": "с 6 лет",
+        "duration": "от 1 до 2 часов"
+      },
+      "image_url": "https://www.vityazi-kursk.ru/media/images/imgonline-com-ua-Resize-sdH2IAjFNV_neaEgZU.jpg"
+    },
+    {
+      "id": "individualnye-zanyatiya",
+      "source_url": "https://www.vityazi-kursk.ru/combat/individualnye-zanyatiya/",
+      "title": "Индивидуальные занятия",
+      "published_at": null,
+      "summary": "Индивидуальные занятия по каратэ и КУДО для одного или двух человек.",
+      "facts_from_source": {
+        "group_size": "до 2 человек",
+        "minimum_age": "с 5 лет",
+        "duration": "от 1 до 2 часов",
+        "price": "от 500 до 1200 рублей"
+      },
+      "image_url": "https://www.vityazi-kursk.ru/media/images/z7LipI8yRXI_bciQ2yS_87bouRi.jpg"
+    }
+  ]
+}

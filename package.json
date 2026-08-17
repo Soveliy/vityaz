@@ -1,19 +1,21 @@
 {
-  "name": "warpoint",
-  "version": "1.0.0",
+  "name": "vityaz",
+  "version": "1.4.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build --mode production",
     "backend": "vite build --mode backend",
+    "wordpress": "vite build --mode wordpress && node scripts/build-wordpress-theme.mjs",
+    "wordpress:zip": "npm run wordpress && node scripts/zip-build.mjs wordpress-theme/vityaz archive/vityaz-wordpress.zip vityaz",
     "clean": "node scripts/clean.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "npm run lint:styles && npm run format:check",
     "lint:styles": "stylelint \"src/scss/**/*.scss\"",
     "sprite": "node scripts/sprite.mjs",
-    "zip": "npm run build && node scripts/zip-build.mjs dist archive/warpoint.zip"
+    "zip": "npm run build && node scripts/zip-build.mjs dist archive/vityaz.zip"
   },
   "browserslist": [
     "last 2 versions",

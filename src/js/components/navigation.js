@@ -38,6 +38,12 @@ export function initNavigation() {
     }
   });
 
+  header.addEventListener('click', (event) => {
+    if (event.target.closest('[data-modal-open="request"]')) {
+      closeMenu();
+    }
+  });
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       closeMenu();

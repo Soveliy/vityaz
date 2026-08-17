@@ -17,8 +17,15 @@ $breakpoint-mobile: rem(767px);
   --color-accent: var(--blue);
   --color-bg: var(--white);
   --color-bg-inverse: var(--black);
+  --color-border: #dfe5fa;
+  --color-muted: #797b82;
   --color-text: var(--black);
   --color-text-inverse: var(--white);
+  --focus-color: var(--blue);
+  --btn-focus: #7695f4;
+  --btn-bg-disabled: #aab9e8;
+  --btn-border-disabled: #aab9e8;
+  --btn-color-disabled: rgb(255 255 255 / 0.72);
   --font-family: 'Inter', sans-serif;
   --second-family: 'AA Stetica', sans-serif;
 }

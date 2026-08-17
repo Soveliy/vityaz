@@ -5,3 +5,9 @@ backend
 archive
 public
 package-lock.json
+.env.wordpress
+wordpress-theme/vityaz/**/*.php
+wordpress-theme/vityaz/assets
+src/index.html
+src/partials/header.html
+src/resources/customization.json

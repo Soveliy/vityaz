@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 import { ZipArchive } from 'archiver';
 
-const [sourceDir = 'dist', targetFile = 'archive/warpoint.zip'] = process.argv.slice(2);
+const [sourceDir = 'dist', targetFile = 'archive/vityaz.zip', archiveRoot = ''] =
+  process.argv.slice(2);
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const sourcePath = path.resolve(projectRoot, sourceDir);
 const targetPath = path.resolve(projectRoot, targetFile);
@@ -20,7 +21,7 @@ await new Promise((resolve, reject) => {
   stream.on('close', resolve);
   archive.on('error', reject);
   archive.pipe(stream);
-  archive.directory(sourcePath, false);
+  archive.directory(sourcePath, archiveRoot || false);
   archive.finalize();
 });
 

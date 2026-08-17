@@ -166,8 +166,8 @@
   z-index: $z-tooltip;
   display: flex;
   flex-direction: column;
-  width: min(rem(380px), calc(100% - #{rem(32px)}));
-  padding: rem(36px) rem(40px);
+  width: min(rem(292px), calc(100% - #{rem(32px)}));
+  padding: rem(28px) rem(30px);
   background: #f8f9fe;
   border-radius: $radius-sm;
   box-shadow: 0 rem(18px) rem(48px) rgb(20 20 20 / 0.16);
@@ -185,21 +185,21 @@
   &__title {
     color: var(--blue);
     font-family: var(--second-family);
-    font-size: rem(24px);
+    font-size: rem(20px);
     font-weight: 700;
     line-height: 110%;
   }
 
   &__text {
-    margin-top: rem(12px);
+    margin-top: rem(8px);
     color: var(--black);
-    font-size: rem(20px);
+    font-size: rem(16px);
     line-height: 120%;
   }
 
   @media (max-width: $breakpoint-mobile) {
     right: rem(16px);
     bottom: rem(16px);
-    padding: rem(28px);
+    padding: rem(24px);
   }
 }

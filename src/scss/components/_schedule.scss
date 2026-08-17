@@ -5,6 +5,10 @@
   &__container {
     position: relative;
 
+    picture {
+      display: block;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -29,11 +33,6 @@
     margin-top: fluid(20px, 40px);
     width: max-content;
   }
-
-  &__mobile {
-    display: none;
-  }
-
   @media (max-width: $breakpoint-tablet) {
     &__container {
       overflow-x: auto;
@@ -65,64 +64,15 @@
 
   @media (max-width: $breakpoint-mobile) {
     &__container {
-      overflow: hidden;
-      margin-inline: 0;
-      padding-inline: 0;
+      overflow-x: visible;
 
       &::before {
-        right: 0;
-        left: 0;
-        width: 100%;
-        height: 22%;
+        display: none;
       }
 
       img {
-        display: none;
-      }
-    }
-
-    &__mobile {
-      display: block;
-      overflow: hidden;
-      border: rem(1px) solid #e7ebf7;
-      font-size: rem(12px);
-      line-height: 130%;
-    }
-
-    &__mobile-head,
-    &__mobile-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-items: center;
-      gap: 0;
-      padding: rem(12px) rem(8px);
-      border-bottom: rem(1px) solid #e7ebf7;
-      text-align: center;
-
-      span + span {
-        display: flex;
-        align-items: center;
-        align-self: stretch;
-        justify-content: center;
-        border-left: rem(1px) solid #e7ebf7;
-      }
-    }
-
-    &__mobile-head {
-      color: #777a83;
-      font-size: rem(11px);
-      font-weight: 500;
-    }
-
-    &__mobile-row {
-      min-height: rem(76px);
-
-      &:nth-child(even) {
-        background: #f8f9fe;
-      }
-
-      span:last-child {
-        color: #4e4f52;
+        width: 100%;
+        max-width: 100%;
       }
     }
 

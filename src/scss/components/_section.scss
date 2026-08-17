@@ -6,6 +6,10 @@
   z-index: 1;
   padding: fluid(20px, 60px) 0;
 
+  &[id] {
+    scroll-margin-top: fluid(76px, 112px);
+  }
+
   &__title {
     font-family: var(--second-family);
     margin: 0 0 fluid(20px, 40px);

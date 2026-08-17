@@ -9,8 +9,13 @@
   }
 
   &__image,
-  .form {
+  &__row > .wpcf7,
+  &__row > .form {
     width: calc(50% - #{rem(10px)});
+  }
+
+  .wpcf7 .form {
+    width: 100%;
   }
 
   &__image {
@@ -26,7 +31,8 @@
     }
 
     &__image,
-    .form {
+    &__row > .wpcf7,
+    &__row > .form {
       width: 100%;
     }
 

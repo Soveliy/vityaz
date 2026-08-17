@@ -42,6 +42,13 @@
     align-self: flex-start;
   }
 
+  &__submit {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: max-content;
+  }
+
   &__checkbox {
     position: relative;
     padding-left: rem(36px);
@@ -56,6 +63,14 @@
       color: #c0c0c0;
       text-decoration: underline;
       text-decoration-skip-ink: none;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    .wpcf7-list-item {
+      margin: 0;
     }
 
     input {
@@ -107,6 +122,49 @@
 
     &__btn {
       width: 100%;
+    }
+  }
+}
+
+.wpcf7 {
+  .wpcf7-form-control-wrap {
+    display: block;
+  }
+
+  .wpcf7-not-valid-tip {
+    display: block;
+    margin-top: rem(6px);
+    color: #c62828;
+    font-size: rem(13px);
+    line-height: 1.25;
+  }
+
+  .wpcf7-response-output {
+    margin: rem(12px) 0 0;
+    padding: rem(10px) rem(12px);
+    color: #c62828;
+    border: 1px solid currentcolor;
+    border-radius: $radius-xs;
+    font-size: rem(14px);
+  }
+
+  form.sent .wpcf7-response-output {
+    display: none;
+  }
+
+  .wpcf7-spinner {
+    position: absolute;
+    right: rem(-32px);
+    margin: 0;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    .form__submit {
+      width: 100%;
+    }
+
+    .wpcf7-spinner {
+      right: rem(12px);
     }
   }
 }

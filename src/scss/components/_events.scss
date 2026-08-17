@@ -8,6 +8,11 @@
     gap: fluid(12px, 20px);
   }
 
+  &__more {
+    display: inline-flex;
+    margin-top: fluid(24px, 40px);
+  }
+
   @media (max-width: $breakpoint-tablet) {
     &__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -37,6 +42,11 @@
     .content-card {
       scroll-snap-align: start;
       scroll-snap-stop: always;
+    }
+
+    &__more {
+      justify-content: center;
+      width: 100%;
     }
   }
 }

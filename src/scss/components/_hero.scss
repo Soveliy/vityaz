@@ -4,10 +4,12 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: fluid(36px, 48px) 0 20px 0;
+  padding: fluid(36px, 48px) 0 20px;
+
   picture {
     display: contents;
   }
+
   &::before {
     position: absolute;
     top: rem(-30px);
@@ -26,12 +28,13 @@
     transform: translateX(-50%);
     -webkit-text-stroke: rem(2px) #edf1ff;
   }
+
   &::after {
     position: absolute;
     z-index: 0;
     color: transparent;
     font-family: var(--second-family);
-    font-size: clamp(17.5rem, 12.2693133047rem + 22.3175965665vw, 33.75rem);
+    font-size: clamp(17.5rem, 12.2693rem + 22.3176vw, 33.75rem);
     font-style: italic;
     font-weight: 700;
     line-height: 0.9;
@@ -125,7 +128,7 @@
     max-height: 73%;
     object-fit: contain;
     object-position: center bottom;
-    filter: drop-shadow(0 1.125rem 1.25rem rgba(20, 20, 20, 0.14));
+    filter: drop-shadow(0 1.125rem 1.25rem rgb(20 20 20 / 0.14));
   }
 
   @media (max-width: $breakpoint-tablet) {
@@ -153,31 +156,39 @@
   @media (max-width: $breakpoint-mobile) {
     overflow: hidden;
     padding-top: 0;
+
     &__visual {
       min-height: initial;
       height: 44vh;
     }
+
     &__fighters {
       right: 2%;
       width: 96%;
       bottom: -20%;
     }
+
     &__container {
       flex-direction: column-reverse;
       gap: rem(104px);
     }
+
     &__title {
       letter-spacing: -0.3px;
     }
+
     &__title br {
       display: none;
     }
+
     &__photo {
       width: 100%;
+
       &--second {
         display: none;
       }
     }
+
     &__btn {
       width: 100%;
       text-align: center;

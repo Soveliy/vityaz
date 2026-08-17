@@ -12,22 +12,26 @@
     flex-direction: column;
     height: 100%;
     padding: fluid(20px, 40px);
-
-    &::after {
-      order: 5;
-      margin-top: auto;
-      color: var(--blue);
-      font-size: fluid(14px, 16px);
-      font-weight: 500;
-      content: 'Подробнее...';
-    }
   }
 
   &__image {
     order: 2;
     width: 100%;
-    // aspect-ratio: 16 / 9;
     object-fit: cover;
+
+    &--placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: rem(180px);
+      background: #edf1ff;
+
+      img {
+        width: min(80%, rem(260px));
+        height: auto;
+        object-fit: contain;
+      }
+    }
   }
 
   &__body {
@@ -62,6 +66,15 @@
     line-height: 130%;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+  }
+
+  &__more {
+    order: 5;
+    margin-top: auto;
+    padding-top: rem(16px);
+    color: var(--blue);
+    font-size: fluid(14px, 16px);
+    font-weight: 500;
   }
 
   @media (max-width: $breakpoint-mobile) {

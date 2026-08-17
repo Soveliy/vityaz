@@ -13,9 +13,12 @@
 @use 'ui/link';
 @use 'ui/field';
 @use 'ui/modal';
+@use 'ui/cookie-notice';
 @use 'ui/burger';
 @use 'ui/nav';
 @use 'pages/home';
+@use 'pages/archive';
+@use 'pages/entry';
 @use 'utilities/states';
 @use 'components/section';
 @use 'components/group-inv';
